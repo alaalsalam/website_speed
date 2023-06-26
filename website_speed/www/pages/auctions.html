@@ -1,0 +1,313 @@
+    {% extends '/templates/page_base.html' %}
+
+    {% block title %} Auctions{% endblock %}
+    
+    {% block content %}
+    
+    <!-- Start Filter Section -->
+    <section class="filter py-3 mt-header">
+        <div class="container">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <select name="vehiclesType" id="vehiclesType" class="form-control select2 form-select " id="basic-usage">
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <select name="models" id="models" class="form-control select2 form-select " id="basic-usage">
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <select name="makes" id="makes" class="form-control select2 form-select ">
+
+                        </select>
+                    </div>
+                    <div class="col-md-2 form-group">
+                        <button type="submit" class="btn btn-primary h-100"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+    <!-- End Filter Section -->
+
+    <!-- Start Result section -->
+    <section class="result cars-page py-5 bg-color-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card border-0 mb-5">
+                        <div class="card-header bg-transparent border-0 border-bottom pb-5">
+                            <h4>Filters</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <input type="text" name="searchName" class="form-control bg-light border-0" placeholder="search by name">
+                                </div>
+                            </form>
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <select name="yearsStart" id="yearsStart" class="select2 form-select">
+                                    
+                                </select>
+                                <span class="mx-3 fw-bold">_</span>
+                                <select name="yearsEnd" id="yearsEnd" class="select2 form-select">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 p-3">
+                        <div class="card-header bg-transparent border-0 border-bottom pb-5">
+                            <h4>Advanced Filters</h4>
+                        </div>
+                        <div class="card-body border-bottom">
+                            <h5 class="mb-4">Loss Type</h5>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox2" class="border-0" wfd-id="id2" value="Collision">
+                                <label for="inlineCheckbox2" class="form-check-label fw-light mx-2">Collision</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox3" class="border-0" wfd-id="id3" value="Fire">
+                                <label for="inlineCheckbox3" class="form-check-label fw-light mx-2">Fire</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox4" class="border-0" wfd-id="id4" value="Other">
+                                <label for="inlineCheckbox5" class="form-check-label fw-light mx-2">Other</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox5" class="border-0" wfd-id="id5" value="Theft">
+                                <label for="inlineCheckbox5" class="form-check-label fw-light mx-2">Theft</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox6" class="border-0" wfd-id="id6" value="Water">
+                                <label for="inlineCheckbox6" class="form-check-label fw-light mx-2">Water</label>
+                            </div>
+                        </div>
+                        <div class="card-body border-bottom">
+                            <h5 class="mb-4">Fuel Type</h5>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox7" class="border-0" wfd-id="id7" value="Diesel">
+                                <label for="inlineCheckbox7" class="form-check-label fw-light mx-2">Diesel</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox8" class="border-0" wfd-id="id8" value="Electric">
+                                <label for="inlineCheckbox8" class="form-check-label fw-light mx-2">Electric</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox9" class="border-0" wfd-id="id9" value="Flexible Fuel">
+                                <label for="inlineCheckbox9" class="form-check-label fw-light mx-2">Flexible Fuel</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox10" class="border-0" wfd-id="id10" value="Gasoline">
+                                <label for="inlineCheckbox10" class="form-check-label fw-light mx-2">Gasoline</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox11" class="border-0" wfd-id="id11" value="Hybrid">
+                                <label for="inlineCheckbox11" class="form-check-label fw-light mx-2">Hybrid</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="" id="inlineCheckbox12" class="border-0" wfd-id="id12" value="Other">
+                                <label for="inlineCheckbox12" class="form-check-label fw-light mx-2">Other</label>
+                            </div>
+                        </div>
+                        <div class="card-body exterior-color">
+                            <h5 class="mb-4">Exterior color</h5>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox13" class="m-0" wfd-id="id13" value="Dark">
+                                <label for="inlineCheckbox13" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line"></span>
+                                    Derk
+                                </label>
+                            </div>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox14" class="m-0" wfd-id="id14" value="White">
+                                <label for="inlineCheckbox14" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line bg-white"></span>
+                                    White
+                                </label>
+                            </div>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox15" class="m-0" wfd-id="id15" value="Silver">
+                                <label for="inlineCheckbox15" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line silver"></span>
+                                    Silver
+                                </label>
+                            </div>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox16" class="m-0" wfd-id="id16" value="Gray">
+                                <label for="inlineCheckbox16" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line gray"></span>
+                                    Gray
+                                </label>
+                            </div>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox17" class="m-0" wfd-id="id17" value="Blue">
+                                <label for="inlineCheckbox17" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line blue"></span>
+                                    Blue
+                                </label>
+                            </div>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox18" class="m-0" wfd-id="id18" value="Red">
+                                <label for="inlineCheckbox18" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line red"></span>
+                                    Red
+                                </label>
+                            </div>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox19" class="m-0" wfd-id="id19" value="Green">
+                                <label for="inlineCheckbox19" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line green"></span>
+                                    Green
+                                </label>
+                            </div>
+                            <div class="form-group d-flex align-items-center w-100">
+                                <input type="checkbox" name="" id="inlineCheckbox20" class="m-0" wfd-id="id20" value="Gold">
+                                <label for="inlineCheckbox20" class="form-check-label fw-light mx-2 w-100 mb-0">
+                                    <span class="color-line gold"></span>
+                                    Gold
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 cars-info">
+                    <div class="bg-white p-3" id="dataApi">
+                        <div class="row py-3 border-bottom m-0">
+                            <div class="col-md-3 px-0">
+                                <img src="/assets/website_speed/speed_assets/uploads/cars/car6.jpg" alt="" class="w-100 h-100">
+                            </div>
+                            <div class="col-md-6 p-0">
+                                <h4>
+                                    <a href="">2018 Polaris Sportsman, 450 H.O.</a>
+                                </h4>
+                                <div class="row m-0 border-end">
+                                    <div class="col-sm-7">
+                                        <p class="m-0 text-muted">
+                                            Number: <span class="text-dark"> 0-30991485</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            VIN: <span class="text-dark">  4XASEA509JA269190</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Milage: <span class="text-dark">  10k miles (16k km)</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Location: <span class="text-dark"> Grenada (MS)</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Seller: <span class="text-dark"> State Farm Grou...</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="m-0 text-muted">
+                                            Sale doc.: <span class="text-dark"> Salvage (Mississippi)</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Damage: <span class="text-dark"> Collision | Front end</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Status: <span class="text-dark"> Stationary</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="date">
+                                    <p class="fw-bold">
+                                        <i class="fa-solid fa-calendar-days"></i> Wed 9 February, 2022
+                                    </p>
+                                </div>
+                                <p class="price py-2 rounded-2 bg-light text-center fs-6 fw-bold my-4">
+                                    <span class="fs-5">$5,300</span>
+                                </p>
+                                <div class="status-auction mt-3">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3 border-bottom m-0">
+                            <div class="col-md-3 px-0">
+                                <img src="/assets/website_speed/speed_assets/uploads/cars/car5.jpg" alt="" class="w-100 h-100">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>
+                                    <a href="">2018 Polaris Sportsman, 450 H.O.</a>
+                                </h4>
+                                <div class="row m-0 border-end">
+                                    <div class="col-sm-7">
+                                        <p class="m-0 text-muted">
+                                            Number: <span class="text-dark"> 0-30991485</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            VIN: <span class="text-dark">  4XASEA509JA269190</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Milage: <span class="text-dark">  10k miles (16k km)</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Location: <span class="text-dark"> Grenada (MS)</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Seller: <span class="text-dark"> State Farm Grou...</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="m-0 text-muted">
+                                            Sale doc.: <span class="text-dark"> Salvage (Mississippi)</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Damage: <span class="text-dark"> Collision | Front end</span>
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Status: <span class="text-dark"> Stationary</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="date">
+                                    <p class="fw-bold">
+                                        <i class="fa-solid fa-calendar-days"></i> Wed 9 February, 2022
+                                    </p>
+                                </div>
+                                <p class="price py-2 rounded-2 bg-light text-center fs-6 fw-bold my-4">
+                                    <span class="fs-5">$5,300</span>
+                                </p>
+                                <div class="status-auction mt-3">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Result section -->
+    
+    {% endblock %}
+
+    {% block script %}
+    <script>
+        $( '.select2' ).select2( {
+            theme: 'bootstrap-5'
+        } );
+    </script>
+
+    <script>
+        getDataCountHistory()
+        getYears();
+        var yearFrom3 = document.querySelector('#yearsStart');
+        var yearTo3 = document.querySelector('#yearsEnd');
+        var from = yearFrom3.value;
+        var to = yearTo3.value;
+        getResultCaes("BMW", "X3", from, to);
+    </script>
+
+    {% endblock %}
+

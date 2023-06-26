@@ -1,0 +1,704 @@
+{% extends 'templates/page_base.html' %}
+
+{% block content %}
+
+    <!-- Start Hero Section -->
+
+    <section class="hero d-flex align-items-center justify-content-center">
+        <div class=" container-fluid pt-5">
+            <div class="row px-5">
+                <div class="col-md-6">
+                    <div class="title-header mb-4">
+                        <h2 class="text-white">BUYING & SHIPPING AMERICAN AUTOMOBILES</h1>
+                        <p class="text-light">With “Home Delivery” option available never been so fast and so easy</p>
+                    </div>
+                    <a href="auctions" class="btn btn-primary fs-4">Start Bidding</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="filter-form p-4">
+                        <div class="title-header mb-3">
+                            <p class="fs-4 text-light">What are you looking for?</p>
+                        </div>
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-4">
+                                    <select name="make" id="" class="form-control select2 ">
+                                        <option value="0">All Make</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group mb-4">
+                                    <select name="make" id="" class="form-control select2 ">
+                                        <option value="0">All Models</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group mb-4">
+                                    <select name="make" id="" class="form-control select2 ">
+                                        <option value="0">All generations</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 form-group mb-4">
+                                    <select name="make" id="" class="form-control select2 ">
+                                        <option value="0">From</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 form-group mb-4">
+                                    <select name="make" id="" class="form-control select2 ">
+                                        <option value="0">To</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 form-group mb-4">
+                                    <p class="mb-3 text-white fs-4">or</p>
+                                    <input type="text" name="search" class="form-control" placeholder="Search by VIN or lot number">
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary">Filter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Hero Section -->
+
+    <!-- Start Buy Car Section -->
+
+    <section class="buy-car py-5 bg-color-light">
+        <div class="container-fluid">
+            <div class="title-header text-center">
+                <h2 class="mb-0">HOW TO BUY A CAR</h2>
+                <p class="fs-1">8 simple steps for buying a car</p>
+            </div>
+            <div class="d-flex steps text-center mb-5">
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 1</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_registration.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Registration</p>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 1-2</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_deposit.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Deposit</p>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 2-3</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_search.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Vehicle search at Auction</p>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 3-4</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_bidding.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Bidding at Auction</p>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 4-6</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_payment.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Payment</p>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 6-10</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_registration.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Transportation</p>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 10-50</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_shipping.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Shipping</p>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent">
+                    <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
+                    <div class="card-header bg-transparent border-0">
+                        <h4 class="fw-bold mb-4">Day 50-55</h4>
+                        <img src="/assets/website_speed/speed_assets/uploads/images/step_custom.svg" alt="" class="m-auto img-step">
+                        <p class="fs-4 fw-bolder mt-4">Customs, Delivery to the Client</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="title-header text-center mb-3">
+                <p class="fs-4 text-center">This purchasing plan is based on the optimal conditions and delivery of your vehicles.</p>
+            </div>
+            <div class="row justify-content-center auto-check align-items-center">
+                <div class="col px-5 text-center">
+                    <div class="card border-0 text-center m-auto position-relative justify-content-center" style="--image: url('../../uploads/images/img1.jpeg')">
+                        <div class="title-header text-center z-1 position-relative mb-0">
+                            <h2 class="text-white">AUTOCHECK</h2>
+                            <p class="text-light">This purchasing plan is based on the optimal conditions and delivery of your vehicles.</p>
+                            <p class="text-light">This purchasing plan is based on the optimal</p>
+                            <h2 class="text-white fs-1 mb-0">FREE</h2>
+                        </div>
+                        <form action="" method="post" class="mt-3 position-relative z-1">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 form-group d-flex">
+                                    <input type="text" name="search" class="form-control bg-white rounded-0">
+                                    <button type="submit" class="btn btn-theme btn-primary rounded-0">CHECK</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Buy Car Section -->
+
+    <!-- Start Our Advantages Section -->
+    <section class="advantages py-5">
+        <div class="title-header text-center">
+            <h2 class="mb-0">OUR ADVANTAGES</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <div id="owl-slider-adv" class="owl-carousel owl-theme listing">
+                        <div class="item p-4 col-animation-2">
+                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv1.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-4 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        Lowest prices in the market with no hidden commission
+                                    </h3>
+                                    <p class="fs-5">
+                                        Speed has a flat commission for services starting at $145, three times lower than our competitors. This is achieved through economies of scale and maximum process automation in all stages of the transaction. Client has full control of the purchase, transportation to the port and ocean shipping with no intermediaries.
+                                    </p>
+                                    <a href="" class="text-dark pb-2">
+                                            
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-4 col-animation-2">
+                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv2.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-4 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        More affordable than buying a car at your local market
+                                    </h3>
+                                    <p class="fs-5">
+                                        On average, buying a vehicle from a US auction will save you 20-40% when compared to the prices on the local retail market. Use the calculator on our site to explore purchasing options, view estimated total cost and confirm your savings.
+                                    </p>
+                                    <a href="" class="text-dark mt-2 btn btn-theme2">
+                                        Calculator
+                                        <i class="fa fa-arrow-right mx-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-4 col-animation-2">
+                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv3.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-4 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        Buy cars from the top auctions: Menhem, Copart, IAAI, Pipeline, NPA, and more
+                                    </h3>
+                                    <p class="fs-5">
+                                        SPEED provides the opportunity to explore and participate in bidding at the largest US and Canadian auctions, where over 800,000 cars, motorcycles, sports and water vehicles, and specialized equipment are listed weekly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-4 col-animation-2">
+                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv4.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-4 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        Full online control of your vehicle on its way (in real time)
+                                    </h3>
+                                    <p class="fs-5">
+                                        The client’s unique, multi-functional personal account lets them control their purchase and delivery according to 15 different parameters. This allows them to make their purchase as easy and safe as possible, and most importantly, as informative as possible.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-4 col-animation-2">
+                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv5.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-4 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        More than 20 company offices around the world
+                                    </h3>
+                                    <p class="fs-5">
+                                        SPEED has the widest network of offices around the world. All our offices work according to a single high standard: the client receives all information and a detailed calculation of the final cost before purchasing a vehicle.
+                                    </p>
+                                    <a href="" class="text-dark mt-2 btn btn-theme2">
+                                        Contact support
+                                        <i class="fa fa-arrow-right mx-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row mb-0 mt-5">
+                <div class="col-lg-12">
+                    <div class="more-btn text-center">
+                        <a href="#####" class="btn btn-theme2"> 
+                            View More
+                            <i class="fa fa-arrow-right mx-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Our Advantages Section -->
+
+    <!-- Start Warranties Section -->
+    <section class="warranties py-5 bg-color-light">
+        <div class="title-header text-center">
+            <h2 class="mb-0">WARRANTIES</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <div id="owl-slider-warranties" class="owl-carousel owl-theme listing">
+                        <div class="item p-2">
+                            <div class="card border-0 bg-transparent text-center">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr1.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-2 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        The deposit is 100% fully refundable.
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-2">
+                            <div class="card border-0 bg-transparent text-center">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr2.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-2 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        Check every car
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-2">
+                            <div class="card border-0 bg-transparent text-center">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr3.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-2 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        Additional technical verification
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-2">
+                            <div class="card border-0 bg-transparent text-center">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr4.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-2 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        Official dealer in the u.s.
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-2">
+                            <div class="card border-0 bg-transparent text-center">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr5.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-2 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        Odometer warranty
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item p-2">
+                            <div class="card border-0 bg-transparent text-center">
+                                <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
+                                    <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr5.svg"
+                                    alt="" />
+                                </div>
+                                <div class="card-body py-2 px-0 title-link-hover">
+                                    <h3 class=" mb-2 text-dark text-center lh-base">
+                                        24/7 support
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row mb-0 mt-5">
+                <div class="col-lg-12">
+                    <div class="more-btn text-center">
+                        <a href="#####" class="btn btn-theme2"> 
+                            View More
+                            <i class="fa fa-arrow-right mx-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Warranties Section -->
+
+    <!-- Start Video Section -->
+    <section class="video py-5">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+                <div class="col mb-3">
+                    <div class="card bg-transparent border-0 p-3">
+                        <div class="title-header mb-3">
+                            <h2 class="mb-0 fs-2 lh-base">Transportation from auction</h2>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=9nPgNa4C_tU" class="card-header bg-transparent border-0 position-relative p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_main.webp" alt="" class="w-100">
+                        </a>
+                        <div class="card-body p-0 pt-2 d-flex justify-content-center w-100">
+                            <a href="">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_1_2x.webp" alt="">
+                            </a>
+                            <a href="">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_2_2x.webp" alt="">
+                            </a>
+                            <a href="">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_3_2x.webp" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card bg-transparent border-0 p-3">
+                        <div class="title-header mb-3">
+                            <h2 class="mb-0 fs-2 lh-base">LOADING, OCEAN SHIPPING</h2>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=xqO_Wcym8w4" class="card-header bg-transparent border-0 position-relative p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_main.webp" alt="" class="w-100">
+                        </a>
+                        <div class="card-body p-0 pt-2 d-flex justify-content-center w-100">
+                            <a href="uploads/images/delivery_loading_1_2x.webp">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_1_2x.webp" alt="">
+                            </a>
+                            <a href="uploads/images/delivery_loading_2_2x.webp">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_2_2x.webp" alt="">
+                            </a>
+                            <a href="uploads/images/delivery_loading_3_2x.webp">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_3_2x.webp" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card bg-transparent border-0 p-3">
+                        <div class="title-header mb-3">
+                            <h2 class="mb-0 fs-2 lh-base">UNLOADING, CUSTOMS</h2>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=Wv2aS6gGC8g" class="card-header bg-transparent border-0 position-relative p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_main.webp" alt="" class="w-100">
+                        </a>
+                        <div class="card-body p-0 pt-2 d-flex justify-content-center w-100">
+                            <a href="uploads/images/delivery_unloading_1_2x.webp">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_1_2x.webp" alt="">
+                            </a>
+                            <a href="uploads/images/delivery_unloading_2_2x.webp">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_2_2x.webp" alt="">
+                            </a>
+                            <a href="uploads/images/delivery_unloading_3_2x.webp">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_3_2x.webp" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Video Section -->
+
+    <!-- Start Cars Section -->
+    <section class="cars-acution py-5">
+        <div class="container-fluid">
+            <div class="title-header mb-5 d-flex align-items-center justify-content-between">
+                <h2 class="mb-0 fs-3 lh-base">American Classic Cars</h2>
+                <div class="more-btn text-center">
+                    <a href="#####" class="btn btn-theme2"> 
+                        View All
+                        <i class="fa fa-arrow-right mx-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car1.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car2.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car3.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cars-acution py-5">
+        <div class="container-fluid">
+            <div class="title-header mb-5 d-flex align-items-center justify-content-between">
+                <h2 class="mb-0 fs-3 lh-base">Motorcycle Harley-Davidson</h2>
+                <div class="more-btn text-center">
+                    <a href="#####" class="btn btn-theme2"> 
+                        View All
+                        <i class="fa fa-arrow-right mx-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car1.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car2.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car3.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 px-4">
+                    <div class="card bg-transparent p-2">
+                        <div class="card-header bg-transparent border-0 p-0">
+                            <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="card-body px-0 py-2">
+                            <h4>
+                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                            </h4>
+                            <p class="date-pub"></p>
+                            <p class="price mb-0">$100000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Cars Section -->
+    
+{% endblock %}
+
+{% block script %} 
+<script>
+        
+    const url = new URL(
+        "https://api.copart-iaai-api.com/api/v1/get-cars"
+    );
+
+    const params = {
+        "vin_number": "5UXKR0C52G0P21189",
+        "make": "BMW",
+        "model": "X3",
+        "year_from": "2018",
+        "year_to": "2018",
+        "auction_date_from": "2023-01-01",
+        "auction_date_to": "2023-02-01",
+        "auction_name": "COPART",
+        "only_sold": "0",
+        "sale_price_from": "0",
+        "sale_price_to": "100000",
+        "page": "1",
+        "per_page": "20",
+        "api_token": "7471ef49828d1441aeb4516ec5bf76cfb62fa52e4125d04bc71b41dcfce0f829",
+    };
+    Object.keys(params)
+        .forEach(key => url.searchParams.append(key, params[key]));
+
+    const headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "Api-Version": "V1",
+    };
+
+    let body = "";
+
+    fetch(url, {
+        method: "POST",
+        headers,
+        body: body,
+    }).then(response => response.json())
+    .then(data => console.log(data.result));
+    var countDownDate = new Date("Jun 17, 2023 23:59:55").getTime();
+    
+    var myfunc = setInterval(function() {
+    // code goes here
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+            
+        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        document.querySelectorAll(".date-pub").forEach((item) => {
+            item.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        })
+    }, 1000)
+    
+
+    // document.getElementById("days").innerHTML = days + "d "
+    // document.getElementById("hours").innerHTML = hours + "h " 
+    // document.getElementById("mins").innerHTML = minutes + "m " 
+    // document.getElementById("secs").innerHTML = seconds + "s"
+    
+</script>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/16px/Search 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10.6312817,11.6598397 C8.06132043,13.7181517 4.29945336,13.556142 1.9171219,11.1738105 C-0.639040632,8.61764797 -0.639040632,4.47328443 1.9171219,1.9171219 C4.47328443,-0.639040632 8.61764797,-0.639040632 11.1738105,1.9171219 C13.5561544,4.29946584 13.7181534,8.06135984 11.6598074,10.6313221 L15.7869862,14.7585009 C16.0710046,15.0425193 16.0710046,15.5030041 15.7869862,15.7870226 C15.5029678,16.071041 15.042483,16.071041 14.7584646,15.7870226 L10.6312817,11.6598397 Z M2.94564354,2.94564354 C0.957517828,4.93376925 0.957517828,8.15716315 2.94564354,10.1452889 C4.93376925,12.1334146 8.15716315,12.1334146 10.1452889,10.1452889 C12.1334146,8.15716315 12.1334146,4.93376925 10.1452889,2.94564354 C8.15716315,0.957517828 4.93376925,0.957517828 2.94564354,2.94564354 Z" id="path-1"></path>
+    </defs>
+    <g id="1.-Home-✅" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-504.000000, -24.000000)">
+            <g id="Header/User">
+                <g id="Navigation" transform="translate(397.000000, 15.000000)">
+                    <g id="Button" transform="translate(92.000000, 0.000000)">
+                        <g id="Group-5" transform="translate(15.000000, 7.000000)">
+                            <g id="search" transform="translate(0.000000, 2.000000)">
+                                <g id="Icons/16px/Search-2">
+                                    <g id="Icons/16px/Search">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#path-1"></use>
+                                        </mask>
+                                        <use id="Search" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                        <g id="🎨Atoms/Colour/White/100%" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                                            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

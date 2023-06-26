@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include website_speed *.css
+recursive-include website_speed *.csv
+recursive-include website_speed *.html
+recursive-include website_speed *.ico
+recursive-include website_speed *.js
+recursive-include website_speed *.json
+recursive-include website_speed *.md
+recursive-include website_speed *.png
+recursive-include website_speed *.py
+recursive-include website_speed *.svg
+recursive-include website_speed *.txt
+recursive-exclude website_speed *.pyc

@@ -1,0 +1,353 @@
+{% extends '/templates/page_base.html' %}
+
+{% block title %} Auctions{% endblock %}
+
+{% block content %}
+
+    <!-- Start Filter Section -->
+    <section class="filter py-3 mt-header">
+        <div class="container">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <select name="vehiclesType" id="vehiclesType" class="form-control select2 form-select " id="basic-usage">
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <select name="models" id="models" class="form-control select2 form-select " id="basic-usage">
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <select name="makes" id="makes" class="form-control select2 form-select ">
+
+                        </select>
+                    </div>
+                    <div class="col-md-2 form-group">
+                        <button type="submit" class="btn btn-primary h-100"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+    <!-- End Filter Section -->
+
+
+    <!-- Start Search Page -->
+
+    <section class="search-page py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 py-5 bg-white mb-5">
+                    <form action="" method="get">
+                        <div class="form-group w-100 px-5 position-relative">
+                            <input type="text" name="search" class="form-control" placeholder="Search for vehicle by Make, Model, Year, Stock or VIN...">
+                            <button type="submit" class="border-0  bg-transparent p-0 position-absolute"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                    <div class="icons-info mt-5 d-flex align-items-center justify-content-center">
+                        <div class="card bg-transparent border-0 text-center mx-5">
+                            <div class="icon rounded-circle border">
+                                <i class="fa-solid fa-car fs-1"></i>
+                            </div>
+                            <h4 class="mt-3">Stock</h4>
+                        </div>
+                        <div class="card bg-transparent border-0 text-center mx-5">
+                            <div class="icon rounded-circle border">
+                                <i class="fa-solid fa-record-vinyl fs-1"></i>
+                            </div>
+                            <h4 class="mt-3">VIN</h4>
+                        </div>
+                        <div class="card bg-transparent border-0 text-center mx-5">
+                            <div class="icon rounded-circle border">
+                                <i class="fa-solid fa-location-dot fs-1"></i>
+                            </div>
+                            <h4 class="mt-3">Location</h4>
+                        </div>
+                        <div class="card bg-transparent border-0 text-center mx-5">
+                            <div class="icon rounded-circle border">
+                                <i class="fa-solid fa-audio-description fs-1"></i>
+                            </div>
+                            <h4 class="mt-3">Specs</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Automobile</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Acura</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Alfa Romeo</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">American Motors</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">American Motors</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Aston</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Martin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Audi</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Austin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Bentley</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">BMW</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Aston</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Martin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Audi</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Austin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Bentley</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">BMW</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Motorcycle</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Acura</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Alfa Romeo</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">American Motors</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">American Motors</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Aston</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Martin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Audi</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Austin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Bentley</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">BMW</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Aston</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Martin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Audi</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Austin</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Bentley</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">BMW</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Snowmobile</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Arctic Cat</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Polaris</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Ski-Doo</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Yamaha</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Other</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Boat</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Other</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Travel Trailer</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Coachmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Dutchmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Fleetwood</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Forest River</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Heart Land</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Jayco</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Keystone</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Farm Equipment</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Other</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Forestry Equipment</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Other</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Bus</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Coachmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Dutchmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Fleetwood</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-white border-0 mb-4">
+                                <div class="p-3">
+                                    <h4 class="text-dark fw-bold">Truck</h4>
+                                    <div class="list-cat">
+                                        <ul class="m-0 p-0 d-flex flex-wrap">
+                                            <li>
+                                                <a href="" class="btn-cat">Coachmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Dutchmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Fleetwood</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Coachmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Dutchmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Fleetwood</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Coachmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Dutchmen</a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="btn-cat">Fleetwood</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Search Page -->
+
+
+    <!-- Start footer Section -->
+    {% endblock %}

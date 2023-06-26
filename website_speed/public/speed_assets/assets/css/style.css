@@ -1,0 +1,777 @@
+
+/* Layout */
+
+:root{
+    --main-color: #e11912;
+    --dark-color: #000;
+    --dark-light: #293542;
+    --light-color: #f8f4f3;
+}
+
+body{
+    margin: 0;
+    background-color: #f5f6f8;
+}
+li{
+    list-style: none;
+}
+.bg-color-light{
+    background-color: var(--light-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+.mt-header{
+    margin-top: 122px;
+}
+.mt-header-2{
+    margin-top: 150px;
+}
+
+.title-header{
+    margin-bottom: 53px;
+}
+
+.title-header h2{
+    font-weight: 900;
+    font-size: 44px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #000;
+}
+.title-header2 h2{
+    width: fit-content;
+}
+.title-header2 h2::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+}
+.title-header p{
+    color: #464646;
+    font-size: 16px;
+}
+
+.btn-theme,
+.btn-theme2{
+    transition: .4s linear;
+}
+
+.btn-theme:hover{
+    background-color: var(--main-color) !important;
+    border: 1px solid var(--main-color) !important;
+}
+
+.btn-theme2:hover{
+    color: var(--main-color) !important;
+}
+
+.owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: var(--dark-light);
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 7px #000000ba;
+}
+
+.owl-carousel .owl-nav .owl-prev{
+    right: -20px;
+}
+
+.owl-carousel .owl-nav .owl-next{
+    left: -20px;
+}
+
+.select2-container--bootstrap-5 .select2-selection{
+    min-height: 45px;
+}
+
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option{
+    font-size: 1.7rem;
+}
+
+.select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered{
+    font-size: 2rem;
+}
+
+/* End Layout */
+/* Start Header */
+#header{
+    z-index: 2;
+}
+#header .navbar-top{
+    background-color: #eadfdf;
+}
+#header .navbar-top .icon img{
+    width: 21px;
+}
+
+#header .header{
+    min-height: 90px;
+    background-color: var(--light-color);
+}
+
+#header .brand img{
+    width: 160px;
+}
+
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#header .nav-list ul{
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .4s ease left;
+}
+
+#header .nav-list ul.active{
+    left: 0;
+}
+
+#header .nav-list ul a{
+    opacity: .7;
+    font-size: 14px;
+    padding: 0.83rem 0.7rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--dark-color);
+    transition: .3s ease color;
+}
+
+#header .nav-list ul a:hover{
+    color: var(--main-color);
+}
+
+#header .nav-list ul a i{
+    margin: 10px 5px;
+    height: 16px;
+}
+
+#header .nav-list ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.157);
+    font-size: 7rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after{
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .hamburger{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: scale(.8);
+    margin: 8px 20px;
+}
+
+#header .hamburger::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: hamburger 1s ease infinite;
+}
+
+#header .hamburger .bar{
+    height: 2.7px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top bottom;
+}
+
+#header .hamburger .bar::after{
+    top: 8px;
+}
+
+#header .hamburger .bar::before{
+    bottom: 8px;
+}
+
+#header .hamburger.active .bar::before{
+    bottom: 0;
+}
+
+#header .hamburger.active .bar::after{
+    top: 0;
+}
+
+body.dark{
+    background-color: rgb(31, 30, 30) !important;
+    transition: all 1s ease-in-out;
+}
+
+.bx{
+    font-size: 29px;
+    color: white;
+    margin-right: 10px;
+    transition: all 1s ease-in-out;
+}
+body.dark :where(h1, h2, label){
+    color: white !important;
+}
+body.dark p{
+    color: rgb(133, 127, 127) !important;
+}
+
+/* End Header */
+
+/* Start Breadcrump Section */
+
+.breadcrump li a{
+    font-size: 15px;
+}
+
+.breadcrump2{
+    min-height: 407px;
+    background-image: url('../../uploads/settings/bg-page.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.breadcrump2::before{
+    background: rgba(51,65,80,.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+}
+
+/* End Breadcrump Section */
+
+/* Start Hero Section */
+
+.hero {
+    background-image: url('../../uploads/settings/newbg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+
+.hero .filter-form{
+    background-color: var(--dark-light);
+}
+
+.hero .form-control{
+    width: 100%;
+    background: #343f4b;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    height: 42px;
+}
+
+/* End Hero Section */
+
+/* Start Buy Car Section */
+.buy-car .steps{
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.buy-car .steps .card{
+    width: 12.49%;
+}
+.buy-car .line-center{
+    width: 100%;
+}
+
+.buy-car .card .img-step{
+    filter: invert(60.5) sepia(5) saturate(103) hue-rotate(361deg);
+}
+
+.buy-car .auto-check .card{
+    background-image: var(--image);
+    background-repeat: no-repeat;
+    width: 80%;
+    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    height: 301px;
+}
+
+.buy-car .auto-check .card::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b3;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* End Buy Car Section */
+
+/* Start Advantages Section */
+
+.advantages img{
+    width: 90px !important;
+}
+
+.advantages .card{
+    height: 379px;
+}
+
+.advantages h3,
+.warranties h3{
+    font-size: 16px;
+    letter-spacing: .24px;
+    line-height: 24px;
+    margin-top: 10px;
+    font-weight: 800;
+}
+
+.advantages p{
+    font-size: 15px !important;
+}
+
+/* End Advantages Section */
+
+/* Start Warranties Section */
+
+.warranties img{
+    width: 60px !important;
+}
+
+.warranties h3{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* End Warranties Section */
+
+/* Start Video Section */
+
+.video .card-header::before{
+    content: "";
+    width: 67px;
+    height: 58px;
+    background-image: url(../../uploads/images/play-arrow.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.video .card-body a{
+
+}
+.video .card-body img{
+    width: 100%;
+}
+
+/* End Video Section */
+
+/* Start Cars Auction */
+
+.cars-acution .card-header{
+    height: 150px;
+}
+
+/* End Cars Auction */
+
+/* Start Result-Fliter Page */
+
+span.color-line{
+    width: 18px;
+    height: 18px;
+    background: #000;
+    display: inline-table;
+    border-radius: 50%;
+    float: right;
+    border: 1px solid #ccc;
+    margin-top: 2px;
+}
+
+span.color-line.silver {
+    background: #ccc ;
+    border: 1px solid #ccc;
+}
+
+span.color-line.gray {
+    background: #555;
+    border: 1px solid #555;
+}
+
+span.color-line.blue {
+    background: #1d75c1;
+    border: 1px solid #1d75c1;
+}
+
+span.color-line.red {
+    background: #aa3d32;
+    border: 1px solid #aa3d32;
+}
+
+span.color-line.green {
+    background: #688551;
+    border: 1px solid #688551;
+}
+
+span.color-line.gold {
+    background: #c3b137;
+    border: 1px solid #c3b137;
+}
+
+.result .cars-info p{
+    font-size: 13px;
+    margin-bottom: 5px !important;
+}
+
+/* End Result-Filter Page */
+
+/* Start Details Page */
+
+.gallary-api {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 1;
+}
+
+.gallary-api .item{
+    width: 20%;
+    flex: 0 0 1;
+}
+
+/* End Details Page */
+
+
+/* Start Search Page */
+
+.search-page form button{
+    right: 42px;
+    top: 8px;
+    color: var(--main-color);
+}
+
+.search-page .icons-info .icon,
+.search-page .icons-info h4{
+    transition: .5s linear;
+}
+
+.search-page .icons-info .icon i{
+    color: var(--main-color);
+}
+
+.search-page .icons-info .icon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-page .icons-info .card:hover .icon{
+    border-color: var(--main-color) !important;
+}
+.search-page .icons-info .card:hover h4{
+    color: var(--main-color);
+}
+
+.search-page .list-cat a{
+    padding: 4px 9px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    color: var(--dark-color);
+    transition: .2s linear;
+}
+
+.search-page .list-cat li{
+    margin: 10px 8px;
+}
+.search-page .list-cat a:hover{
+    background-color: var(--main-color);
+    color: #FFF;
+}
+
+/* End Search Page */
+
+/* Start Calculator  Page*/
+
+.calculator input.form-control{
+    height: 44px;
+    font-size: 2rem;
+}
+
+.calculator input.form-check-input{
+    width: 1.4em;
+    height: 1.4em;
+}
+
+/* End Calculator  Page*/
+
+
+/* Start User Dashboard */
+
+/* Start Sidebar Col*/
+
+.sidebar ul li a{
+    color: var(--dark-color);
+}
+.sidebar ul li a.active{
+    color: var(--main-color);
+}
+
+/* End Sidebar Col*/
+
+/* Start Summary Page */
+
+.summary .summary-info .card{
+    min-height: 110px;
+    height: 110px;
+    background-color: var(--light-color);
+}
+
+/* End Summary Page */
+
+/* Start Profile Page*/
+
+.profile .select2-container--bootstrap-5 .select2-selection{
+    min-height: 35px;
+}
+
+/* End Profile Page*/
+
+/* Start Tracking Page */
+
+.tracking .search {
+    
+}
+.tracking .search form {
+    width: 50%;
+    margin: auto;
+}
+.tracking .search input{
+    height: 36px;
+}
+.tracking .search button{
+    right: 37px;
+    top: 26%;
+    color: var(--main-color);
+}
+
+.tracking .tracking-info .row::after,
+.tracking .tracking-info .col::after{
+    content: '';
+    position: absolute;
+    background-color: #000;
+}
+
+.tracking .tracking-info .row::after{
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 100%;
+}
+
+.tracking .tracking-info .col .card{
+    float: left;
+    margin-left: 67px;
+}
+
+.tracking .tracking-info .col:nth-child(even) .card{
+    float: right;
+    margin-right: 67px;
+    margin-left: 0;
+}
+.tracking .tracking-info .card .icon{
+    width: 80px;
+    height: 80px;
+    border-color: var(--dark-color) !important;
+}
+
+.tracking .tracking-info .col::after{
+    left: 155px;
+    top: 26%;
+    width: 31.1%;
+    height: 3px;
+}
+.tracking .tracking-info .col:nth-child(even):after{
+    left: auto;
+    right: 154.4px;
+}
+
+/* End Tracking Page */
+
+/* Start User Dashboard */
+
+/* Start About Page */
+
+.details-page .row{
+    padding: 0 100px;
+}
+
+.about-us #owl-slider-about1 .card-header{
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-us .card .card-body{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    top: 0;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0;
+    transition: .3s linear;
+}
+
+.about-us .card:hover .card-body{
+    background-color: #000000dc;
+    opacity: 1;
+}
+
+.details-page p{
+    font-size: 14px;
+    margin: 40px 0;
+    text-align: justify;
+    color: #687687;
+    line-height: 1.5;
+}
+
+/* End About Page */
+/* Start Help Page */
+
+.help .help-steps:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+/* End Help Page */
+
+/* Start Login Page */
+
+.login{
+    max-height: 581px;
+    /* min-height: 528px; */
+    height: 581px;
+}
+.login .image-main,
+.signup .image-main{
+    background-image: url('../../uploads/settings/login-bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login .image-main::before,
+.signup .image-main::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(51,65,80,.7);
+    position: absolute;
+    left: 0;
+}
+.signup .iti{
+    width: 100%;
+}
+/* End Login Page */
+
+/* Start Footer */
+.footer{
+    margin-top: 70px;
+}
+.footer li{
+    list-style: none;
+}
+
+.footer .footer-logo{
+    width: 170px;
+}
+
+.footer .sub-footer{
+    background-color: #eadfdf;
+}
+
+/* End Footer */
+
+@media (min-width:992px){
+    #header .hamburger{
+        display: none;
+    }
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+    #header .nav-list ul a{
+        font-size: 1.8rem;
+    }
+    #header .nav-list ul a::after{
+        display: none;
+    }
+    #services .services-button .services-item{
+        flex-basis: 35%;
+        height: 300px;
+        margin: 1.5%;
+    }
+}

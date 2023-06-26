@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/brands.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/solid.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/regular.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/js/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/style.css">
+    
+</head>
+<body>
+    <!-- Start Navbar -->
+    <section id="header" class="position-fixed w-100 top-0 left-0">
+        <div class="navbar-top">
+            <div class="container-fluid">
+                <div class="row mb-0 py-2">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="" class="text-dark">
+                                support.int@speedym.com
+                            </a>
+                            <a href="" class=" icon">
+                                <img src="/assets/website_speed/speed_assets/uploads/images/facebook.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header pt-2 shadow">
+            <div class=" container-fluid">
+                <div class="nav-bar d-flex align-items-center justify-content-between">
+                    <div class="brand">
+                        <a href="../">
+                            <img src="/assets/website_speed/speed_assets/uploads/settings/logo3.png" alt="">
+                        </a>
+                    </div>
+                    <!-- <i class='bx bx-toggle-left change-theme' id="theme-button"></i> -->
+                    <div class="nav-list">
+                        <div class="hamburger"><div class="bar"></div></div>
+                        <ul class="mb-0">
+                            <li>
+                                <a href="../pages/search" data-after="Home">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    Search
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../userdashboard/profile" data-after="My Account">
+                                    <i class="fa-regular fa-user"></i>
+                                    My Account
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../pages/calculator" data-after="Calculator">
+                                    <i class="fa-solid fa-calculator"></i>
+                                    Calculator
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../pages/about-us" data-after="About">
+                                    <i class="fa-solid fa-eject"></i>
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#Services" data-after="Services">
+                                    <i class="fa-brands fa-servicestack"></i>
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#Help" data-after="help">
+                                    <i class="fa-solid fa-handshake-angle"></i>
+                                    Help
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../pages/contact-us" data-after="Contact">
+                                    <i class="fa-solid fa-location-crosshairs"></i>
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="acount d-flex align-items-center justify-content-between">
+                        <a href="../pages/login" class="border py-3 px-3 mx-2 rounded-2">Login</a>
+                        <a href="../pages/signup.html" class="py-3 px-3 btn btn-primary mx-2">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- End Navbar -->
+
+    <!-- Start Contant -->
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- End Contant  -->
+
+
+    <!-- Start footer Section -->
+    <section class="footer">
+        <div class="bg-color-light pt-5 pb-3">
+            <div class="container-fluid">
+                <div class="row mx-0 mb-0 row-cols-1 row-cols-md-2 row-cols-lg-4">
+                    <div class="col mb-3">
+                        <div class="card border-0 bg-transparent">
+                            <h4 class="fw-bold mb-4">Company</h4>
+                            <p class="mb-2 text-muted">
+                                Speed 20B/40
+                            </p>
+                            <p class="mb-2">
+                                61-623 Poznań
+                            </p>
+                            <p>Tax no.: 499-06-50-123</p>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card border-0 bg-transparent">
+                            <ul>
+                                <li class="mb-3">
+                                    <a href="../pages/about-us" class="text-dark">About</a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="../pages/about-us" class="text-dark">How it works</a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="../pages/about-us" class="text-dark">Cooperation</a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="../pages/about-us" class="text-dark">Bidfax</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card border-0 bg-transparent">
+                            <h4 class="fw-bold mb-4">Questions</h4>
+                            <ul>
+                                <li class="mb-3">
+                                    <a href="pages/about-us" class="text-dark">Help</a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="pages/about-us" class="text-dark">Terms</a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="pages/about-us" class="text-dark">Privacy and Cookies</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card border-0 bg-transparent">
+                            <img src="/assets/website_speed/speed_assets/uploads/settings/logo1.png" alt="" class="m-auto footer-logo">
+                            <div class="icon d-flex mt-5 justify-content-center">
+                                <a href="" class="mx-3 text-dark"><i class="fa-brands fa-facebook-f fs-4"></i></a>
+                                <a href="" class="mx-3 text-dark"><i class="fa-brands fa-twitter fs-4"></i></a>
+                                <a href="" class="mx-3 text-dark"><i class="fa-brands fa-linkedin-in fs-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-footer py-3 text-center">
+            <p class="text-muted mb-0">Ⓒ 2021 Speed. All Rights Reserved</p>
+        </div>
+    </section>
+    <!-- End footer Section -->
+
+    <script src="/assets/website_speed/speed_assets/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/jquery.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/select2.full.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/app.js"></script>
+
+</body>
+</html>
+{% block script %} 
+
+{% endblock %}
+
+<!-- <script>
+        
+    const url = new URL(
+        "https://api.copart-iaai-api.com/api/v1/get-cars"
+    );
+
+    const params = {
+        "vin_number": "5UXKR0C52G0P21189",
+        "make": "BMW",
+        "model": "X3",
+        "year_from": "2018",
+        "year_to": "2018",
+        "auction_date_from": "2023-01-01",
+        "auction_date_to": "2023-02-01",
+        "auction_name": "COPART",
+        "only_sold": "0",
+        "sale_price_from": "0",
+        "sale_price_to": "100000",
+        "page": "1",
+        "per_page": "20",
+        "api_token": "7471ef49828d1441aeb4516ec5bf76cfb62fa52e4125d04bc71b41dcfce0f829",
+    };
+    Object.keys(params)
+        .forEach(key => url.searchParams.append(key, params[key]));
+
+    const headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "Api-Version": "V1",
+    };
+
+    let body = "";
+
+    fetch(url, {
+        method: "POST",
+        headers,
+        body: body,
+    }).then(response => response.json())
+    .then(data => console.log(data.result));
+    var countDownDate = new Date("Jun 17, 2023 23:59:55").getTime();
+    
+    var myfunc = setInterval(function() {
+    // code goes here
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+            
+        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        document.querySelectorAll(".date-pub").forEach((item) => {
+            item.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        })
+    }, 1000)
+    
+
+    // document.getElementById("days").innerHTML = days + "d "
+    // document.getElementById("hours").innerHTML = hours + "h " 
+    // document.getElementById("mins").innerHTML = minutes + "m " 
+    // document.getElementById("secs").innerHTML = seconds + "s"
+    
+</script> -->
