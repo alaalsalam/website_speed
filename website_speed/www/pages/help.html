@@ -1,4 +1,4 @@
-{% extends '/templates/page_base.html' %}
+{% extends '/templates/base_speed.html' %}
 
 {% block title %} Help {% endblock %}
 
@@ -6,14 +6,21 @@
  <!-- End Navbar -->
 
     <!-- Start Breadcrump Section -->
-    <section class="breadcrump2 mb-3 d-flex align-items-center justify-content-center">
-        <div class="container">
+    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+        <div class="container position-relative z-1">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="text-white">The vehicle purchase process</h1>
-                    <p class="text-light">Are you interested in importing cars from the USA? Check out our guide on how the process of purchasing a vehicle from the USA unfolds on our website.
-                        We explain everything that's important, step by step. From now on, US car auctions will have no secrets for you.</p>
+                    <h1 class="text-white load-animate-left mb-5">Help</h1>
+                    <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                        <li>
+                            <a href="../index" class="text-white mx-1">Home </a>
+                        </li>
+                        <li>
+                            <a class="text-white mx-1"><span class="mx-2">/</span> Help </a>
+                        </li>
+                    </ul>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -21,20 +28,20 @@
 
     <!-- Start About Page -->
 
-    <section class="help details-page py-5 bg-white">
+    <section class="help details-page py-5 bg-white ">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-md-12">
-                    <div class="title-header">
+                <div class="col-md-12 section-animation inner-pages">
+                    <div class="title-header animate-top">
                         <h2 class="fs-1 text-center">4 Steps to Buying a Vehicle with BidCars</h2>
                     </div>
-                    <p>
+                    <p class="animate-top">
                         To make the import of vehicles from the USA clear and transparent, we've created the BidCars service. Auctions are conducted without intermediaries, with no hidden costs - you're the one making all the decisions! You choose the car you want to bid on and the amount you're willing to pay, and we help you win the auction! Importantly, at BidCars, there are no costs incurred before you win a bid on a car. Registration and participation in the auction are free! We only require a refundable deposit to secure your bidding. BidCars allows you to quickly and easily order auctions, purchase, and ship vehicles, with an option for "doorstep" delivery. BidCars stands for 100% transparency and full awareness of the costs incurred, as well as control over the location of your vehicle.
                     </p>
                 </div>
             </div>
-            <div class="row help-steps mb-5 ">
-                <div class="col-md-9 border-bottom">
+            <div class="row help-steps mb-5 section-animation">
+                <div class="col-md-9 border-bottom animate-top">
                     <h4 class="text-info mb-5">Step 1</h4>
                     <h2 class="mb-2">Find your dream car</h2>
                     <p class="my-4 fs-5">
@@ -54,12 +61,12 @@
                         Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At BidCars, you don't need to create an account to view the cars and auctions that interest you.
                     </p>
                 </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around">
+                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
                     <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-3.svg" alt="">
                 </div>
             </div>
-            <div class="row help-steps mb-5 ">
-                <div class="col-md-9 border-bottom">
+            <div class="row help-steps mb-5 section-animation">
+                <div class="col-md-9 border-bottom animate-top">
                     <h4 class="text-info mb-5">Step 2</h4>
                     <h2 class="mb-2">Make a Refundable Deposit</h2>
                     <p class="my-4 fs-5">
@@ -79,12 +86,12 @@
                         Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At BidCars, you don't need to create an account to view the cars and auctions that interest you.
                     </p>
                 </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around">
+                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
                     <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg" alt="">
                 </div>
             </div>
-            <div class="row help-steps mb-5 ">
-                <div class="col-md-9 border-bottom">
+            <div class="row help-steps mb-5 section-animation">
+                <div class="col-md-9 border-bottom animate-top">
                     <h4 class="text-info mb-5">Step 2</h4>
                     <h2 class="mb-2">Make a Refundable Deposit</h2>
                     <p class="my-4 fs-5">
@@ -104,7 +111,7 @@
                         Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At BidCars, you don't need to create an account to view the cars and auctions that interest you.
                     </p>
                 </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around">
+                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
                     <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg" alt="">
                 </div>
             </div>
@@ -112,5 +119,7 @@
     </section>
 
     <!-- End About Page -->
+
+    <!-- Start footer Section -->
 
     {% endblock %}

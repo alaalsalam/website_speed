@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/brands.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/solid.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/regular.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/select2.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/js/owl-carousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/style.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/animate.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/fancybox.css">
+
+
+{% if head_html is defined -%}
+{{ head_html or "" }}
+{%- endif %}
+
+{%- if theme.name != 'Standard' -%}
+<link type="text/css" rel="stylesheet" href="{{ theme.theme_url }}">
+{%- else -%}
+{{ include_style('website.bundle.css') }}
+{%- endif -%}
+
+{%- for link in web_include_css %}
+{{ include_style(link) }}
+{%- endfor -%}

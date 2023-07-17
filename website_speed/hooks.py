@@ -12,10 +12,13 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/website_speed/css/website_speed.css"
+app_include_css = "/assets/website_speed/css/website_speed.scss"
+
 # app_include_js = "/assets/website_speed/js/website_speed.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/website_speed/css/website_speed.css"
+
 # web_include_js = "/assets/website_speed/js/website_speed.js"
 
 # include custom scss in every website theme (without file extension ".scss")

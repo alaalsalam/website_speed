@@ -1,0 +1,18 @@
+<svg width="74" height="52" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.a{isolation:isolate;}.b,.d{fill:none;}.b{stroke:#000;stroke-width:3px;}.c{fill:#fff;}.d{stroke:#3797fd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
+ </defs>
+ <title>Customs</title>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="54" width="76" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_4">
+   <path id="svg_1" d="m35.41038,38.79916l18.34,0m-18.34,5l36.67,0m-36.67,-31.67l3.22,0a15,15 0 0 1 10.29,4.07l4.75,4.45a14.73,14.73 0 0 0 10.05,4l1.69,0a6.67,6.67 0 0 1 6.67,6.66l0,0l0,0.83a6.67,6.67 0 0 1 -6.67,6.67m-30,-14.17l10.84,0" class="d"/>
+   <path id="svg_2" d="m65.41038,37.95916a5.83,5.83 0 1 1 -5.83,-5.83a5.82,5.82 0 0 1 5.83,5.83zm2.5,-8.33l3.33,0m-62.5,-20l20,0m-20,8.33l20,0m-20,8.34l20,0m-20,12.5l5.83,0m-12.5,11.66l33.33,0m-5.83,-11.25a4.59,4.59 0 1 1 -4.58,-4.58l0,0a4.58,4.58 0 0 1 4.59,4.58l-0.01,0z" class="d"/>
+   <path id="svg_3" d="m2.08038,50.45916l0,-49.16l33.33,0l0,49.16" class="d"/>
+  </g>
+ </g>
+</svg>

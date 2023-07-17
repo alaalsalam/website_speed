@@ -1,30 +1,54 @@
-    {% extends '/templates/page_base.html' %}
+    {% extends '/templates/base_speed.html' %}
 
     {% block title %} Auctions{% endblock %}
     
     {% block content %}
-    
+   
+    <!-- End Navbar -->
+
+    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+        <div class="container position-relative z-1">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="text-white load-animate-left mb-5">Care list</h1>
+                    <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                        <li>
+                            <a href="../index" class="text-white mx-1">Home </a>
+                        </li>
+                        <li>
+                            <a href="auctions" class="text-white mx-1"><span class="mx-2">/</span> AUTOMOBILE </a>
+                        </li>
+                        <li>
+                            <a class="text-white mx-1"><span class="mx-2">/</span> care list </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
     <!-- Start Filter Section -->
-    <section class="filter py-3 mt-header">
+    <section class="filter py-3 section-animation inner-pages ">
         <div class="container">
             <form action="" method="post">
                 <div class="row">
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-4 form-group animate-top">
                         <select name="vehiclesType" id="vehiclesType" class="form-control select2 form-select " id="basic-usage">
                             
                         </select>
                     </div>
-                    <div class="col-md-3 form-group">
+                    <div class="col-md-3 form-group animate-top transition-delay-1">
                         <select name="models" id="models" class="form-control select2 form-select " id="basic-usage">
                             
                         </select>
                     </div>
-                    <div class="col-md-3 form-group">
+                    <div class="col-md-3 form-group animate-top transition-delay-2">
                         <select name="makes" id="makes" class="form-control select2 form-select ">
 
                         </select>
                     </div>
-                    <div class="col-md-2 form-group">
+                    <div class="col-md-2 form-group animate-top transition-delay-3">
                         <button type="submit" class="btn btn-primary h-100"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
                     </div>
                 </div>
@@ -38,8 +62,8 @@
     <section class="result cars-page py-5 bg-color-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="card border-0 mb-5">
+                <div class="col-lg-3 section-animation">
+                    <div class="card border-0 mb-5 animate-top ">
                         <div class="card-header bg-transparent border-0 border-bottom pb-5">
                             <h4>Filters</h4>
                         </div>
@@ -60,7 +84,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card border-0 p-3">
+                    <div class="card border-0 p-3 animate-top">
                         <div class="card-header bg-transparent border-0 border-bottom pb-5">
                             <h4>Advanced Filters</h4>
                         </div>
@@ -177,112 +201,7 @@
                 </div>
                 <div class="col-lg-9 cars-info">
                     <div class="bg-white p-3" id="dataApi">
-                        <div class="row py-3 border-bottom m-0">
-                            <div class="col-md-3 px-0">
-                                <img src="/assets/website_speed/speed_assets/uploads/cars/car6.jpg" alt="" class="w-100 h-100">
-                            </div>
-                            <div class="col-md-6 p-0">
-                                <h4>
-                                    <a href="">2018 Polaris Sportsman, 450 H.O.</a>
-                                </h4>
-                                <div class="row m-0 border-end">
-                                    <div class="col-sm-7">
-                                        <p class="m-0 text-muted">
-                                            Number: <span class="text-dark"> 0-30991485</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            VIN: <span class="text-dark">  4XASEA509JA269190</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Milage: <span class="text-dark">  10k miles (16k km)</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Location: <span class="text-dark"> Grenada (MS)</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Seller: <span class="text-dark"> State Farm Grou...</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <p class="m-0 text-muted">
-                                            Sale doc.: <span class="text-dark"> Salvage (Mississippi)</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Damage: <span class="text-dark"> Collision | Front end</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Status: <span class="text-dark"> Stationary</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="date">
-                                    <p class="fw-bold">
-                                        <i class="fa-solid fa-calendar-days"></i> Wed 9 February, 2022
-                                    </p>
-                                </div>
-                                <p class="price py-2 rounded-2 bg-light text-center fs-6 fw-bold my-4">
-                                    <span class="fs-5">$5,300</span>
-                                </p>
-                                <div class="status-auction mt-3">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row py-3 border-bottom m-0">
-                            <div class="col-md-3 px-0">
-                                <img src="/assets/website_speed/speed_assets/uploads/cars/car5.jpg" alt="" class="w-100 h-100">
-                            </div>
-                            <div class="col-md-6">
-                                <h4>
-                                    <a href="">2018 Polaris Sportsman, 450 H.O.</a>
-                                </h4>
-                                <div class="row m-0 border-end">
-                                    <div class="col-sm-7">
-                                        <p class="m-0 text-muted">
-                                            Number: <span class="text-dark"> 0-30991485</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            VIN: <span class="text-dark">  4XASEA509JA269190</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Milage: <span class="text-dark">  10k miles (16k km)</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Location: <span class="text-dark"> Grenada (MS)</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Seller: <span class="text-dark"> State Farm Grou...</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <p class="m-0 text-muted">
-                                            Sale doc.: <span class="text-dark"> Salvage (Mississippi)</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Damage: <span class="text-dark"> Collision | Front end</span>
-                                        </p>
-                                        <p class="m-0 text-muted">
-                                            Status: <span class="text-dark"> Stationary</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="date">
-                                    <p class="fw-bold">
-                                        <i class="fa-solid fa-calendar-days"></i> Wed 9 February, 2022
-                                    </p>
-                                </div>
-                                <p class="price py-2 rounded-2 bg-light text-center fs-6 fw-bold my-4">
-                                    <span class="fs-5">$5,300</span>
-                                </p>
-                                <div class="status-auction mt-3">
-                                    
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -290,12 +209,17 @@
     </section>
     <!-- End Result section -->
     
+    <!-- Start footer Section --> 
     {% endblock %}
 
     {% block script %}
+     
+    <script src="/assets/website_speed/speed_assets/assets/js/filter.js"></script>
+    
     <script>
         $( '.select2' ).select2( {
-            theme: 'bootstrap-5'
+            theme: 'bootstrap-5',
+            width: 'auto',
         } );
     </script>
 
@@ -308,6 +232,8 @@
         var to = yearTo3.value;
         getResultCaes("BMW", "X3", from, to);
     </script>
+    <script src="/assets/website_speed/speed_assets/assets/js/animate.js"></script>
+
 
     {% endblock %}
 

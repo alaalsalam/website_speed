@@ -1,29 +1,35 @@
 
-    {% extends '/templates/page_base.html' %}
+    {% extends '/templates/base_speed.html' %}
 
     {% block title %} CALCULATOR{% endblock %}
     
     {% block content %}
     
 
+  
+    <!-- End Navbar -->
 
-        <!-- Start Breadcrump Section -->
-        <section class="breadcrump mb-3 mt-header-2">
-            <div class="container bg-white">
-                <div class="row">
-                    <div class="ul d-flex px-3 py-3 breadcrump-list rounded-3">
+    <!-- Start Breadcrump Section -->
+    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+        <div class="container position-relative z-1">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="text-white load-animate-left mb-5">CALCULATOR</h1>
+                    <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
                         <li>
-                            <a href="index.html" class="text-info mx-1">Home > </a>
+                            <a href="../index.html" class="text-white mx-1">Home </a>
                         </li>
                         <li>
-                            <a href="search.html" class="text-info mx-1">Calculator  </a>
+                            <a  href="../pages/calculator.html"class="text-white mx-1"><span class="mx-2">/</span> CALCULATOR </a>
                         </li>
-                    </div>
+                    </ul>
                 </div>
+                
             </div>
-        </section>
-        <!-- End Breadcrump Section -->
-    
+        </div>
+    </section>
+    <!-- End Breadcrump Section -->
+
     <!-- Start Calculator Page -->
 
     <section class="calculator py-5">
@@ -154,4 +160,6 @@
 
     <!-- End Calculator Page -->
 
+    <!-- Start footer Section -->
+   
     {% endblock %}

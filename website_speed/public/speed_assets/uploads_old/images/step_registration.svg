@@ -1,0 +1,18 @@
+<svg width="74" height="52" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.a{isolation:isolate;}.b,.d{fill:none;}.b{stroke:#000;stroke-width:3px;}.c{fill:#fff;}.d{stroke:#3797fd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
+ </defs>
+ <title>Registration</title>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="76" height="54" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_4">
+   <path class="d" d="m68.19119,2.20385l-10.36,10.36l-6,-5.7" id="svg_1"/>
+   <path class="d" d="m39.99119,13.22385a12.29,12.29 0 1 1 -12.29,-12.26a12.29,12.29 0 0 1 12.29,12.29l0,-0.03zm-2.21,14l0,0a4.82,4.82 0 0 0 -2.26,0.56a16.4,16.4 0 0 1 -15.65,0a4.78,4.78 0 0 0 -2.25,-0.56a4.91,4.91 0 0 0 -2.93,1a21.56,21.56 0 0 0 -8.6,17.26l0,0.05a5.54,5.54 0 0 0 5.6,5.45l32,0a5.55,5.55 0 0 0 5.6,-5.45l0,-0.06a21.6,21.6 0 0 0 -8.61,-17.25a4.88,4.88 0 0 0 -2.9,-1.02l0,0.02z" id="svg_2"/>
+   <path class="d" d="m16.26119,31.55385a21.59,21.59 0 0 0 25.84,-2.22" id="svg_3"/>
+  </g>
+ </g>
+</svg>

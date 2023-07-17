@@ -221,46 +221,33 @@ function viewDataInSite(data){
         })
         getEndDate(salesHistory);
         row += `
-                <div class="row py-3 border-bottom m-0">
-                <div class="col-md-3 px-0">
+                <div class="row py-3 border-bottom m-0 section-animation">
+                <div class="col-md-4 image-animate">
                     <img src="`+ photo +`" alt="" class="w-100 h-100">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5 animate-top transition-delay-1">
                     <h4>
                         <a href="details.html?id=`+item.lot_number+`&auction_name=`+item.auction_name+`">`+ item.year +` `+ item.make +`, `+item.model+`, `+ item.series +`</a>
                     </h4>
-                    <div class="row m-0 border-end">
-                        <div class="col-sm-7">
-                            <p class="m-0 text-muted">
-                                Number: <span class="text-dark"> 0-`+item.lot_number+`</span>
-                            </p>
-                            <p class="m-0 text-muted">
-                                VIN: <span class="text-dark"> `+item.vin+`</span>
-                            </p>
-                            <p class="m-0 text-muted">
-                                Milage: <span class="text-dark">  10k miles (16k km)</span>
-                            </p>
-                            <p class="m-0 text-muted">
-                                Location: <span class="text-dark"> `+item.location+`</span>
-                            </p>
-                            <p class="m-0 text-muted">
-                                Seller: <span class="text-dark"> `+seller+`</span>
-                            </p>
-                        </div>
-                        <div class="col-sm-5">
-                            <p class="m-0 text-muted">
-                                Sale doc.: <span class="text-dark"> Salvage (Mississippi)</span>
-                            </p>
-                            <p class="m-0 text-muted">
-                                Damage: <span class="text-dark"> `+secondaryDamage +` ` +primaryDamage+ `</span>
-                            </p>
-                            <p class="m-0 text-muted">
-                                Status: <span class="text-dark"> `+item.highlights+`</span>
-                            </p>
-                        </div>
+                    <div class="">
+                        <p class="m-0 text-muted">
+                            Number: <span class="text-dark"> 0-`+item.lot_number+`</span>
+                        </p>
+                        <p class="m-0 text-muted">
+                            VIN: <span class="text-dark"> `+item.vin+`</span>
+                        </p>
+                        <p class="m-0 text-muted">
+                            Milage: <span class="text-dark">  10k miles (16k km)</span>
+                        </p>
+                        <p class="m-0 text-muted">
+                            Location: <span class="text-dark"> `+item.location+`</span>
+                        </p>
+                        <p class="m-0 text-muted">
+                            Seller: <span class="text-dark"> `+seller+`</span>
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 animate-top transition-delay-2">
                     <div class="date">
                         <p class="fw-bold">
                             <i class="fa-solid fa-calendar-days"></i> `+new Date(salesHistory).toString().substring(4, 15)+`
@@ -271,6 +258,19 @@ function viewDataInSite(data){
                     </p>
                     <div class="status-auction mt-3">
                         
+                    </div>
+                </div>
+                <div class="col-md-12 animate-top transition-delay-3">
+                    <div class="d-flex flex-wrap bg-light py-2">
+                        <p class="m-0 text-muted mx-2">
+                            Sale doc.: <span class="text-dark"> Salvage (Mississippi)</span>
+                        </p>
+                        <p class="m-0 text-muted mx-2">
+                            Damage: <span class="text-dark"> `+secondaryDamage +` ` +primaryDamage+ `</span>
+                        </p>
+                        <p class="m-0 text-muted mx-2">
+                            Status: <span class="text-dark"> `+item.highlights+`</span>
+                        </p>
                     </div>
                 </div>
             </div>

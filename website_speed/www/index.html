@@ -1,20 +1,23 @@
-{% extends 'templates/page_base.html' %}
+{% extends 'templates/base_speed.html' %}
 
 {% block content %}
 
+  <!-- End Navbar -->
+
     <!-- Start Hero Section -->
 
-    <section class="hero d-flex align-items-center justify-content-center">
-        <div class=" container-fluid pt-5">
+    <section class="hero d-flex align-items-center justify-content-center section-animation inner-pages">
+        <div class=" container-fluid pt-5 position-relative z-1">
             <div class="row px-5">
-                <div class="col-md-6">
+                <div class="col-md-12">
+                    <a href="../pages/auctions" class="btn btn-primary fs-4 mb-3 load-animate-left transition-delay-1">Start Bidding</a>
                     <div class="title-header mb-4">
-                        <h2 class="text-white">BUYING & SHIPPING AMERICAN AUTOMOBILES</h1>
-                        <p class="text-light">With “Home Delivery” option available never been so fast and so easy</p>
+                        <h2 class="text-white load-animate-left transition-delay-2">BUYING & SHIPPING AMERICAN AUTOMOBILES</h1>
+                        <p class="text-light load-animate-left transition-delay-3">With “Home Delivery” option available never been so fast and so easy</p>
                     </div>
-                    <a href="auctions" class="btn btn-primary fs-4">Start Bidding</a>
+                    
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <div class="filter-form p-4">
                         <div class="title-header mb-3">
                             <p class="fs-4 text-light">What are you looking for?</p>
@@ -56,7 +59,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -65,16 +68,16 @@
 
     <!-- Start Buy Car Section -->
 
-    <section class="buy-car py-5 bg-color-light">
+    <section class="buy-car py-5 bg-color-light section-animation ">
         <div class="container-fluid">
             <div class="title-header text-center">
-                <h2 class="mb-0">HOW TO BUY A CAR</h2>
-                <p class="fs-1">8 simple steps for buying a car</p>
+                <h2 class="mb-0 load-animate-left">HOW TO BUY A CAR</h2>
+                <p class="fs-1 load-animate-left transition-delay-1">8 simple steps for buying a car</p>
             </div>
             <div class="d-flex steps text-center mb-5">
-                <div class="card border-0 bg-transparent">
+                <div class="card border-0 bg-transparent ">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 1</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_registration.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Registration</p>
@@ -82,7 +85,7 @@
                 </div>
                 <div class="card border-0 bg-transparent">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 1-2</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_deposit.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Deposit</p>
@@ -90,7 +93,7 @@
                 </div>
                 <div class="card border-0 bg-transparent">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 2-3</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_search.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Vehicle search at Auction</p>
@@ -98,7 +101,7 @@
                 </div>
                 <div class="card border-0 bg-transparent">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 3-4</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_bidding.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Bidding at Auction</p>
@@ -106,7 +109,7 @@
                 </div>
                 <div class="card border-0 bg-transparent">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 4-6</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_payment.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Payment</p>
@@ -114,7 +117,7 @@
                 </div>
                 <div class="card border-0 bg-transparent">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 6-10</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_registration.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Transportation</p>
@@ -122,7 +125,7 @@
                 </div>
                 <div class="card border-0 bg-transparent">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 10-50</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_shipping.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Shipping</p>
@@ -130,7 +133,7 @@
                 </div>
                 <div class="card border-0 bg-transparent">
                     <img src="/assets/website_speed/speed_assets/uploads/images/_center.svg" alt="" class="line-center">
-                    <div class="card-header bg-transparent border-0">
+                    <div class="card-header bg-transparent border-0 load-animate">
                         <h4 class="fw-bold mb-4">Day 50-55</h4>
                         <img src="/assets/website_speed/speed_assets/uploads/images/step_custom.svg" alt="" class="m-auto img-step">
                         <p class="fs-4 fw-bolder mt-4">Customs, Delivery to the Client</p>
@@ -138,10 +141,10 @@
 
                 </div>
             </div>
-            <div class="title-header text-center mb-3">
+            <div class="title-header text-center mb-3 load-animate transition-delay-5">
                 <p class="fs-4 text-center">This purchasing plan is based on the optimal conditions and delivery of your vehicles.</p>
             </div>
-            <div class="row justify-content-center auto-check align-items-center">
+            <div class="row justify-content-center auto-check align-items-center load-animate transition-delay-5">
                 <div class="col px-5 text-center">
                     <div class="card border-0 text-center m-auto position-relative justify-content-center" style="--image: url('../../uploads/images/img1.jpeg')">
                         <div class="title-header text-center z-1 position-relative mb-0">
@@ -167,16 +170,16 @@
     <!-- End Buy Car Section -->
 
     <!-- Start Our Advantages Section -->
-    <section class="advantages py-5">
-        <div class="title-header text-center">
-            <h2 class="mb-0">OUR ADVANTAGES</h2>
+    <section class="advantages py-5 section-animation">
+        <div class="title-header text-center ">
+            <h2 class="mb-0 load-animate-left">OUR ADVANTAGES</h2>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-0">
                     <div id="owl-slider-adv" class="owl-carousel owl-theme listing">
-                        <div class="item p-4 col-animation-2">
-                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                        <div class="item p-4 ">
+                            <div class="card load-animate item2 border-0 bg-transparent shadow text-center p-2">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv1.svg"
                                     alt="" />
@@ -194,8 +197,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-4 col-animation-2">
-                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                        <div class="item p-4 ">
+                            <div class="card load-animate item2 border-0 bg-transparent shadow text-center p-2">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv2.svg"
                                     alt="" />
@@ -207,15 +210,15 @@
                                     <p class="fs-5">
                                         On average, buying a vehicle from a US auction will save you 20-40% when compared to the prices on the local retail market. Use the calculator on our site to explore purchasing options, view estimated total cost and confirm your savings.
                                     </p>
-                                    <a href="" class="text-dark mt-2 btn btn-theme2">
+                                    <a href="../pagess/calculator" class="text-dark mt-2 btn btn-theme2">
                                         Calculator
                                         <i class="fa fa-arrow-right mx-2"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-4 col-animation-2">
-                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                        <div class="item p-4 ">
+                            <div class="card load-animate item2 border-0 bg-transparent shadow text-center p-2">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv3.svg"
                                     alt="" />
@@ -230,8 +233,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-4 col-animation-2">
-                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                        <div class="item p-4 ">
+                            <div class="card load-animate item2 border-0 bg-transparent shadow text-center p-2">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv4.svg"
                                     alt="" />
@@ -246,8 +249,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-4 col-animation-2">
-                            <div class="card border-0 bg-transparent shadow text-center p-2">
+                        <div class="item p-4 ">
+                            <div class="card load-animate item2 border-0 bg-transparent shadow text-center p-2">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/adv5.svg"
                                     alt="" />
@@ -259,7 +262,7 @@
                                     <p class="fs-5">
                                         SPEED has the widest network of offices around the world. All our offices work according to a single high standard: the client receives all information and a detailed calculation of the final cost before purchasing a vehicle.
                                     </p>
-                                    <a href="" class="text-dark mt-2 btn btn-theme2">
+                                    <a href="../pagess/contact-us" class="text-dark mt-2 btn btn-theme2">
                                         Contact support
                                         <i class="fa fa-arrow-right mx-2"></i>
                                     </a>
@@ -273,7 +276,7 @@
             <div class="row mb-0 mt-5">
                 <div class="col-lg-12">
                     <div class="more-btn text-center">
-                        <a href="#####" class="btn btn-theme2"> 
+                        <a href="#home" class="btn btn-theme2"> 
                             View More
                             <i class="fa fa-arrow-right mx-2"></i>
                         </a>
@@ -285,15 +288,15 @@
     <!-- End Our Advantages Section -->
 
     <!-- Start Warranties Section -->
-    <section class="warranties py-5 bg-color-light">
+    <section class="warranties py-5 bg-color-light section-animation">
         <div class="title-header text-center">
-            <h2 class="mb-0">WARRANTIES</h2>
+            <h2 class="mb-0 load-animate-left">WARRANTIES</h2>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-0">
                     <div id="owl-slider-warranties" class="owl-carousel owl-theme listing">
-                        <div class="item p-2">
+                        <div class="item p-2 item3 load-animate ">
                             <div class="card border-0 bg-transparent text-center">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr1.svg"
@@ -306,7 +309,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-2">
+                        <div class="item p-2 item3 load-animate ">
                             <div class="card border-0 bg-transparent text-center">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr2.svg"
@@ -319,7 +322,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-2">
+                        <div class="item p-2 item3 load-animate ">
                             <div class="card border-0 bg-transparent text-center">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr3.svg"
@@ -332,7 +335,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-2">
+                        <div class="item p-2 item3 load-animate ">
                             <div class="card border-0 bg-transparent text-center">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr4.svg"
@@ -345,7 +348,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-2">
+                        <div class="item p-2 item3 load-animate ">
                             <div class="card border-0 bg-transparent text-center">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr5.svg"
@@ -358,7 +361,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item p-2">
+                        <div class="item p-2 item3 load-animate ">
                             <div class="card border-0 bg-transparent text-center">
                                 <div class="card-header border-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
                                     <img class="owl-lazy" data-src="/assets/website_speed/speed_assets/uploads/images/warr5.svg"
@@ -378,7 +381,7 @@
             <div class="row mb-0 mt-5">
                 <div class="col-lg-12">
                     <div class="more-btn text-center">
-                        <a href="#####" class="btn btn-theme2"> 
+                        <a href="#home" class="btn btn-theme2"> 
                             View More
                             <i class="fa fa-arrow-right mx-2"></i>
                         </a>
@@ -390,25 +393,25 @@
     <!-- End Warranties Section -->
 
     <!-- Start Video Section -->
-    <section class="video py-5">
+    <section class="video py-5 section-animation">
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
                 <div class="col mb-3">
                     <div class="card bg-transparent border-0 p-3">
                         <div class="title-header mb-3">
-                            <h2 class="mb-0 fs-2 lh-base">Transportation from auction</h2>
+                            <h2 class="mb-0 fs-2 lh-base load-animate-left">Transportation from auction</h2>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=9nPgNa4C_tU" class="card-header bg-transparent border-0 position-relative p-0">
+                        <a href="https://www.youtube.com/watch?v=9nPgNa4C_tU" class="card-header bg-transparent border-0 position-relative p-0 image-animate">
                             <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_main.webp" alt="" class="w-100">
                         </a>
                         <div class="card-body p-0 pt-2 d-flex justify-content-center w-100">
-                            <a href="">
+                            <a href="../pagess/auctions" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_1_2x.webp" alt="">
                             </a>
-                            <a href="">
+                            <a href="../pagess/auctions" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_2_2x.webp" alt="">
                             </a>
-                            <a href="">
+                            <a href="../pagess/auctions" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_to_port_3_2x.webp" alt="">
                             </a>
                         </div>
@@ -417,19 +420,19 @@
                 <div class="col mb-3">
                     <div class="card bg-transparent border-0 p-3">
                         <div class="title-header mb-3">
-                            <h2 class="mb-0 fs-2 lh-base">LOADING, OCEAN SHIPPING</h2>
+                            <h2 class="mb-0 fs-2 lh-base load-animate-left">LOADING, OCEAN SHIPPING</h2>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=xqO_Wcym8w4" class="card-header bg-transparent border-0 position-relative p-0">
+                        <a href="https://www.youtube.com/watch?v=xqO_Wcym8w4" class="card-header bg-transparent border-0 position-relative p-0 image-animate">
                             <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_main.webp" alt="" class="w-100">
                         </a>
                         <div class="card-body p-0 pt-2 d-flex justify-content-center w-100">
-                            <a href="uploads/images/delivery_loading_1_2x.webp">
+                            <a href="/assets/website_speed/speed_assets/uploads/images/delivery_loading_1_2x.webp" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_1_2x.webp" alt="">
                             </a>
-                            <a href="uploads/images/delivery_loading_2_2x.webp">
+                            <a href="/assets/website_speed/speed_assets/uploads/images/delivery_loading_2_2x.webp" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_2_2x.webp" alt="">
                             </a>
-                            <a href="uploads/images/delivery_loading_3_2x.webp">
+                            <a href="/assets/website_speed/speed_assets/uploads/images/delivery_loading_3_2x.webp" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_loading_3_2x.webp" alt="">
                             </a>
                         </div>
@@ -438,19 +441,19 @@
                 <div class="col mb-3">
                     <div class="card bg-transparent border-0 p-3">
                         <div class="title-header mb-3">
-                            <h2 class="mb-0 fs-2 lh-base">UNLOADING, CUSTOMS</h2>
+                            <h2 class="mb-0 fs-2 lh-base load-animate-left">UNLOADING, CUSTOMS</h2>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=Wv2aS6gGC8g" class="card-header bg-transparent border-0 position-relative p-0">
+                        <a href="https://www.youtube.com/watch?v=Wv2aS6gGC8g" class="card-header bg-transparent border-0 position-relative p-0 image-animate">
                             <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_main.webp" alt="" class="w-100">
                         </a>
                         <div class="card-body p-0 pt-2 d-flex justify-content-center w-100">
-                            <a href="uploads/images/delivery_unloading_1_2x.webp">
+                            <a href="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_1_2x.webp" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_1_2x.webp" alt="">
                             </a>
-                            <a href="uploads/images/delivery_unloading_2_2x.webp">
+                            <a href="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_2_2x.webp" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_2_2x.webp" alt="">
                             </a>
-                            <a href="uploads/images/delivery_unloading_3_2x.webp">
+                            <a href="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_3_2x.webp" class="image-animate">
                                 <img src="/assets/website_speed/speed_assets/uploads/images/delivery_unloading_3_2x.webp" alt="">
                             </a>
                         </div>
@@ -462,12 +465,12 @@
     <!-- End Video Section -->
 
     <!-- Start Cars Section -->
-    <section class="cars-acution py-5">
+    <section class="cars-acution py-5 section-animation">
         <div class="container-fluid">
             <div class="title-header mb-5 d-flex align-items-center justify-content-between">
-                <h2 class="mb-0 fs-3 lh-base">American Classic Cars</h2>
-                <div class="more-btn text-center">
-                    <a href="#####" class="btn btn-theme2"> 
+                <h2 class="mb-0 fs-3 lh-base load-animate-left">American Classic Cars</h2>
+                <div class="more-btn text-center load-animate-left">
+                    <a href="../pagess/auctions" class="btn btn-theme2"> 
                         View All
                         <i class="fa fa-arrow-right mx-2"></i>
                     </a>
@@ -476,12 +479,12 @@
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car1.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -490,12 +493,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car2.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -504,12 +507,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car3.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -518,12 +521,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -532,12 +535,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -547,12 +550,12 @@
             </div>
         </div>
     </section>
-    <section class="cars-acution py-5">
+    <section class="cars-acution py-5 section-animation">
         <div class="container-fluid">
             <div class="title-header mb-5 d-flex align-items-center justify-content-between">
-                <h2 class="mb-0 fs-3 lh-base">Motorcycle Harley-Davidson</h2>
-                <div class="more-btn text-center">
-                    <a href="#####" class="btn btn-theme2"> 
+                <h2 class="mb-0 fs-3 lh-base load-animate-left">Motorcycle Harley-Davidson</h2>
+                <div class="more-btn text-center load-animate-left">
+                    <a href="#home" class="btn btn-theme2"> 
                         View All
                         <i class="fa fa-arrow-right mx-2"></i>
                     </a>
@@ -561,12 +564,12 @@
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car1.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -575,12 +578,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car2.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -589,12 +592,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car3.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -603,12 +606,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -617,12 +620,12 @@
                 </div>
                 <div class="col mb-3 px-4">
                     <div class="card bg-transparent p-2">
-                        <div class="card-header bg-transparent border-0 p-0">
+                        <div class="card-header image-animate transition-delay-2 bg-transparent border-0 p-0">
                             <img src="/assets/website_speed/speed_assets/uploads/cars/car4.jpg" alt="" class="w-100 h-100">
                         </div>
-                        <div class="card-body px-0 py-2">
+                        <div class="card-body load-animate-left transition-delay-3 px-0 py-2">
                             <h4>
-                                <a href="" class="text-primary">1923 Ford MODEL T</a>
+                                <a href="../pagess/auctions" class="text-primary">1923 Ford MODEL T</a>
                             </h4>
                             <p class="date-pub"></p>
                             <p class="price mb-0">$100000</p>
@@ -633,6 +636,8 @@
         </div>
     </section>
     <!-- End Cars Section -->
+
+    <!-- Start footer Section -->
     
 {% endblock %}
 
@@ -700,5 +705,4 @@
     // document.getElementById("secs").innerHTML = seconds + "s"
     
 </script>
-
 {% endblock %}

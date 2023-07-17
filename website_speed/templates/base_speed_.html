@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Built by alaalsalam. https://github.com/alaalsalam -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="generator" content="alaalsalam">
+
+
+	<title>{% block title %}{{ title }}{% endblock %}</title>
+	{%- block head -%}
+		{% include "templates/includes/head.html" %}
+	{%- endblock -%}
+
+</head>
+<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="{{ body_class or ''}}">
+	
+
+	{%- block navbar -%}
+		{% include "templates/includes/navbar.html" %}
+	{%- endblock -%}
+
+	{% block content %}
+		{{ content }}
+	{% endblock %}
+
+	{%- block footer -%}
+	{% include "templates/includes/footer.html" %}
+
+	{%- endblock -%}
+
+	{% block base_scripts %}
+
+	<!-- js should be loaded in body! -->
+	<script src="/assets/website_speed/speed_assets/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/jquery.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/select2.full.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/owl-carousel/owl.carousel.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/fancybox.umd.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/app.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/animate.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/filter.js"></script>
+
+	<!-- js should be loaded in body! -->
+	<!-- {{ include_script('frappe-web.bundle.js') }} -->
+	
+	{% endblock %}
+
+	</body>
+
+</html>

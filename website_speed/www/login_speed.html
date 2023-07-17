@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/style.css">
+    
+</head>
+<body>
+    <section class="login">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-lg-6 image-main position-relative h-100">
+                    <div class="d-flex align-items-center justify-content-center h-100 position-relative z-1 flex-column">
+                        <h1 class="text-white">Login</h1>
+                        <p class="text-white text-center">Speed care about every step by step process. Fast, without unnecessary paperwork and additional charges. The simplest way to import your first American's car.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-relative h-100 bg-white">
+                    <div class="d-flex align-items-center justify-content-center h-100 px-5 w-100">
+                        <form action="" method="post" class="w-100">
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3">{{ login_label or _("Email")}}</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="" class="mb-3">Password</label>
+                                    <a href="" class="fs-5">Forgot Password</a>
+                                </div>
+                                <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
+                            </div>
+                            <!-- ------ -->
+                            <div class="form-group mb-4 w-100">
+                                <input type="checkbox" name="rememberMe" class="form-check-input">
+                                <label for="" class="mx-3">Remember me</label>
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <p class="text-center">Don’t have an account?  <a href="signup.html">Sign</a></p>
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/assets/website_speed/speed_assets/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/jquery.js"></script>
+</body>
+</html>

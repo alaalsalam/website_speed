@@ -1,16 +1,28 @@
 
-{% extends '/templates/page_base.html' %}
+{% extends '/templates/base_speed.html' %}
 
 {% block title %} Contact Us{% endblock %}
 
 {% block content %}
 
-    <section class="breadcrump2 mb-3 d-flex align-items-center justify-content-center">
-        <div class="container">
+    <!-- End Navbar -->
+
+    <!-- Start Breadcrump Section -->
+    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+        <div class="container position-relative z-1">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="text-white">Contact Us</h1>
+                    <h1 class="text-white load-animate-left mb-5">Contact Us</h1>
+                    <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                        <li>
+                            <a href="../index" class="text-white mx-1">Home </a>
+                        </li>
+                        <li>
+                            <a class="text-white mx-1"><span class="mx-2">/</span> Contact Us </a>
+                        </li>
+                    </ul>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -71,6 +83,8 @@
         </div>
     </section>
     <!-- End Contact Page -->
+
+    <!-- Start footer Section -->
     
     {% endblock %}
 

@@ -1,0 +1,154 @@
+/* Start Animation */
+
+.load-animate{
+    transform: translateY(35px);
+    opacity: 0;
+    transition: 1s cubic-bezier(0.5, 0.5, 0, 1)
+}
+
+#inner-headline ul.breadcrumb li:nth-child(even){
+    transform: translateY(-35px);
+}
+
+.load-animate.active{
+    transform: translateY(0px) !important;
+    opacity: 1;
+}
+
+.image-animate img{
+    object-fit: cover;
+} 
+
+.home-welcome .image2,
+.home-welcome .image3,
+.brand,
+.products .card,
+.section-animation .image-animate,
+.section-animation .details,
+.section-animation .statistics .col,
+.card-animate .image-animate-2{
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    transition: 2s cubic-bezier(0.5, 0.5, 0, 1);
+}
+.home-welcome .image3 img,
+.home-welcome .image2 img,
+.brand img,
+.products .card img,
+.section-animation .image-animate img,
+.card-animate .image-animate-2 img{
+    transform-origin: 50% 50%;
+    transition: 2s cubic-bezier(0.5, 0.5, 0, 1) !important;
+    transform: scale(1.5) translate(-100px, 0px);
+}
+
+.home-welcome .image2.active,
+.home-welcome .image3.active,
+.brand.active,
+.products.active .card,
+.section-animation.active .image-animate,
+.section-animation.active .details,
+.section-animation.active .statistics .col,
+.card-animate.active .image-animate-2{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.home-welcome .image3.active img,
+.home-welcome .image2.active img,
+.brand.active img,
+.products.active .card img,
+.section-animation.active .image-animate img,
+.card-animate.active .image-animate-2 img{
+    transform: scale(1) translate(0px, 0px);
+}
+
+.home-welcome .image3.active img:hover,
+.home-welcome .image2.active img:hover,
+.section-animation .image-animate img:hover,
+.section-animation .image-animate-2 img:hover{
+    transform: scale(1.2) translate(-30px, 0px);
+}
+
+aside .widget .sub-title-header .sub-title,
+aside .widget .sub-title-header::after{
+    transition-delay: var(--transition-delay-4);
+}
+
+aside .widget .sub-title-header .sub-title{
+    letter-spacing: 5px;
+}
+
+aside .widget ul.cat li{
+    transform: translateX(-26px);
+    opacity: 0;
+    transition: var(--transition-1);
+    transition-delay: 1.5s;
+}
+
+.section-animation.active aside .widget ul.cat li{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.layout-animate{
+    position: relative;
+}
+
+.layout-animate::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--second-color);
+    z-index: 3;
+    transition: 2s cubic-bezier(0.5, 0.5, 0, 1);
+    transition-delay: var(--transition-delay-1);
+}
+
+.section-animation.active .layout-animate::after{
+    width: 0 !important;
+}
+
+.load-animate-left,
+.load-animate-left-2{
+    transform: translateX(-40px);
+}
+
+.load-animate-right{
+    transform: translateX(40px);
+}
+
+.load-animate-left,
+.load-animate-left-2,
+.load-animate-right{
+    opacity: 0;
+    transition: var(--transition-1);
+}
+.section-animation.active .load-animate-left,
+.section-animation.active .load-animate-right,
+.card-animate.active .load-animate-left-2,
+.card-animate.active .load-animate-right{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.animate-top{
+    transform: translateY(40px);
+    opacity: 0;
+}
+
+.animate-top,
+.hover-top{
+    transition: var(--transition-1);
+}
+
+.section-animation.active .animate-top,
+.hover-top{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hover-top:hover{
+    transform: translateY(-20px);
+}
