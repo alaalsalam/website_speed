@@ -1,15 +1,41 @@
 {% extends '/templates/base_speed.html' %}
 
-{% block title %} Auctions{% endblock %}
+{% block title %} Tracking {% endblock %}
 
 {% block content %}
+    <!-- End Navbar -->
+
+    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+        <div class="container position-relative z-1">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="text-white load-animate-left mb-5">User Name</h1>
+                    <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                        <li>
+                            <a href="../index.html" class="text-white mx-1">Home </a>
+                        </li>
+                        <li>
+                            <a href="../userdashboard/summary" class="text-white mx-1"><span class="mx-2">/</span> Dashboard </a>
+                        </li>
+                        <li>
+                            <a class="text-white mx-1"><span class="mx-2">/</span> Tracking </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
     <!-- Start Summary Page -->
 
-    <section class="tracking mt-header py-5">
+    <section class="tracking mobile-bottom py-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
+                    <div class="settings-mobile">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
                     <div class="sidebar">
                         <div class="card border-0 p-3 py-5 mb-4">
                             <ul class="">
@@ -71,7 +97,7 @@
                     
                 </div>
                 <div class="col-lg-9">
-                    <div class="tracking-info bg-white p-4">
+                    <div class="tracking-info bg-white p-1 p-md-4">
                         <h1 class="fw-bold mb-5">Tracking</h1>
                         <div class="search my-5 border-bottom">
                             <form action="" method="get">
@@ -177,9 +203,9 @@
 
 
     <!-- Start footer Section -->
-{% endblock %}
-{% block script %}
-
+    {% endblock %}
+    {% block script %}
+ 
     <script>
         var range1 = document.querySelector('#range1');
         var availablePower = document.querySelector('#available_power').value;
@@ -189,5 +215,5 @@
         bidsLimit.innerHTML = totalPower / 2;
         activeBids.innerHTML = availablePower / 2;
     </script>
-
     {% endblock %}
+

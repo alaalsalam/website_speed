@@ -4,20 +4,50 @@
 
 {% block content %}
 
+    <!-- End Navbar -->
+
+    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+        <div class="container position-relative z-1">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="text-white load-animate-left mb-5">User Name</h1>
+                    <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                        <li>
+                            <a href="../index" class="text-white mx-1">Home </a>
+                        </li>
+                        <li>
+                            <a href="summary" class="text-white mx-1"><span class="mx-2">/</span> Dashboard </a>
+                        </li>
+                        <li>
+                            <a class="text-white mx-1"><span class="mx-2">/</span> Profile </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
     <!-- Start Summary Page -->
 
-    <section class="profile mt-header py-5">
+    <section class="profile mobile-bottom py-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
+                    <div class="settings-mobile">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
                     <div class="sidebar">
                         <div class="card border-0 p-3 py-5 mb-4">
                             <ul class="">
                                 <li class="fs-2 mb-4">
-                                    <a href="summary.html" class="py-3 active">Summary</a>
+                                    <a href="summary" class="py-3 active">Summary</a>
                                 </li>
                                 <li class="fs-2">
-                                    <a href="profile.html" class="py-3">Profile</a>
+                                    <a href="profile" class="py-3">Profile</a>
+                                </li>
+                                <li class="fs-2">
+                                    <a href="tracking" class="py-3">Tracking</a>
                                 </li>
                             </ul>
                         </div>
@@ -68,7 +98,7 @@
                     
                 </div>
                 <div class="col-lg-9">
-                    <div class="profile-info bg-white p-4">
+                    <div class="profile-info bg-white p-1 p-md-4">
                         <h1 class="fw-bold mb-3">Profile</h1>
                         <div class="card bg-transparent border-0 mb-5">
                             <p class="mb-5">Personal information</p>
@@ -156,6 +186,9 @@
     </section>
 
     <!-- End Summary Page -->
+
+
+    <!-- Start footer Section -->
     {% endblock %}
 
 
