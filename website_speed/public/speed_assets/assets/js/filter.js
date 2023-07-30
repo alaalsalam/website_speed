@@ -227,11 +227,11 @@ function viewDataInSite(data){
                 </div>
                 <div class="col-md-5 animate-top transition-delay-1">
                     <h4>
-                        <a href="details.html?id=`+item.lot_number+`&auction_name=`+item.auction_name+`">`+ item.year +` `+ item.make +`, `+item.model+`, `+ item.series +`</a>
+                        <a href="details.html?id=`+item.lot_id+`&auction_name=`+item.auction_name+`">`+ item.year +` `+ item.make +`, `+item.model+`, `+ item.series +`</a>
                     </h4>
                     <div class="">
                         <p class="m-0 text-muted">
-                            Number: <span class="text-dark"> 0-`+item.lot_number+`</span>
+                            Number: <span class="text-dark"> 0-`+item.lot_id+`</span>
                         </p>
                         <p class="m-0 text-muted">
                             VIN: <span class="text-dark"> `+item.vin+`</span>

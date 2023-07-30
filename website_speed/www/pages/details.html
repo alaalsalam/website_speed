@@ -123,7 +123,7 @@
     
     let params = {
         "vin_number": "5UXKR0C52G0P21189",
-        "lot_number": id,
+        "lot_id": id,
         "api_token": "7471ef49828d1441aeb4516ec5bf76cfb62fa52e4125d04bc71b41dcfce0f829",
     };
     
@@ -183,7 +183,7 @@
                             <h5 class="fs-3">`+item.year+` `+item.make+` `+item.model+` <span class="btn btn-info">`+item.auction_name+`</span></h5>    
                             <p class="text-dark border py-2 px-3">Final bid: $`+salesHistory+`</p>
                         </div>
-                        <p class="mb-1">Lot: 0-`+item.lot_number+`</p>    
+                        <p class="mb-1">Lot: 0-`+item.lot_id+`</p>    
                         <p class="mb-1">VIN: `+item.vin+`</p>    
                         <p class="mb-1">Seller: `+seller+`</p>    
                         <p class="mb-1">Estimated final price: `+odometer+`</p>   
@@ -296,7 +296,7 @@
                     </p>
                 `;
                 document.querySelector('.calculator-info').innerHTML += `
-                    <p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>BidCars Fee</span><span>$450</span></p>
+                    <p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Speed Fee</span><span>$450</span></p>
                 `;
                 document.querySelector('.calculator-info').innerHTML += `
                     <p class="d-flex justify-content-between align-items-center py-3 mb-0"><span>Final Price</span><span>$6,678</span></p>
