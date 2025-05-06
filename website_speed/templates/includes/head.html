@@ -1,3 +1,18 @@
+{% set current_lang = frappe.request.cookies.get('preferred_lang', 'ar') %}
+
+{% if current_lang == 'ar' %}
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/brands.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/solid.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/regular.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap-rtl.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap-rtl.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/select2.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/js/owl-carousel/assets/owl-rtl.carousel.min.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/style-rtl.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/animate.css">
+<link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/fancybox.css">
+{% else %}
 <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/fontawesome.min.css">
 <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/brands.css">
 <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/solid.css">
@@ -9,7 +24,7 @@
 <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/style.css">
 <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/animate.css">
 <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/fancybox.css">
-
+{% endif %}
 
 {% if head_html is defined -%}
 {{ head_html or "" }}

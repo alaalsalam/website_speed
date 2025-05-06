@@ -11,71 +11,117 @@
 	</div> -->
 </footer>
 <!-- Start footer Section -->
-<section class="footer">
-	<div class="bg-color-light pt-5 pb-3">
-		<div class="container-fluid">
-			<div class="row mx-0 mb-0 row-cols-1 row-cols-md-2 row-cols-lg-4">
-				<div class="col mb-3">
-					<div class="card border-0 bg-transparent">
-						<h4 class="fw-bold mb-4">Company</h4>
-						<p class="mb-2 text-muted">
-							Speed 20B/40
-						</p>
-						<p class="mb-2">
-							61-623 Poznań
-						</p>
-						<p>Tax no.: 499-06-50-123</p>
-					</div>
-				</div>
-				<div class="col mb-3">
-					<div class="card border-0 bg-transparent">
-						<ul>
-							<li class="mb-3">
-								<a href="../pages/about-us" class="text-dark">About</a>
-							</li>
-							<li class="mb-3">
-								<a href="../pages/about-us" class="text-dark">How it works</a>
-							</li>
-							<li class="mb-3">
-								<a href="../pages/about-us" class="text-dark">Cooperation</a>
-							</li>
-							<li class="mb-3">
-								<a href="../pages/about-us" class="text-dark">Bidfax</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col mb-3">
-					<div class="card border-0 bg-transparent">
-						<h4 class="fw-bold mb-4">Questions</h4>
-						<ul>
-							<li class="mb-3">
-								<a href="../pages/help" class="text-dark">Help</a>
-							</li>
-							<li class="mb-3">
-								<a href="../pages/about-us" class="text-dark">Terms</a>
-							</li>
-							<li class="mb-3">
-								<a href="../pages/about-us" class="text-dark">Privacy and Cookies</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col mb-3">
-					<div class="card border-0 bg-transparent">
-						<img src="/assets/website_speed/speed_assets/uploads/settings/logo1.png" alt="" class="m-auto footer-logo">
-						<div class="icon d-flex mt-5 justify-content-center">
-							<a href="" class="mx-3 text-dark"><i class="fa-brands fa-facebook-f fs-4"></i></a>
-							<a href="" class="mx-3 text-dark"><i class="fa-brands fa-twitter fs-4"></i></a>
-							<a href="" class="mx-3 text-dark"><i class="fa-brands fa-linkedin-in fs-4"></i></a>
+<!-- <section class="footer"> -->
+	{% if current_lang == 'ar' %}
+	<section class="footer" style="direction: rtl; text-align: right;">
+	{% else %}
+	<section class="footer" style="direction: ltr; text-align: left;">
+	{% endif %}
+		<div class="bg-color-light pt-5 pb-3">
+			<div class="container-fluid">
+				<div class="row mx-0 mb-0 row-cols-1 row-cols-md-2 row-cols-lg-3">
+	
+					<!-- معلومات الشركة -->
+					<div class="col mb-3">
+						<div class="card border-0 bg-transparent">
+							<h4 class="fw-bold mb-4">{{ i18n['company'][current_lang] }}</h4>
+							<p class="mb-2 text-muted">
+								<i class="fa-solid fa-location-dot me-2"></i>
+								{{ "الجمهورية اليمنية - صنعاء - شارع 14 أكتوبر" if current_lang == 'ar' else "14 October St., Sana'a, Yemen" }}
+							</p>
+							<p class="mb-2">
+								<i class="fa-solid fa-phone me-2"></i>
+								<span class="fw-bold">771818988</span>
+							</p>
+							<p class="mb-2">
+								<i class="fa-brands fa-whatsapp me-2 text-success"></i>
+								<a href="https://wa.me/967771818988" target="_blank" class="text-success fw-bold">تواصل عبر واتساب</a>
+							</p>
+							<p>
+								<i class="fa-solid fa-envelope me-2"></i>
+								info@speedym.com
+							</p>
 						</div>
 					</div>
+	
+					<!-- روابط حول الموقع -->
+					<div class="col mb-3 d-flex justify-content-center">
+						<div class="card border-0 bg-transparent mt-5">
+							<ul class="mt-5 list-unstyled text-center footer-links">
+								<li class="fw-bold mb-4">
+									<a href="/index" class="text-dark">{{ i18n['home'][current_lang] }}</a>
+								</li>
+								<li class="mb-3">
+									<a href="../pages/about-us" class="text-dark">{{ i18n['about'][current_lang] }}</a>
+								</li>
+								<li class="mb-3">
+									<a href="../pages/contact-us" class="text-dark">{{ i18n['contact'][current_lang] }}</a>
+								</li>
+								<li class="mb-3">
+									<a href="../pages/shipping_rates" class="text-dark">{{ i18n['shipping_rates'][current_lang] }}</a>
+								</li>
+								<li class="mb-3">
+									<a href="../pages/calculator" class="text-dark">{{ i18n['calculator'][current_lang] }}</a>
+								</li>
+								</li>
+								<li class="mb-3">
+									<a href="../pages/help" class="text-dark">{{ i18n['help'][current_lang] }}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+	
+					<!-- الأسئلة والمساعدة -->
+					<!-- <div class="col mb-3">
+						<div class="card border-0 bg-transparent">
+							<h4 class="fw-bold mb-4">	
+								{{ i18n['questions'][current_lang] }}
+							</h4>					
+							<ul class="list-unstyled">
+								<li class="mb-3">
+									<a href="../pages/help" class="text-dark"><i class="fa-solid fa-question-circle me-2"></i>{{ i18n['help'][current_lang] }}</a>
+								</li>
+
+
+
+
+								<li class="mb-3">
+									<a href="../pages/terms" class="text-dark"><i class="fa-solid fa-file-contract me-2"></i>{{ i18n['terms'][current_lang] }}</a>
+								</li>
+								<li class="mb-3">
+									<a href="../pages/privacy" class="text-dark"><i class="fa-solid fa-user-shield me-2"></i>{{ i18n['privacy_and_cookies'][current_lang] }}</a>
+								</li>
+							</ul>		
+						</div>
+					</div> -->
+	
+					<!-- شعار وروابط التواصل -->
+					<div class="col mb-3">
+						<div class="card border-0 bg-transparent text-center">
+							<img src="/assets/website_speed/speed_assets/uploads/settings/logo1.png" height="300" width="300" alt="Speed Logo" class="footer-logo mx-auto d-block">
+							<div class="icon d-flex mt-4 justify-content-center">
+								<a href="https://www.facebook.com/speedymcom" class="mx-2 facebook"><i class="fa-brands fa-facebook-f fs-1"></i></a>
+								<a href="https://www.instagram.com/speedymcom" class="mx-2 instagram"><i class="fa-brands fa-instagram fs-1"></i></a>
+								<a href="https://www.linkedin.com/company/speedymcom" class="mx-2 linkedin"><i class="fa-brands fa-linkedin-in fs-1"></i></a>
+							</div>
+						</div>
+					</div>
+	
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="sub-footer py-3 text-center">
-		<p class="text-muted mb-0">Ⓒ 2021 Speed. All Rights Reserved</p>
-	</div>
-</section>
+	
+		<!-- الحقوق -->
+		<div class="sub-footer py-3 text-center">
+			<p class="text-muted mb-0">
+				Ⓒ {{ current_year }} Speed.
+				{% if current_lang == 'ar' %}
+					جميع الحقوق محفوظة
+				{% else %}
+					All Rights Reserved
+				{% endif %}
+			</p>
+		</div>
+	</section>
+	
 <!-- End footer Section -->

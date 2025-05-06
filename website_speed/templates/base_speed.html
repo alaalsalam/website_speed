@@ -1,6 +1,520 @@
 <!DOCTYPE html>
-<!-- Built on Frappe. https://frappeframework.com/ -->
-<html lang="en">
+{% set current_year = frappe.utils.now_datetime().year %}
+
+{% set i18n = {
+    'home': {'en': 'Home', 'ar': 'الصفحة الرئيسية'},
+    'login': {'en': 'Login', 'ar': 'تسجيل الدخول'},
+    'sign_up': {'en': 'Sign Up', 'ar': 'تسجيل'},
+    'contact': {'en': 'Contact', 'ar': 'اتصل بنا'},
+    'help': {'en': 'Help', 'ar': 'مساعدة'},
+    'services': {'en': 'Services', 'ar': 'الخدمات'},
+    'about_us': {'en': 'About Us', 'ar': 'معلومات عنّا'},
+    'shipping_rates': {'en': 'Shipping Rates', 'ar': 'أسعار الشحن'},
+    'calculator': {'en': 'Calculator', 'ar': 'حاسبة'},
+    'my_account': {'en': 'My Account', 'ar': 'حسابي'},
+    'search': {'en': 'Search', 'ar': 'بحث'},
+    'company': {'en': 'Company', 'ar': 'الشركة'},
+    'speed_address': {'en': 'Speed 20B/40, 61-623 Poznań', 'ar': 'Speed 20B/40، 61-623 بوزنان'},
+    'Poznan': {'en': '61-623 Poznań', 'ar': '61-623 Poznań'},
+    'tax_no': {'en': 'Tax no.: 499-06-50-123', 'ar': 'الرقم الضريبي: 499-06-50-123'},
+    'about': {'en': 'About', 'ar': 'معلومات عنا'},
+    'how_it_works': {'en': 'How it works', 'ar': 'كيف يعمل'},
+    'cooperation': {'en': 'Cooperation', 'ar': 'التعاون'},
+    'bidfax': {'en': 'Bidfax', 'ar': 'Bidfax'},
+    'questions': {'en': 'Questions', 'ar': 'أسئلة'},
+    'terms': {'en': 'Terms', 'ar': 'الشروط'},
+    'privacy_and_cookies': {'en': 'Privacy and Cookies', 'ar': 'سياسة الخصوصية والكوكيز'},
+    'copyright': {'en': 'Ⓒ {year} Speed. All Rights Reserved', 'ar': 'Ⓒ {year} Speed. جميع الحقوق محفوظة'},
+		"start_bidding": {
+		  "en": "Start Bidding",
+		  "ar": "ابدأ المزايدة"
+		},
+		"hero_title": {
+			"en": "Your Trusted Partner for Buying and Shipping Cars from U.S. Auctions",
+			"ar": "شريكك الموثوق لشراء وشحن السيارات من المزادات الأمريكية"
+			},
+			"hero_subtitle": {
+			"en": "Speed offers full service from auction accounts to shipping, clearance, and delivery across Yemen — with full transparency, secure tracking, and rapid logistics tailored for individuals and dealers alike.",
+			"ar": "نوفر لك في Speed كل ما تحتاجه — من فتح الحسابات في المزادات الأمريكية إلى الشحن والتخليص والتوصيل داخل اليمن — بخدمات احترافية وشفافية كاملة ومتابعة دقيقة وسرعة في الإنجاز، للأفراد والتجار على حد سواء."
+			},
+		"how_to_buy_title": {
+			"en": "How to Buy a Car",
+			"ar": "كيفية شراء سيارة"
+		  },
+		  "how_to_buy_subtitle": {
+			"en": "8 simple steps for buying your car with ease",
+			"ar": "8 خطوات بسيطة لشراء سيارتك بسهولة"
+		  },
+		  "step_registration": {
+			"en": "Registration",
+			"ar": "تسجيل حساب"
+		  },
+		  "step_deposit": {
+			"en": "Deposit",
+			"ar": "الإيداع"
+		  },
+		  "step_vehicle_search": {
+			"en": "Vehicle Search at Auction",
+			"ar": "البحث عن سيارة في المزاد"
+		  },
+		  "step_bidding": {
+			"en": "Bidding at Auction",
+			"ar": "المزايدة في المزاد"
+		  },
+		  "step_payment": {
+			"en": "Payment",
+			"ar": "الدفع"
+		  },
+		  "step_transportation": {
+			"en": "Transportation",
+			"ar": "النقل"
+		  },
+		  "step_shipping": {
+			"en": "Shipping",
+			"ar": "الشحن"
+		  },
+		  "step_customs_delivery": {
+			"en": "Customs, Delivery to the Client",
+			"ar": "الجمارك وتسليم السيارة للعميل"
+		  },
+		  "purchase_plan_note": {
+			"en": "This purchasing plan is based on the optimal conditions and delivery of your vehicles.",
+			"ar": "خطة الشراء هذه مبنية على أفضل الظروف وتسليم مركباتك."
+		  },
+		  "purchase_plan_note_short": {
+			"en": "This purchasing plan is based on the optimal.",
+			"ar": "هذه الخطة مبنية على أفضل الظروف."
+		  },
+		  "autocheck": {
+			"en": "AUTOCHECK",
+			"ar": "فحص تلقائي"
+		  },
+		  "free": {
+			"en": "FREE",
+			"ar": "مجانًا"
+		  },
+		  "check": {
+			"en": "Check",
+			"ar": "تحقق"
+		  },
+		  "day": {
+			"en": "Day",
+			"ar": "يوم"
+		  },
+			"warranties_title": {
+			  "en": "WARRANTIES",
+			  "ar": "الضمانات"
+			},
+			"warranty_deposit_refund": {
+			  "en": "The deposit is 100% fully refundable.",
+			  "ar": "الإيداع قابل للاسترداد بالكامل بنسبة 100٪."
+			},
+			"warranty_check_every_car": {
+			  "en": "Check every car",
+			  "ar": "فحص كل سيارة"
+			},
+			"warranty_additional_verification": {
+			  "en": "Additional technical verification",
+			  "ar": "فحص فني إضافي"
+			},
+			"warranty_official_dealer": {
+			  "en": "Official dealer in the U.S.",
+			  "ar": "وكيل رسمي في الولايات المتحدة"
+			},
+			"warranty_odometer": {
+			  "en": "Odometer warranty",
+			  "ar": "ضمان عداد الكيلومترات"
+			},
+			"warranty_support_24_7": {
+			  "en": "24/7 support",
+			  "ar": "دعم 24/7"
+			},
+			"view_more": {
+			  "en": "View More",
+			  "ar": "عرض المزيد"
+			},
+			"view_all": {
+			  "en": "View All",
+			  "ar": "عرض الكل"
+			},
+			"american_classic_cars": {
+			  "en": "American Classic Cars",
+			  "ar": "سيارات كلاسيكية أمريكية"
+			},
+			"motorcycle_harley": {
+			  "en": "Motorcycle Harley-Davidson",
+			  "ar": "دراجة هارلي ديفيدسون"
+			},
+			"transportation_title": {
+			  "en": "Transportation from auction",
+			  "ar": "النقل من المزاد"
+			},
+			"loading_shipping_title": {
+			  "en": "Loading, Ocean Shipping",
+			  "ar": "التحميل والشحن البحري"
+			},
+			"unloading_customs_title": {
+			  "en": "Unloading, Customs",
+			  "ar": "التفريغ والجمارك"
+			},
+			
+				"our_advantages_title": {
+				"en": "OUR ADVANTAGES",
+				"ar": "مميزاتنا"
+				},
+
+				"advantage_lowest_prices_title": {
+				"en": "Transparent Pricing Without Hidden Fees",
+				"ar": "تسعير شفاف بدون رسوم خفية"
+				},
+				"advantage_lowest_prices_text": {
+				"en": "Speed is one of the few companies in Yemen offering direct auction access without intermediaries. We clearly disclose all service fees upfront, ensuring full transparency in pricing and no surprise charges.",
+				"ar": "تُعد Speed من الشركات القليلة في اليمن التي توفر الوصول المباشر للمزادات دون وسطاء. نوضح جميع الرسوم مسبقًا لضمان الشفافية الكاملة دون أي تكاليف خفية."
+				},
+
+				"advantage_affordable_title": {
+				"en": "Fast and Secure Vehicle Shipping",
+				"ar": "شحن سريع وآمن للمركبات"
+				},
+				"advantage_affordable_text": {
+				"en": "Our logistics network ensures the safe and timely delivery of all types of vehicles. Whether in shared or private containers, we deliver with speed and reliability.",
+				"ar": "نضمن شحن المركبات بجميع أنواعها بسرعة وأمان، سواء في حاويات مشتركة أو خاصة، مع الالتزام بمواعيد التسليم وجودة الخدمات."
+				},
+
+				"advantage_buy_top_auctions_title": {
+				"en": "Support for Individuals and Dealers",
+				"ar": "خدمة مخصصة للأفراد والتجار"
+				},
+				"advantage_buy_top_auctions_text": {
+				"en": "We help individuals and dealers alike. For individuals, we offer car search and buying services through Speed's accounts. For major traders, we provide premium A-category accounts to access the best deals.",
+				"ar": "نخدم الأفراد والتجار على حد سواء. نوفر للأفراد خدمات البحث والشراء عبر حساباتنا، وللتجار الكبار نوفر حسابات فئة A للوصول إلى أفضل العروض."
+				},
+
+				"advantage_online_control_title": {
+				"en": "Full Digital Tracking and Status Updates",
+				"ar": "متابعة رقمية كاملة وتحديثات فورية"
+				},
+				"advantage_online_control_text": {
+				"en": "Clients are given access to a private system to track every step of the shipping and documentation process, including photos of the vehicle and real-time status updates.",
+				"ar": "نوفر لعملائنا نظامًا خاصًا لمتابعة جميع مراحل الشحن والتخليص، مع إمكانية عرض صور المركبة وتحديثات مباشرة لحالة الطلب."
+				},
+
+				"advantage_company_offices_title": {
+				"en": "Comprehensive Shipping and Clearance Services",
+				"ar": "خدمات متكاملة للشحن والتخليص"
+				},
+				"advantage_company_offices_text": {
+				"en": "From auction pickup to customs clearance and local delivery inside Yemen, Speed handles everything — including container handling, unloading, and final delivery to the nearest city.",
+				"ar": "نتولى كافة المراحل من استلام السيارة من المزاد إلى التخليص الجمركي والتوصيل داخل اليمن، بما في ذلك تفريغ الحاويات وتوصيل السيارات لأقرب مدينة."
+				},
+
+				"calculator_button": {
+				  "en": "Calculator",
+				  "ar": "الحاسبة"
+				},
+				"contact_support_button": {
+				  "en": "Contact Support",
+				  "ar": "الاتصال بالدعم"
+				},
+				"about_us_title": {
+					"en": "About Us",
+					"ar": "معلومات عنا"
+				  },
+				  "about_us_subtitle": {
+					"en": "We specialize in acquiring and transporting vehicles from the United States since 2015.",
+					"ar": "نحن متخصصون في شراء ونقل المركبات من الولايات المتحدة منذ عام 2015."
+				  },
+				  "about_us_intro_title": {
+					"en": "About Us",
+					"ar": "معلومات عنا"
+				  },
+				  "about_us_intro_paragraph": {
+					"en": "Speed is a leading Yemeni company in trading and shipping cars and spare parts, with more than 19 years of experience.",
+					"ar": "سبيد هي شركة رائدة يمنية في تجارة وشحن السيارات وقطع الغيار، بخبرة تزيد عن 19 عامًا."
+				  },
+				  "about_us_intro_details": {
+					"en": "Speed provides innovative shipping solutions, using closed vehicles for protection, offering auction purchases, inspections, packaging, spare parts, and international shipping services.",
+					"ar": "توفر سبيد حلول شحن مبتكرة باستخدام سيارات مغلقة للحماية، وتقدم خدمات شراء السيارات من المزادات، الفحص، التغليف، قطع الغيار، وخدمات الشحن الدولي."
+				  },
+				  "years_in_business": {
+					"en": "Years in Business",
+					"ar": "سنوات من العمل"
+				  },
+				  "our_vision_title": {
+					"en": "Our Vision",
+					"ar": "رؤيتنا"
+				  },
+				  "our_vision_description": {
+					"en": "Providing high-quality car shipping and logistics services worldwide, ensuring customer satisfaction, and maintaining excellence.",
+					"ar": "تقديم خدمات شحن سيارات وخدمات لوجستية عالية الجودة حول العالم، مع ضمان رضا العملاء والحفاظ على التميز."
+				  },
+				  "our_message_title": {
+					"en": "Our Message",
+					"ar": "رسالتنا"
+				  },
+				  "our_message_description": {
+					"en": "Transforming our vision into reality through modern technologies and best logistics practices.",
+					"ar": "تحويل رؤيتنا إلى واقع من خلال التكنولوجيا الحديثة وأفضل الممارسات اللوجستية."
+				  },
+				  "our_services_title": {
+					"en": "Our Services",
+					"ar": "خدماتنا"
+				  },
+				  "our_services_description": {
+					"en": "Providing a variety of services to meet all customer needs with best quality and competitive prices.",
+					"ar": "تقديم مجموعة متنوعة من الخدمات لتلبية جميع احتياجات العملاء بأفضل جودة وأسعار تنافسية."
+				  },
+				  "transportation_service_title": {
+					"en": "Transportation Service in Europe",
+					"ar": "خدمة النقل في أوروبا"
+				  },
+				  "transportation_service_description": {
+					"en": "We import cars, motorcycles, quads, and water scooters from North America, providing transparent and affordable services.",
+					"ar": "نقوم باستيراد السيارات والدراجات النارية والدراجات الرباعية والدراجات المائية من أمريكا الشمالية، مع تقديم خدمات شفافة وبأسعار معقولة."
+				  },
+				  "container_packing_title": {
+					"en": "Container Packing",
+					"ar": "تعبئة الحاويات"
+				  },
+				  "container_packing_description": {
+					"en": "We guarantee the best shipping and land transportation rates thanks to continuous cooperation with international companies.",
+					"ar": "نضمن أفضل أسعار الشحن والنقل البري بفضل التعاون المستمر مع الشركات الدولية."
+				  },
+					"help_title": {
+					  "en": "Help",
+					  "ar": "المساعدة"
+					},
+					"step": {
+					  "en": "Step",
+					  "ar": "الخطوة"
+					},
+
+					"buying_steps_title": {
+					  "en": "4 Steps to Buying a Vehicle with Speed",
+					  "ar": "4 خطوات لشراء سيارة مع Speed"
+					},
+					"buying_steps_intro": {
+					  "en": "To make the import of vehicles from the USA clear and transparent, we've created the Speed service. Auctions are conducted without intermediaries, with no hidden costs - you're the one making all the decisions! You choose the car you want to bid on and the amount you're willing to pay, and we help you win the auction! Importantly, at Speed, there are no costs incurred before you win a bid on a car. Registration and participation in the auction are free! We only require a refundable deposit to secure your bidding. Speed allows you to quickly and easily order auctions, purchase, and ship vehicles, with an option for \"doorstep\" delivery. Speed stands for 100% transparency and full awareness of the costs incurred, as well as control over the location of your vehicle.",
+					  "ar": "لتوضيح واستكشاف استيراد المركبات من الولايات المتحدة، أنشأنا خدمة Speed. يتم تنفيذ المزادات بدون وسطاء وبدون تكاليف خفية - أنت من يتخذ جميع القرارات! تختار السيارة التي تريد المزايدة عليها والمبلغ الذي ترغب في دفعه، ونحن نساعدك على الفوز بها! الأهم من ذلك، لا تتحمل أي تكاليف قبل الفوز بالمزايدة. التسجيل والمشاركة مجانية! نطلب فقط وديعة قابلة للاسترداد لضمان المزايدة. تتيح لك Speed بسهولة طلب المزادات وشراء وشحن المركبات مع خيار التوصيل إلى الباب. تمثل Speed الشفافية الكاملة والسيطرة الكاملة على تكاليف وموقع سيارتك."
+					},
+				  
+
+					"step1_title": {
+					  "en": "Find your dream car",
+					  "ar": "اعثر على سيارتك الحلم"
+					},
+					"step1_text": {
+					  "en": "Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you. Once registered, you'll be able to track vehicles, add cars to your watchlist, and view final prices of archived offers.",
+					  "ar": "اعثر على سيارتك الحلم من الولايات المتحدة. سيساعدك محرك البحث لدينا والفلاتر التفصيلية في استعراض قاعدة بيانات السيارات لدينا بسهولة. في Speed، لا تحتاج إلى إنشاء حساب لعرض السيارات والمزادات التي تهمك. بمجرد التسجيل، ستتمكن من تتبع المركبات، وإضافة السيارات إلى قائمة المراقبة الخاصة بك، وعرض الأسعار النهائية للعروض المؤرشفة."
+					},
+
+					"step2_title": {
+					  "en": "Make a Refundable Deposit",
+					  "ar": "قم بدفع وديعة قابلة للاسترداد"
+					},
+					"step2_text": {
+					  "en": "Before you start bidding, a refundable deposit is required to secure your participation. This ensures commitment and helps streamline the auction process.",
+					  "ar": "قبل البدء بالمزايدة، يُطلب منك دفع وديعة قابلة للاسترداد لضمان مشاركتك. يساهم ذلك في ضمان الجدية وتسهيل عملية المزاد."
+					},
+					"step3_title": {
+					  "en": "Bid and Purchase",
+					  "ar": "المزايدة والشراء"
+					},
+					"step3_text": {
+					  "en": "Place your bid confidently. Once you win, we guide you through the payment and shipping process with full transparency and support.",
+					  "ar": "قم بالمزايدة بثقة. بمجرد فوزك، سنرشدك خلال عملية الدفع والشحن بشفافية كاملة ودعم متواصل."
+					},
+					
+					
+			
+					"step1_title": {
+					  "en": "Find and Track Your Ideal Vehicles",
+					  "ar": "ابحث وتابع المركبات المثالية"
+					},
+					"step1_text": {
+					  "en": "Easily browse thousands of vehicles through our smart search and filters. No registration required for initial browsing. Registered dealers can track multiple vehicles, add favorites, and access detailed auction histories to make better buying decisions.",
+					  "ar": "استعرض آلاف المركبات بسهولة عبر محرك البحث الذكي والفلاتر المتقدمة. لا حاجة للتسجيل لتصفح أولي، بينما يتمكن التجار المسجلون من متابعة عدة مركبات، إضافة المفضلة، والوصول إلى سجلات المزادات لمساعدتهم على اتخاذ قرارات شراء أفضل."
+					},
+					"step2_title": {
+					  "en": "Secure Your Bidding with a Refundable Deposit",
+					  "ar": "تأمين المزايدة عبر وديعة قابلة للاسترداد"
+					},
+					"step2_text": {
+					  "en": "Place a refundable deposit to participate in live auctions. This ensures your ability to bid on vehicles and confirms your seriousness as a buyer in the system, increasing your success rate at auctions.",
+					  "ar": "قم بإيداع مبلغ قابل للاسترداد للمشاركة في المزادات المباشرة. يضمن هذا المبلغ إمكانية المزايدة ويؤكد جديتك كمشتري، مما يزيد فرص نجاحك في المزادات."
+					},
+					"step4_title": {
+					  "en": "Handle Domestic and International Shipping",
+					  "ar": "التعامل مع الشحن الداخلي والدولي"
+					},
+					"step4_text": {
+					  "en": "After purchase, we organize secure transportation of your vehicle from the auction site to the nearest port, then manage ocean shipping to your destination country with the best negotiated freight rates.",
+					  "ar": "بعد الشراء، نقوم بتنظيم نقل آمن لمركبتك من موقع المزاد إلى أقرب ميناء، ثم إدارة الشحن البحري إلى بلدك مع توفير أفضل أسعار الشحن التفاوضية."
+					},
+				  
+					
+				 
+					
+					"step5_title": {
+					  "en": "Complete Customs Clearance and Vehicle Delivery",
+					  "ar": "استكمال التخليص الجمركي وتسليم المركبة"
+					},
+					"step5_text": {
+					  "en": "Upon arrival, we assist in customs clearance procedures and documentation. Vehicles can be picked up from the port or delivered locally to your dealership for added convenience.",
+					  "ar": "عند الوصول، نساعد في إجراءات التخليص الجمركي وتجهيز كافة المستندات. يمكنك استلام المركبة من الميناء أو طلب توصيل محلي مباشر إلى معرضك لمزيد من الراحة."
+					}
+	  ,
+		"contact": { "en": "Contact Us", "ar": "اتصل بنا" },
+		"home": { "en": "Home", "ar": "الصفحة الرئيسية" },
+		"contact_intro": {
+		  "en": "We are here to assist you with any inquiries or support you may need. Reach out to us via email or visit one of our offices.",
+		  "ar": "نحن هنا لمساعدتك في أي استفسارات أو دعم تحتاجه. تواصل معنا عبر البريد الإلكتروني أو قم بزيارة أحد مكاتبنا."
+		},
+		"offices": { "en": "Our Offices", "ar": "مكاتبنا" },
+		"office_yemen": {
+		  "en": "Yemen Office: Haddah Street, Sana'a, near Sana'a Trade Center",
+		  "ar": "مكتب اليمن: شارع حدة، صنعاء، بجانب مركز صنعاء التجاري"
+		},
+		"uae_address": {
+		  "en": "UAE Office: Dubai, Al Qusais Industrial Area, near Al Ittihad Private School",
+		  "ar": "مكتب الإمارات: دبي، منطقة القصيص الصناعية، بالقرب من مدرسة الاتحاد الخاصة"
+		},
+		"email": { "en": "Email", "ar": "البريد الإلكتروني" },
+		"get_in_touch": { "en": "Get in Touch", "ar": "تواصل معنا" },
+		"get_in_touch_desc": {
+		  "en": "Have a question or need help? Fill out the form below and we’ll get back to you shortly.",
+		  "ar": "هل لديك سؤال أو تحتاج إلى مساعدة؟ املأ النموذج وسنعود إليك قريبًا."
+		},
+		"full_name": { "en": "Full Name*", "ar": "الاسم الكامل*" },
+		"email_placeholder": { "en": "Email*", "ar": "البريد الإلكتروني*" },
+		"phone": { "en": "Phone Number", "ar": "رقم الهاتف" },
+		"message": { "en": "Message*", "ar": "الرسالة*" },
+		"submit": { "en": "Submit", "ar": "إرسال" },
+		"please_fill_required": {
+		  "en": "Please fill in all required fields.",
+		  "ar": "يرجى تعبئة جميع الحقول المطلوبة."
+		},
+		"message_submitted": {
+		  "en": "Your message has been successfully submitted.",
+		  "ar": "تم إرسال رسالتك بنجاح."
+		}
+	  ,
+	  
+	  
+		"about_us": {
+		  "en": "About Us",
+		  "ar": "من نحن"
+		},
+		"about_us_intro_title": {
+		  "en": "A few words about Speed",
+		  "ar": "نبذة عن شركة سبيد"
+		},
+		"about_us_subtitle": {
+		  "en": "We specialize in acquiring and transporting vehicles from the United States since 2015.",
+		  "ar": "متخصصون في شراء ونقل السيارات من الولايات المتحدة الأمريكية منذ عام 2015."
+		},
+		"years_in_business": {
+		  "en": "Years in Business",
+		  "ar": "سنة من النجاح"
+		},
+		"about_us_intro_paragraph": {
+		  "en": "Speed is a leading Yemeni company in the field of trading and shipping cars and spare parts, with more than 19 years of experience in the field.",
+		  "ar": "سبيد هي شركة يمنية رائدة في مجال تجارة وشحن السيارات وقطع الغيار، وتتمتع بخبرة تزيد عن 19 عاماً في هذا المجال."
+		},
+		"about_us_intro_details": {
+		  "en": "Speed provides innovative shipping solutions that outperform competitors. We use closed and covered trucks to protect vehicles, and we offer inspection, packaging, spare parts, and international shipping services.",
+		  "ar": "توفر سبيد حلول شحن مبتكرة تفوق المنافسين، حيث نعتمد على شاحنات مغلقة ومغطاة لحماية السيارات، ونقدم خدمات الفحص والتغليف وقطع الغيار والشحن الدولي."
+		},
+		"our_vision_title": {
+		  "en": "Our Vision",
+		  "ar": "رؤيتنا"
+		},
+		"our_vision_description": {
+		  "en": "Providing high-quality and distinguished car shipping and logistics services to all customers worldwide, ensuring the highest satisfaction levels through fully integrated services.",
+		  "ar": "تقديم خدمات شحن سيارات وخدمات لوجستية عالية الجودة ومتميزة لجميع العملاء حول العالم، مع تحقيق أعلى مستويات الرضا من خلال خدمات متكاملة."
+		},
+		"our_message_title": {
+		  "en": "Our Mission",
+		  "ar": "رسالتنا"
+		},
+		"our_message_description": {
+		  "en": "To transform our vision into reality by investing in modern technologies and applying best practices in shipping and logistics, offering comprehensive and innovative services.",
+		  "ar": "تحقيق رؤيتنا من خلال الاستثمار في التقنيات الحديثة وتطبيق أفضل الممارسات في مجال الشحن واللوجستيات، وتقديم خدمات متكاملة ومبتكرة."
+		},
+		"our_services_title": {
+		  "en": "Our Services",
+		  "ar": "خدماتنا"
+		},
+		"our_services_description": {
+		  "en": "Speed stands out by offering a wide variety of services that meet all customer needs with competitive prices and high quality.",
+		  "ar": "تتميز سبيد بتقديم مجموعة واسعة من الخدمات التي تلبي جميع احتياجات العملاء بأفضل جودة وأسعار تنافسية."
+		},
+		"service_auction": {
+		  "en": "Vehicle Auctions",
+		  "ar": "مزادات السيارات"
+		},
+		"service_auction_desc": {
+		  "en": "We help customers participate in vehicle auctions in the US and bid on their chosen cars with transparency and ease.",
+		  "ar": "نساعد العملاء في المشاركة في مزادات السيارات بأمريكا والمزايدة على السيارات المختارة بكل شفافية وسهولة."
+		},
+		"service_shipping": {
+		  "en": "International Shipping",
+		  "ar": "الشحن الدولي"
+		},
+		"service_shipping_desc": {
+		  "en": "We offer international vehicle shipping services with secured containers and door-to-door delivery options.",
+		  "ar": "نوفر خدمات الشحن الدولي للمركبات باستخدام حاويات مؤمنة وخيارات توصيل حتى باب العميل."
+		},
+		"service_clearance": {
+		  "en": "Customs Clearance",
+		  "ar": "التخليص الجمركي"
+		},
+		"service_clearance_desc": {
+		  "en": "We handle all customs clearance procedures in ports, ensuring fast and efficient processing of vehicles.",
+		  "ar": "نتولى جميع إجراءات التخليص الجمركي في الموانئ لضمان سرعة وفعالية تسليم السيارات."
+		},
+		"service_parts": {
+		  "en": "Spare Parts Supply",
+		  "ar": "توفير قطع الغيار"
+		},
+		"service_parts_desc": {
+		  "en": "We provide genuine and alternative spare parts for a variety of vehicle models at competitive prices.",
+		  "ar": "نوفر قطع غيار أصلية وبديلة لمختلف أنواع السيارات بأسعار منافسة."
+		},
+		"service_inspection": {
+		  "en": "Vehicle Inspection & Packaging",
+		  "ar": "فحص وتغليف السيارات"
+		},
+		"service_inspection_desc": {
+		  "en": "Before shipping, we inspect and professionally package the vehicles to ensure they arrive in perfect condition.",
+		  "ar": "نقوم بفحص السيارات وتغليفها باحترافية قبل الشحن لضمان وصولها بأفضل حالة."
+		},
+		"transportation_service_title": {
+		  "en": "Complete Logistics Services",
+		  "ar": "خدمات لوجستية متكاملة"
+		},
+		"transportation_service_description": {
+		  "en": "From the USA to your destination, Speed offers a full suite of services from purchase to delivery, ensuring transparency and customer convenience throughout the process.",
+		  "ar": "من أمريكا إلى وجهتك، تقدم سبيد مجموعة متكاملة من الخدمات من الشراء حتى التسليم، مع ضمان الشفافية وراحة العميل طوال العملية."
+		},
+		"container_packing_title": {
+		  "en": "Container Packing",
+		  "ar": "تغليف الحاويات"
+		},
+		"container_packing_description": {
+		  "en": "We ensure safe and efficient container loading for cars and parts using international safety standards and professional packaging.",
+		  "ar": "نضمن تحميل السيارات وقطع الغيار داخل الحاويات بأمان وكفاءة وفقاً لمعايير السلامة الدولية وباستخدام تغليف احترافي."
+		}
+	  
+	  
+	  
+	  
+	  
+  
+} %}
+
+{% set current_lang = frappe.request.cookies.get('preferred_lang', 'ar') %}
+<html lang="{{ current_lang }}" dir="{% if current_lang == 'ar' %}rtl{% else %}ltr{% endif %}">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -68,17 +582,20 @@
 
 	{%- block footer -%}
 	{% include "templates/includes/footer.html" %}
-
-
 	{%- endblock -%}
 
 	{% block base_scripts %}
 
-	<script>
+	<!-- <script>
 		frappe.boot = {{ boot }}
 		// for backward compatibility of some libs
 		frappe.sys_defaults = frappe.boot.sysdefaults;
+	</script> -->
+	<script>
+		frappe.boot = {{ boot | tojson }}
+		frappe.sys_defaults = frappe.boot.sysdefaults;
 	</script>
+	
 	{{ include_script('frappe-web.bundle.js') }}
 
 	
@@ -89,10 +606,25 @@
     <script src="/assets/website_speed/speed_assets/assets/js/owl-carousel/owl.carousel.min.js"></script>
     <script src="/assets/website_speed/speed_assets/assets/js/app.js"></script>
     <script src="/assets/website_speed/speed_assets/assets/js/animate.js"></script>
-	<!-- js should be loaded in body! -->
-	
-	{% endblock %}
 
+	<script>
+		document.getElementById('lang-toggle')?.addEventListener('click', function() {
+			const lang = this.getAttribute('data-lang');
+			const currentUrl = window.location.pathname + window.location.search;
+		
+			fetch(`/set_language?lang=${lang}&redirect_to=${currentUrl}`, {
+				method: 'GET',
+				credentials: 'same-origin'
+			}).then(() => {
+				window.location.reload();
+			}).catch((err) => {
+				console.error("Language switch failed", err);
+				alert("Something went wrong while switching language.");
+			});
+		});
+	</script>
+	<!-- js should be loaded in body! -->
+	{% endblock %}
 	{%- for link in web_include_js %}
 	{{ include_script(link) }}
 	{%- endfor -%}

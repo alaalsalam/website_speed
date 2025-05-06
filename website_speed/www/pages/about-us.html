@@ -1,300 +1,102 @@
 {% extends '/templates/base_speed.html' %}
 
-{% block title %} About Us{% endblock %}
+{% block title %}{{ i18n['about_us'][current_lang] }}{% endblock %}
 
 {% block content %}
-     <!-- End Navbar -->
+<!-- Start Breadcrump Section -->
+<section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+  <div class="container position-relative z-1">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 class="text-white load-animate-left">{{ i18n['about_us_intro_title'][current_lang] }}</h1>
+        <p class="text-light load-animate-left transition-delay-1">{{ i18n['about_us_subtitle'][current_lang] }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Breadcrump Section -->
 
-    <!-- Start Breadcrump Section -->
-    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
-        <div class="container position-relative z-1">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1 class="text-white load-animate-left">A few words about Speed</h1>
-                    <p class="text-light load-animate-left transition-delay-1">We specialize in acquiring and transporting vehicles from the United States since 2015.</p>
-                </div>
-                
-            </div>
+<!-- Start About Page -->
+<section class="home-welcome py-5 section-animation inner-pages">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="image relative h-100">
+          <img src="/assets/website_speed/speed_assets/uploads/settings/office.jpg" alt="" class="w-100 h-100 image-animate">
+          <div class="years playfont image-animate">
+            <h2 style="background-image: url('uploads/settings/office.jpg')">19</h2>
+            <h5 class="main-color">{{ i18n['years_in_business'][current_lang] }}</h5>
+          </div>
         </div>
-    </section>
-    <!-- End Breadcrump Section -->
-
-    <!-- Start About Page -->
-
-    <section class="home-welcome py-5 section-animation inner-pages">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="image relative h-100 ">
-                        <img src="/assets/website_speed/speed_assets/uploads/settings/office.jpg" alt="" class="w-100 h-100 image-animate">
-                        
-                        <div class="years playfont image-animate">
-                            <h2 style="background-image: url('uploads/settings/office.jpg')">19</h2>
-                            <h5 class="main-color">Years in Business</h5>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="col-md-7 details d-flex flex-column justify-content-center px-4">
-                    <div class="title-header title-header2 mb-4">
-                        <h2 class="fw-bolder position-relative pb-3 animate-top transition-delay-1">About Us</h2>
-                        <p class="fw-bold text-muted fs-3 animate-top transition-delay-2">
-                            Speed ​​is a leading Yemeni company in the field of trading and shipping cars and spare parts, with more than 19 years of experience in the field.
-                        </p>
-                    </div>
-                    <p class="text-muted fs-5 mt-4 animate-top transition-delay-3">
-                        Speed ​​is a leading Yemeni company in the field of trading and shipping cars and spare parts, with more than 19 years of experience in this field. The company is characterized by providing innovative shipping solutions that outperform its competitors, and relies on closed and covered cars to protect cars during the shipping process. Speed ​​also provides services such as buying cars from auctions, examining and packaging them, in addition to providing spare parts and distinguished international shipping services. The company is keen to constantly develop its services to meet the requirements of its customers, and to achieve distinguished successes to become one of the leading companies in the field of freight and logistics services in the automotive world.
-                    </p>
-                    <div class="row row-cols-md-3 mt-5 statistics">
-                        
-                        
-                    </div>
-                    
-                </div>
-            </div>
+      </div>
+      <div class="col-md-7 details d-flex flex-column justify-content-center px-4">
+        <div class="title-header title-header2 mb-4">
+          <h2 class="fw-bolder position-relative pb-3 animate-top transition-delay-1">{{ i18n['about_us'][current_lang] }}</h2>
+          <p class="fw-bold text-muted fs-3 animate-top transition-delay-2">{{ i18n['about_us_intro_paragraph'][current_lang] }}</p>
         </div>
-    </section>
+        <p class="text-muted fs-5 mt-4 animate-top transition-delay-3">{{ i18n['about_us_intro_details'][current_lang] }}</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="services py-5 section-animation">
-        <div class="container">
-            <div class="row justify-content-center align-items-center row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <div class="col mb-3 animate-top">
-                    <div class="card text-center  bg-transparent border-0">
-                        <div class="card-header bg-transparent border-0 p-0">
-                            <img class="" src="/assets/website_speed/speed_assets/uploads/settings/vision.png" alt="Title">
-                        </div>
-                        <div class="card-body py-0">
-                            <h3 class="card-title fw-bold">Our vision</h3>
-                            <p class="card-text mt-2">
-                                Providing high-quality and distinguished car shipping and logistics services to all customers around the world, by providing fully integrated services and car facilities, achieving the highest levels of customer satisfaction, and maintaining the spirit of competition and excellence in all aspects of our work.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 animate-top ">
-                    <div class="card text-center  bg-transparent border-0">
-                        <div class="card-header bg-transparent border-0 p-0">
-                            <img class="" src="/assets/website_speed/speed_assets/uploads/settings/conversation.png" alt="Title">
-                        </div>
-                        <div class="card-body py-0">
-                            <h3 class="card-title fw-bold">Our message</h3>
-                            <p class="card-text mt-2">
-                                Providing high-quality and distinguished car shipping and logistics services, transforming our vision into reality by investing in modern technologies and employing best practices in the field of shipping and logistics, and providing fully integrated and innovative car services.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 animate-top">
-                    <div class="card text-center  bg-transparent border-0">
-                        <div class="card-header bg-transparent border-0 p-0">
-                            <img class="" src="/assets/website_speed/speed_assets/uploads/settings/customer-service.png" alt="Title">
-                        </div>
-                        <div class="card-body py-0">
-                            <h3 class="card-title fw-bold">Our services</h3>
-                            <p class="card-text mt-2">
-                                Speed ​​Cars Trading and Importing Company was distinguished by providing a variety of services that allow its customers to fully meet their needs with the best quality and competitive prices.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Start Vision / Mission / Services Summary -->
+<section class="services py-5 section-animation">
+  <div class="container">
+    <div class="row justify-content-center align-items-center row-cols-1 row-cols-md-2 row-cols-lg-3">
+      <div class="col mb-3 animate-top">
+        <div class="card text-center bg-transparent border-0">
+          <div class="card-header bg-transparent border-0 p-0">
+            <img class="" src="/assets/website_speed/speed_assets/uploads/settings/vision.png" alt="Vision">
+          </div>
+          <div class="card-body py-0">
+            <h3 class="card-title fw-bold">{{ i18n['our_vision_title'][current_lang] }}</h3>
+            <p class="card-text mt-2">{{ i18n['our_vision_description'][current_lang] }}</p>
+          </div>
         </div>
-    </section>
-
-    <section class="about-us details-page py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title-header title-header2 mb-5 section-animation">
-                        <h2 class="fs-3 fw-bolder position-relative pb-3 animate-top">Transportation service in Europe</h2>
-                    </div>
-                    <div id="owl-slider-about1" class="owl-carousel owl-theme owl-theme-22 listing section-animation">
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 bg-transparent p-0 position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/52.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/52.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                    
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 p-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/56.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/56.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 p-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/65.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/65.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 bg-transparent p-0 position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/67.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/67.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 bg-transparent p-0 position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/68.webp" caption="">
-                                        <img  src="/assets/website_speed/speed_assets/uploads/about/68.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 section-animation">
-                    <p class="animate-top">
-                        Our company has been dealing with the acquisition and transport of vehicles from the US since 2015. Since then, we have managed to import over the thousound cars from different parts of North America. Apart from passenger cars, we also import motorcycles, quads and water scooters. We provide services for both individual clients and traders, as well as for wholesale customers. Thanks to our continuous cooperation with foreign companies, we can guarantee the best negotiated freight and land transport rates. In Speed, we bet on transparency and ease of purchase, which is why our transport rates are known before making a bid. On our website, you will find a calculator calculating the total transaction cost, and thanks to this, clients do not incur any additional hidden costs.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title-header title-header2 mb-5 section-animation">
-                        <h2 class="fs-3 fw-bolder position-relative pb-3 animate-top">Container packing</h2>
-                    </div>
-                    <div id="owl-slider-about2" class="owl-carousel owl-theme owl-theme-33 listing section-animation">
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 bg-transparent p-0 position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/52.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/52.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                    
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 p-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/56.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/56.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 p-0 bg-transparent position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/65.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/65.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 bg-transparent p-0 position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/67.webp" caption="">
-                                        <img src="/assets/website_speed/speed_assets/uploads/about/67.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="item p-2 animate-top">
-                            <div class="card border-0 bg-transparent text-center">
-                                <div class="card-header border-0 bg-transparent p-0 position-relative d-flex align-items-center justify-content-center top-animate-hover">
-                                    <a data-fancybox="gallery" class="h-100 w-100" href="/assets/website_speed/speed_assets/#" data-src="/assets/website_speed/speed_assets/uploads/about/68.webp" caption="">
-                                        <img  src="/assets/website_speed/speed_assets/uploads/about/68.webp" class="h-100 w-100"
-                                        alt="" />
-                                        <div class="card-body d-flex align-items-center justify-content-center">
-                                            <i class="fa fs-3 fa-search-plus text-white"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 section-animation">
-                    <p class="animate-top">
-                        Our company has been dealing with the acquisition and transport of vehicles from the US since 2015. Since then, we have managed to import over the thousound cars from different parts of North America. Apart from passenger cars, we also import motorcycles, quads and water scooters. We provide services for both individual clients and traders, as well as for wholesale customers. Thanks to our continuous cooperation with foreign companies, we can guarantee the best negotiated freight and land transport rates. In Speed, we bet on transparency and ease of purchase, which is why our transport rates are known before making a bid. On our website, you will find a calculator calculating the total transaction cost, and thanks to this, clients do not incur any additional hidden costs.
-                    </p>
-                </div>
-            </div>
+      </div>
+      <div class="col mb-3 animate-top">
+        <div class="card text-center bg-transparent border-0">
+          <div class="card-header bg-transparent border-0 p-0">
+            <img class="" src="/assets/website_speed/speed_assets/uploads/settings/conversation.png" alt="Message">
+          </div>
+          <div class="card-body py-0">
+            <h3 class="card-title fw-bold">{{ i18n['our_message_title'][current_lang] }}</h3>
+            <p class="card-text mt-2">{{ i18n['our_message_description'][current_lang] }}</p>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="col mb-3 animate-top">
+        <div class="card text-center bg-transparent border-0">
+          <div class="card-header bg-transparent border-0 p-0">
+            <img class="" src="/assets/website_speed/speed_assets/uploads/settings/customer-service.png" alt="Services">
+          </div>
+          <div class="card-body py-0">
+            <h3 class="card-title fw-bold">{{ i18n['our_services_title'][current_lang] }}</h3>
+            <p class="card-text mt-2">{{ i18n['our_services_description'][current_lang] }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- End About Page -->
-
-    <!-- Start footer Section -->
-    
+<!-- Start About Details Services Combined -->
+<section class="about-us details-page py-5">
+  <div class="container">
+    <div class="row">
+        {% for key in ['service_auction', 'service_shipping', 'service_clearance', 'service_parts', 'service_inspection'] %}
+        {% set desc_key = key + '_desc' %}
+        <div class="col-md-12 mb-5">
+          <div class="title-header title-header2 section-animation">
+            <h2 class="fs-3 fw-bolder position-relative pb-3 animate-top">{{ i18n[key][current_lang] }}</h2>
+            <p class="fw-bold text-muted fs-3 animate-top transition-delay-2">{{ i18n[desc_key][current_lang] }}</p>
+          </div>
+        </div>
+      {% endfor %}
+      
+      
+    </div>
+  </div>
+</section>
 {% endblock %}
-
-{% block script %}
-<script>
-    Fancybox.bind("[data-fancybox]", {
-        Image: {
-            zoom: false,
-        },
-        helpers : { 
-            title : { type : 'inside' }
-        }, // helpers
-        beforeLoad: function() {
-            this.title = (this.title ? '' + this.title + '<br />' : '') + 'Image ' + (this.index + 1) + ' of ' + this.group.length;
-        },
-    });
-</script>
-{% endblock %}
-

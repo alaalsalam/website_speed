@@ -118,12 +118,14 @@ website_speed/templates/includes/footer.html
 website_speed/templates/includes/head.html
 website_speed/templates/includes/navbar.html
 website_speed/website_speed/__init__.py
+website_speed/www/__init__.py
 website_speed/www/index.html
 website_speed/www/login frappe.html
 website_speed/www/login.html
 website_speed/www/login.py
 website_speed/www/login_speed.html
 website_speed/www/signup.html
+website_speed/www/__pycache__/__init__.py
 website_speed/www/pages/__init__.py
 website_speed/www/pages/about-us.html
 website_speed/www/pages/auctions.html
@@ -135,6 +137,7 @@ website_speed/www/pages/login.html
 website_speed/www/pages/search.html
 website_speed/www/pages/signup.html
 website_speed/www/pages/tracking.html
+website_speed/www/userdashboard/__init__.py
 website_speed/www/userdashboard/current-bids.html
 website_speed/www/userdashboard/lost-bids.html
 website_speed/www/userdashboard/profile.html

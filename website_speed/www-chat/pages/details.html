@@ -1,0 +1,322 @@
+{% extends '/templates/base_speed.html' %}
+
+{% block title %} Auctions{% endblock %}
+
+{% block content %}
+<!-- End Navbar -->
+
+<section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+    <div class="container position-relative z-1">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="text-white load-animate-left mb-5">Care Info</h1>
+                <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                    
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Start Filter Section -->
+<section class="filter py-3 section-animation inner-pages ">
+    <div class="container">
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-md-4 form-group animate-top">
+                    <select name="vehiclesType" id="vehiclesType" class="form-control select2 form-select " id="basic-usage">
+                        
+                    </select>
+                </div>
+                <div class="col-md-3 form-group animate-top transition-delay-1">
+                    <select name="models" id="models" class="form-control select2 form-select " id="basic-usage">
+                        
+                    </select>
+                </div>
+                <div class="col-md-3 form-group animate-top transition-delay-2">
+                    <select name="makes" id="makes" class="form-control select2 form-select ">
+
+                    </select>
+                </div>
+                <div class="col-md-2 form-group animate-top transition-delay-3">
+                    <button type="submit" class="btn btn-primary h-100"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</section>
+<!-- End Filter Section -->
+
+<section class="details py-5">
+    <div class="container bg-white">
+        <div class="row" >
+            <div class="col-md-12" id="details-info">
+
+            </div>
+            <div class="col-lg-8 gallery gallary-all gallary-js">
+                <div class="row row-cols-1" >
+                    <div class="col p-2 border-bottom">
+                        <div class="card relative bg-transparent border-0 p-0">
+                            <div class="card-header bg-transparent gallary-image border-0 p-0 d-flex align-items-center justify-content-center flex-column">
+                                <img src=""
+                                    alt="" class="main-image w-100">
+                                
+                                    <div class="gallary-api">
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="text-dark border-bottom py-4">Condition Details</h4>
+                <div class="list-info px-2">
+
+                </div>
+                <h4 class="text-dark border-bottom py-4">Vehicle Details</h4>
+                <div class="vehicle-details px-2">
+
+                </div>
+            </div>
+            <div class="col-lg-4 h-auto">
+                <div class="card bg-white p-3 date-info mb-3">
+
+                </div>
+                <div class="card bg-white p-3 mb-4">
+                    <div class="form-group input-info d-flex align-items-center"></div>
+                    <a href="" class="alert alert-warning">Please login to be able bid this vehicle.</a>
+                    <div class="date-time"></div>
+                </div>
+                <div class="card bg-white p-3 calculator">
+                    <h4>Final Price Calculator</h4>
+                    <div class="calculator-info">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 condition-details">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Start footer Section -->
+
+    
+    {% endblock %}
+{% block script %}
+
+   
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
+    const auctionName = urlParams.get('auction_name')
+    let url = new URL(
+        "https://api.copart-iaai-api.com/api/v1/get-car-lot" 
+    );
+    
+    let params = {
+        "vin_number": "5UXKR0C52G0P21189",
+        "lot_id": id,
+        "api_token": "7471ef49828d1441aeb4516ec5bf76cfb62fa52e4125d04bc71b41dcfce0f829",
+    };
+    
+    Object.keys(params)
+        .forEach(key => url.searchParams.append(key, params[key]));
+    
+    let headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "Api-Version": "V1",
+    };
+    
+    let body = "";
+    
+    fetch(url, {
+        method: "POST",
+        headers,
+        body: body,
+    }).then(response => response.json())
+    .then((data) => {
+        data.result.forEach((item)=> {
+            if(item.auction_name == auctionName){
+                var salesHistory = ' No information';
+                var countHistory = 0;
+                var seller = ' No information';
+                var odometer =' No information';
+                item.sales_history.forEach((history) => {
+                    countHistory++;
+                    salesHistory = history.purchase_price;
+                    DateHistory = history.sale_date;
+                })
+                if(item.seller != null){
+                    seller = item.seller;
+                }
+                if(item.odometer != null){
+                    odometer = item.odometer;
+                }
+                document.querySelector('.breadcrump-list').innerHTML += `
+                    <li>
+                        <a href="../auctions" class="text-white mx-1"> Home </a>
+                    </li>
+                    <li>
+                        <a href="../auctions" class="text-white mx-1"><span class="mx-2">/</span> `+item.vehicle_type+` </a>
+                    </li>
+                    <li>
+                        <a class="text-white mx-1"><span class="mx-2">/</span> `+item.make+` </a>
+                    </li>
+                `;
+
+                const breadcrumpLi = document.querySelectorAll('.breadcrump-list li');
+                breadcrumpLi.forEach((item) => {
+                    item.classList.add('active-li');
+                });
+
+                var info = `
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="fs-3">`+item.year+` `+item.make+` `+item.model+` <span class="btn btn-info">`+item.auction_name+`</span></h5>    
+                            <p class="text-dark border py-2 px-3">Final bid: $`+salesHistory+`</p>
+                        </div>
+                        <p class="mb-1">Lot: 0-`+item.lot_id+`</p>    
+                        <p class="mb-1">VIN: `+item.vin+`</p>    
+                        <p class="mb-1">Seller: `+seller+`</p>    
+                        <p class="mb-1">Estimated final price: `+odometer+`</p>   
+                        <h5 class="fw-bold mt-5 fs-3">Sales History(`+countHistory+`)</h5> 
+                `;
+                document.querySelector('#details-info').innerHTML = info
+                document.querySelector('.main-image').setAttribute('src', item.car_photo.photo[0])
+                var ph = document.querySelector('.gallary-api').innerHTML;
+                item.car_photo.photo.forEach((photos)=> {
+                    ph += `
+                        <div class="item text-start p-2">
+                            <img src="/assets/website_speed/speed_assets/`+photos+`"
+                                alt="" class="w-100 h-100" />
+                        </div>
+                    `;
+                })
+
+                document.querySelector('.gallary-api').innerHTML = ph
+                console.log(item)
+                var infoDetails = `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Loss</span><span>-</span></p>`
+                
+                if(item.primary_damage != null){
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Primary damage</span><span>`+item.primary_damage+`</span></p>`
+                }else{
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Primary damage</span><span>-</span></p>`
+                }
+                if(item.secondary_damage != null){
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Secondary damage</span><span>`+item.secondary_damage+`</span></p>`
+                }else{
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Secondary damage</span><span>-</span></p>`
+                }
+                if(item.odometer != null){
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Odometer</span><span>`+item.odometer+`</span></p>`
+                }else{
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Odometer</span><span>-</span></p>`
+                }
+                if(item.car_keys != null){
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Key</span><span>`+item.car_keys+`</span></p>`
+                }
+                else{
+                    infoDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Key</span><span>-</span></p>`
+                }
+
+                document.querySelector('.list-info').innerHTML = infoDetails
+
+                var vehicleDetails = `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>VIN</span><span>`+item.vin+`</span></p>`
+                vehicleDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Short info</span><span>`+item.series+`*`+item.fuel+`*`+item.make+`*`+item.transmission+`</span></p>`
+                vehicleDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Model</span><span>`+item.model+`</span></p>`
+                vehicleDetails += `<p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Transmission</span><span>`+item.transmission+`</span></p>`
+                document.querySelector('.vehicle-details').innerHTML = vehicleDetails
+
+                document.querySelector('.input-info').innerHTML = `
+                <i class="fa-solid fa-minus p-3 border"></i>
+                <input type="text" name="price" class="form-control rounded-0 input-price text-center" value="$`+salesHistory+`">
+                <i class="fa-solid fa-plus p-3 border"></i>
+                `;
+
+                document.querySelector('.date-info').innerHTML = `
+                    <div class="date p-3 bg-light">
+                        <p class="fw-bold ">
+                            <i class="fa-solid fa-calendar-days"></i> `+new Date(DateHistory)+`
+                        </p>
+                    </div>
+                `;
+                // minus('.fa-minus');
+
+                var countDownDate = DateHistory;
+                var item;
+                var myfunc = setInterval(function() {
+                
+                var now = new Date().getTime();
+                var timeleft = countDownDate - now;
+                        
+                    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+                    
+                    if(timeleft < 0){
+                        document.querySelector('.date-time').innerHTML = `<p class="text-danger fs-5 fw-bold"><i class="fa-solid fa-triangle-exclamation"></i> Pre-Bid Closed</p>`;
+                    }else{
+                        document.querySelector('.date-time').innerHTML = `<p class="text-info fs-5 fw-bold"><i class="fa-solid fa-triangle-exclamation"></i> `+ days + "d " + hours + "h " + minutes + " min left " +`</p>`;
+                    }
+                    
+                }, 1000)
+
+                document.querySelector('.calculator-info').innerHTML = `
+                    <p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Lot Price</span><span>`+salesHistory+`</span></p>
+                `;
+                document.querySelector('.calculator-info').innerHTML += `
+                    <p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Auction Fees</span><span>$688</span></p>
+                `;
+                document.querySelector('.calculator-info').innerHTML += `
+                    <p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom">
+                        <span>Shipping to 
+                            <select name="" id="">
+                                <option value="">Rotterdam, NL</option>
+                                <option value="">Bremerhaven, DE</option>
+                                <option value="">Gdynia, PL</option>
+                                <option value="">Aqaba, JO</option>
+                                <option value="">Jebel Ali, AE</option>
+                                <option value="">Klaipeda, LT</option>
+                                <option value="">Poti, GE</option>
+                                <option value="">Sohar, OM</option>
+                                <option value="">Umm Qasr, IQ</option>
+                            </select>
+                        </span>
+                        <span>$1,575</span>
+                    </p>
+                `;
+                document.querySelector('.calculator-info').innerHTML += `
+                    <p class="d-flex justify-content-between align-items-center py-3 mb-0 border-bottom"><span>Speed Fee</span><span>$450</span></p>
+                `;
+                document.querySelector('.calculator-info').innerHTML += `
+                    <p class="d-flex justify-content-between align-items-center py-3 mb-0"><span>Final Price</span><span>$6,678</span></p>
+                `;
+            }
+        })
+        // if(data)
+        
+    });
+
+    // function minus(value){
+    //     var minus = document.querySelector(value);
+    //     minus.addEventListener('click', function(){
+    //         var val = document.querySelector('.input-price').value
+    //         var num = parseInt(val) -= 500;
+    //         // val.value = '$' + num.toString();
+    //         console.log(num);
+    //     })
+    // }
+</script>
+{% endblock %}
+
+

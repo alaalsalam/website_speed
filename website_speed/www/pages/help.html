@@ -1,125 +1,110 @@
-{% extends '/templates/base_speed.html' %}
+{% extends 'templates/base_speed.html' %}
 
-{% block title %} Help {% endblock %}
+{% block title %}{{ i18n['help_title'][current_lang] }}{% endblock %}
 
 {% block content %}
- <!-- End Navbar -->
 
-    <!-- Start Breadcrump Section -->
-    <section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
-        <div class="container position-relative z-1">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1 class="text-white load-animate-left mb-5">Help</h1>
-                    <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
-                        <li>
-                            <a href="../index" class="text-white mx-1">Home </a>
-                        </li>
-                        <li>
-                            <a class="text-white mx-1"><span class="mx-2">/</span> Help </a>
-                        </li>
-                    </ul>
-                </div>
-                
+<!-- ========================= -->
+<!-- 📍 Breadcrump Section -->
+<!-- ========================= -->
+<section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+    <div class="container position-relative z-1">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="text-white load-animate-left mb-4">{{ i18n['help_title'][current_lang] }}</h1>
+                <ul class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                    <li>
+                        <a href="../index" class="text-white mx-1">{{ i18n['home'][current_lang] }}</a>
+                    </li>
+                    <li>
+                        <span class="text-white mx-2">/</span>
+                        <span class="text-white mx-1">{{ i18n['help_title'][current_lang] }}</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
-    <!-- End Breadcrump Section -->
+    </div>
+</section>
 
-    <!-- Start About Page -->
-
-    <section class="help details-page py-5 bg-white ">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-12 section-animation inner-pages">
-                    <div class="title-header animate-top">
-                        <h2 class="fs-1 text-center">4 Steps to Buying a Vehicle with Speed</h2>
-                    </div>
-                    <p class="animate-top">
-                        To make the import of vehicles from the USA clear and transparent, we've created the Speed service. Auctions are conducted without intermediaries, with no hidden costs - you're the one making all the decisions! You choose the car you want to bid on and the amount you're willing to pay, and we help you win the auction! Importantly, at Speed, there are no costs incurred before you win a bid on a car. Registration and participation in the auction are free! We only require a refundable deposit to secure your bidding. Speed allows you to quickly and easily order auctions, purchase, and ship vehicles, with an option for "doorstep" delivery. Speed stands for 100% transparency and full awareness of the costs incurred, as well as control over the location of your vehicle.
-                    </p>
+<!-- ========================= -->
+<!-- 📍 Help Main Section -->
+<!-- ========================= -->
+<section class="help details-page py-5 bg-white">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-12 section-animation">
+                <div class="title-header animate-top">
+                    <h2 class="fs-1 text-center">{{ i18n['buying_steps_title'][current_lang] }}</h2>
                 </div>
-            </div>
-            <div class="row help-steps mb-5 section-animation">
-                <div class="col-md-9 border-bottom animate-top">
-                    <h4 class="text-info mb-5">Step 1</h4>
-                    <h2 class="mb-2">Find your dream car</h2>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Once registered, you'll have the opportunity to track all the vehicles you're interested in from one tab. You'll also gain:
-                    </p>
-                    <ul class="my-4 fs-5">
-                        <li>the ability to add cars to your watchlist,</li>
-                        <li>the ability to view final prices of archived offers,</li>
-                    </ul>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
-                    <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-3.svg" alt="">
-                </div>
-            </div>
-            <div class="row help-steps mb-5 section-animation">
-                <div class="col-md-9 border-bottom animate-top">
-                    <h4 class="text-info mb-5">Step 2</h4>
-                    <h2 class="mb-2">Make a Refundable Deposit</h2>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Once registered, you'll have the opportunity to track all the vehicles you're interested in from one tab. You'll also gain:
-                    </p>
-                    <ul class="my-4 fs-5">
-                        <li>the ability to add cars to your watchlist,</li>
-                        <li>the ability to view final prices of archived offers,</li>
-                    </ul>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
-                    <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg" alt="">
-                </div>
-            </div>
-            <div class="row help-steps mb-5 section-animation">
-                <div class="col-md-9 border-bottom animate-top">
-                    <h4 class="text-info mb-5">Step 2</h4>
-                    <h2 class="mb-2">Make a Refundable Deposit</h2>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Once registered, you'll have the opportunity to track all the vehicles you're interested in from one tab. You'll also gain:
-                    </p>
-                    <ul class="my-4 fs-5">
-                        <li>the ability to add cars to your watchlist,</li>
-                        <li>the ability to view final prices of archived offers,</li>
-                    </ul>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
-                    <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg" alt="">
-                </div>
+                <p class="text-center fs-5 animate-top mt-4">
+                    {{ i18n['buying_steps_intro'][current_lang] }}
+                </p>
             </div>
         </div>
-    </section>
 
-    <!-- End About Page -->
+        {% set steps = [
+            {
+                'number': '1',
+                'title': i18n['step1_title'][current_lang],
+                'text': i18n['step1_text'][current_lang],
+                'image': '/assets/website_speed/speed_assets/uploads/topics/icon-page-3.svg'
+            },
+            {
+                'number': '2',
+                'title': i18n['step2_title'][current_lang],
+                'text': i18n['step2_text'][current_lang],
+                'image': '/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg'
+            },
+            {
+                'number': '3',
+                'title': i18n['step3_title'][current_lang],
+                'text': i18n['step3_text'][current_lang],
+                'image': '/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg'
+            },
+            {
+                'number': '4',
+                'title': i18n['step4_title'][current_lang],
+                'text': i18n['step4_text'][current_lang],
+                'image': '/assets/website_speed/speed_assets/uploads/topics/icon-page-3.svg'
+            },
+            {
+                'number': '5',
+                'title': i18n['step5_title'][current_lang],
+                'text': i18n['step5_text'][current_lang],
+                'image': '/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg'
+            }
+        ] %}
 
-    <!-- Start footer Section -->
+        {% for step in steps %}
+        <div class="row help-steps mb-5 section-animation">
+            <div class="col-md-9 border-bottom animate-top">
+                <h4 class="text-info mb-4">{{ i18n['step'][current_lang] }} {{ step.number }}</h4>
+                <h2 class="mb-3">{{ step.title }}</h2>
+                <p class="fs-5">{{ step.text }}</p>
+            </div>
+            <div class="col-md-3 d-flex align-items-center justify-content-center image-animate">
+                <img src="{{ step.image }}" alt="Step {{ step.number }}" class="img-fluid">
+            </div>
+        </div>
+        {% endfor %}
 
-    {% endblock %}
+    </div>
+</section>
+
+{% endblock %}
+
+{% block script %}
+<script>
+Fancybox.bind("[data-fancybox]", {
+    Image: {
+        zoom: false,
+    },
+    helpers: {
+        title: { type: 'inside' }
+    },
+    beforeLoad: function() {
+        this.title = (this.title ? '' + this.title + '<br />' : '') + 'Image ' + (this.index + 1) + ' of ' + this.group.length;
+    },
+});
+</script>
+{% endblock %}

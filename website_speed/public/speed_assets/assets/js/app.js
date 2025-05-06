@@ -37,30 +37,170 @@ if(document.querySelector('.settings-mobile')){
     });
 }
 
-$(document).ready(function () {
+// $(document).ready(function () {
     
-    $("#owl-slider-adv").owlCarousel({
+
+//     var isRTL = document.documentElement.dir === 'rtl';
+//     var navIcons = isRTL
+//         ? ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+//         : ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-left"></i>'];
+
+//     $("#owl-slider-adv").owlCarousel({
+//         items: 3,
+//         autoplay: false,
+//         rtl: isRTL,
+//         lazyLoad: true,
+//         autoplayTimeout: 3000,
+//         dots: false,
+//         nav: true,
+//         navText: navIcons,
+//         responsive: {
+//             0: {
+//                 items: 1
+//             },
+//             600: {
+//                 items: 2
+//             },
+//             1000: {
+//                 items: 3
+//             }
+//         }
+//     });
+    
+//     $("#owl-slider-adv").trigger('refresh.owl.carousel');
+
+//     $("#owl-slider-warranties").owlCarousel({
+//         items: 6,
+//         autoplay: false,
+//         rtl: false,
+//         lazyLoad:true,
+//         autoplayTimeout: 3000,
+//         dots: false,
+//         nav: true,
+//         navText: ['<i class="fa fa-angle-right">', '<i class="fa fa-angle-left">'],
+//         responsive: {
+//             0: {
+//                 items: 1
+//             },
+//             600: {
+//                 items: 2
+//             },
+//             1000: {
+//                 items: 6
+//             }
+//         }
+//     });
+
+//     $("#owl-slider-gallry-info").owlCarousel({
+//         items: 3,
+//         autoplay: false,
+//         rtl: true,
+//         loop: true,
+//         autoplayTimeout: 3000,
+//         dots: false,
+//         nav: false,
+//         responsive:{
+//             0:{
+//                 items:1
+//             },
+//             600:{
+//                 items:2
+//             },
+//             1000:{
+//                 items:3
+//             }
+//         }
+//     });
+//     $("#owl-slider-about1").owlCarousel({
+//         items: 4,
+//         autoplay: false,
+//         rtl: false,
+//         loop: true,
+//         autoplayTimeout: 3000,
+//         dots: true,
+//         nav: false,
+//         responsive:{
+//             0:{
+//                 items:1
+//             },
+//             600:{
+//                 items:2
+//             },
+//             1000:{
+//                 items:4
+//             }
+//         }
+//     });
+//     $("#owl-slider-about2").owlCarousel({
+//         items: 4,
+//         autoplay: false,
+//         rtl: false,
+//         loop: true,
+//         autoplayTimeout: 3000,
+//         dots: true,
+//         nav: false,
+//         responsive:{
+//             0:{
+//                 items:1
+//             },
+//             600:{
+//                 items:2
+//             },
+//             1000:{
+//                 items:4
+//             }
+//         }
+//     });
+
+
+//     $('.gallary-api .item img').on('click', function() {
+//         var img = $(this).attr('src');
+//         $(this).parent().parent().parent().children().attr('src', img);
+//         console.log(img)
+//     })
+// });
+
+$(document).ready(function () {
+    var isRTL = document.documentElement.dir === 'rtl';
+    var navIcons = isRTL
+        ? ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+        : ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-left"></i>'];
+
+    var $owlAdv = $("#owl-slider-adv");
+
+    $owlAdv.owlCarousel({
         items: 3,
         autoplay: false,
-        rtl: false,
-        lazyLoad:true,
+        rtl: isRTL,
+        lazyLoad: true,
         autoplayTimeout: 3000,
         dots: false,
         nav: true,
-        navText: ['<i class="fa fa-angle-right">', '<i class="fa fa-angle-left">'],
+        navText: navIcons,
         responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            }
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 3 }
         }
     });
-    
+
+    if (isRTL) {
+        setTimeout(function () {
+            $owlAdv.find('img.owl-lazy').each(function () {
+                var $img = $(this);
+                var src = $img.attr('data-src');
+                if (src) {
+                    $img.attr('src', src);
+                    $img.removeAttr('data-src');
+                    $img.removeClass('owl-lazy');
+                }
+            });
+        }, 500);
+    }
+
+
+    $("#owl-slider-adv").trigger('refresh.owl.carousel');
+
     $("#owl-slider-warranties").owlCarousel({
         items: 6,
         autoplay: false,
@@ -150,7 +290,11 @@ $(document).ready(function () {
         $(this).parent().parent().parent().children().attr('src', img);
         console.log(img)
     })
+
 });
+
+
+
 
 $( '.select2' ).select2( {
     theme: 'bootstrap-5'

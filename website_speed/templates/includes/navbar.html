@@ -1,74 +1,84 @@
-    <!-- Start Navbar -->
-    <section id="header" class="position-fixed w-100 top-0 left-0">
-        <div class="header pt-2">
-            <div class=" container-fluid">
-                <div class="nav-bar d-flex align-items-center justify-content-between">
-                    <div class="brand image-animate">
-                        <a href="/index">
-                            <img src="/assets/website_speed/speed_assets/uploads/settings/logo3.png" alt="" class="">
-                        </a>
+<!-- Start Navbar -->
+<section id="header" class="position-fixed w-100 top-0 left-0">
+    <div class="header pt-2">
+        <div class="container-fluid">
+            <div class="nav-bar d-flex align-items-center justify-content-between">
+                <!-- Logo -->
+                <div class="brand image-animate">
+                    <a href="/index">
+                        <img src="/assets/website_speed/speed_assets/uploads/settings/logo3.png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Navigation List -->
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
                     </div>
-                    <!-- <i class='bx bx-toggle-left change-theme' id="theme-button"></i> -->
-                    <div class="nav-list">
-                        <div class="hamburger"><div class="bar"></div></div>
-                        <ul class="mb-0">
-                            <li>
-                                <a href="../pages/search" data-after="Home">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    Search
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../userdashboard/summary" data-after="My Account">
-                                    <i class="fa-regular fa-user"></i>
-                                    My Account
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../pages/calculator" data-after="Calculator">
-                                    <i class="fa-solid fa-calculator"></i>
-                                    Calculator
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../pages/about-us" data-after="About">
-                                    <i class="fa-solid fa-eject"></i>
-                                    About Us
-                                </a>
-                            </li>
-                            <!-- <li>
-                                <a href="../pages/#Services" data-after="Services">
-                                    <i class="fa-brands fa-servicestack"></i>
-                                    Services
-                                </a>
-                            </li> -->
-                            <li>
-                                <a href="../pages/help" data-after="help">
-                                    <i class="fa-solid fa-handshake-angle"></i>
-                                    Help
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../pages/contact-us" data-after="Contact">
-                                    <i class="fa-solid fa-location-crosshairs"></i>
-                                    Contact
-                                </a>
-                            </li>
-                            <li class="acount  align-items-center justify-content-between">
-                                <a href="../login" class="border py-3 px-3 mx-2 rounded-2 d-inline-block fs-4 text-white">Login</a>
-                                <a href="../signup" class="py-3 px-3 btn btn-primary mx-2 d-inline-block fs-4 text-white">Sign Up</a>
-                            </li>
-                            <li>
-                                <a href="../login#Speed-ar" data-after="Arabic">
-                                    العربية
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="mb-0">
+                        <li>
+                            <a href="/index">
+                                {{ i18n['home'][current_lang] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../pages/calculator" data-after="Calculator">
+                                {{ i18n['calculator'][current_lang] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../pages/about-us" data-after="About">
+                                {{ i18n['about_us'][current_lang] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../pages/help" data-after="help">
+                                {{ i18n['help'][current_lang] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../pages/contact-us" data-after="Contact">
+                                {{ i18n['contact'][current_lang] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../pages/shipping_rates" data-after="Shipping Rates">
+                                {{ i18n['shipping_rates'][current_lang] }}
+                            </a>
+                        </li>
+                        <li class="acount align-items-center justify-content-between">
+                            <a href="../login" class="border py-3 px-3 mx-2 rounded-2 d-inline-block fs-4 text-white">
+                                {{ i18n['login'][current_lang] }}
+                            </a>
+                        </li>
+                        <li>
+                            {% set current_lang = frappe.request.cookies.get('preferred_lang', 'ar') %}
+                            <a href="javascript:void(0);" id="lang-toggle" data-lang="{{ 'en' if current_lang == 'ar' else 'ar' }}">
+                                {{ 'English' if current_lang == 'ar' else 'العربية' }}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Navbar -->
+    </div>
+</section>
+<!-- End Navbar -->
 
-    <!-- Start Hero Section -->
+<!-- Language Switch Script -->
+<script>
+    document.getElementById('lang-toggle')?.addEventListener('click', function () {
+        const lang = this.getAttribute('data-lang');
+        const currentUrl = window.location.pathname + window.location.search;
+
+        fetch(`/set_language?lang=${lang}&redirect_to=${currentUrl}`, {
+            method: 'GET',
+            credentials: 'same-origin'
+        }).then(() => {
+            window.location.reload();
+        }).catch((err) => {
+            console.error("Language switch failed", err);
+            alert("حدث خطأ أثناء تغيير اللغة.");
+        });
+    });
+</script>

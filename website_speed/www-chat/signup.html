@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.css">
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/style.css">
+    
+</head>
+<body>
+    <section class="signup">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-lg-6 image-main position-relative">
+                    <div class="d-flex align-items-center justify-content-center h-100 position-relative z-1 flex-column">
+                        <h1 class="text-white">Sign UP</h1>
+                        <p class="text-white text-center">Speed care about every step by step process. Fast, without unnecessary paperwork and additional charges. The simplest way to import your first American's car.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-relative bg-white">
+                    <div class="d-flex align-items-center justify-content-center h-100 px-5 w-100">
+                        <form action="" method="post" class="w-100">
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3">First Name*</label>
+                                <input type="text" name="firstname" class="form-control" placeholder="Enter Your First Name">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3">Last Name*</label>
+                                <input type="text" name="lastname" class="form-control" placeholder="Enter Your Last Name">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3">Email*</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3 d-block">Phone*</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter Your Phone Number">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3">Password*</label>
+                                <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3">Confirm Password*</label>
+                                <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Your Password">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <input type="checkbox" name="emailsSpeed" class="form-check-input">
+                                <label for="" class="mx-3 text-muted">* I want to receive Speed emails</label>
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <input type="checkbox" name="yearsOld" class="form-check-input">
+                                <label for="" class="mx-3 text-muted">* I hereby declare that I am over eighteen years old.</label>
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/assets/website_speed/speed_assets/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "auto",
+            geoIpLookup: getIp,
+            utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+
+        function getIp(callback) {
+            fetch('https://ipinfo.io/json?token=0c4e06494e69b2', { headers: { 'Accept': 'application/json' }})
+            .then((resp) => resp.json())
+            .catch(() => {
+                return {
+                country: 'us',
+                };
+            })
+            .then((resp) => callback(resp.country));
+         }
+    </script>
+</body>
+</html>

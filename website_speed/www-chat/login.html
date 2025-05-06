@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website_speed/speed_assets/assets/css/style.css">
+    
+</head>
+<body>
+    <section class="login">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-lg-6 image-main position-relative h-100">
+                    <div class="d-flex align-items-center justify-content-center h-100 position-relative z-1 flex-column">
+                        <h1 class="text-white">Login</h1>
+                        <p class="text-white text-center">Speed care about every step by step process. Fast, without unnecessary paperwork and additional charges. The simplest way to import your first American's car.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-relative h-100 bg-white">
+                    <div class="d-flex align-items-center justify-content-center h-100 px-5 w-100">
+                        <form id="login-form" method="post" class="w-100">
+                            <div class="form-group mb-4 w-100">
+                                <label for="" class="mb-3">{{ login_label or _("Email")}}</label>
+                                <input type="text" name="username" class="form-control" placeholder="Enter Your Username">
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="" class="mb-3">Password</label>
+                                    <a href="" class="fs-5">Forgot Password</a>
+                                </div>
+                                <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
+                            </div>
+                            <!-- ------ -->
+                            <div class="form-group mb-4 w-100">
+                                <input type="checkbox" name="rememberMe" class="form-check-input">
+                                <label for="" class="mx-3">Remember me</label>
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <p class="text-center">Don’t have an account?  <a href="signup.html">Sign</a></p>
+                            </div>
+                            <div class="form-group mb-4 w-100">
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/assets/website_speed/speed_assets/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website_speed/speed_assets/assets/js/jquery.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            $('#login-form').on('submit', function(e) {
+                e.preventDefault();
+        
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/method/login',
+                    data: {
+                        usr: $('input[name="username"]').val(),
+                        pwd: $('input[name="password"]').val()
+                    },
+                    headers: {
+                        "Accept": "application/json"
+                    },
+                    success: function(response) {
+                        window.location.href = '/app';
+                    },
+                    error: function(xhr) {
+                        let errorMsg = "Login failed. Please check your credentials.";
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMsg = xhr.responseJSON.message;
+                        }
+                        alert(errorMsg);
+                    }
+                });
+            });
+        });
+    </script>         -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#login-form').on('submit', function(e) {
+                e.preventDefault();
+        
+                const lang = getCookie('preferred_lang') || 'en';
+        
+                const i18n = {
+                    loading: lang === 'ar' ? 'جاري تسجيل الدخول ...' : 'Logging in ...',
+                    success: lang === 'ar' ? 'تم تسجيل الدخول بنجاح!' : 'Logged in successfully!',
+                    fail_title: lang === 'ar' ? 'خطأ' : 'Oops ...',
+                    fail_message: lang === 'ar' ? 'فشل تسجيل الدخول. تأكد من صحة البيانات.' : 'Login failed. Please check your credentials.',
+                    try_again: lang === 'ar' ? 'حاول مرة أخرى' : 'Try Again'
+                };
+        
+                Swal.fire({
+                    title: i18n.loading,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    }
+                });
+        
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/method/login',
+                    data: {
+                        usr: $('input[name="username"]').val(),
+                        pwd: $('input[name="password"]').val()
+                    },
+                    headers: {
+                        "Accept": "application/json"
+                    },
+                    success: function(response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: i18n.success,
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(() => {
+                            window.location.href = '/app';
+                        });
+                    },
+                    error: function(xhr) {
+                        let errorMsg = i18n.fail_message;
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMsg = xhr.responseJSON.message;
+                        }
+        
+                        Swal.fire({
+                            icon: 'error',
+                            title: i18n.fail_title,
+                            text: errorMsg,
+                            confirmButtonText: i18n.try_again
+                        });
+                    }
+                });
+            });
+        
+            function getCookie(name) {
+                let value = "; " + document.cookie;
+                let parts = value.split("; " + name + "=");
+                if (parts.length === 2) return parts.pop().split(";").shift();
+            }
+        });
+    </script>
+    
+
+
+</body>
+</html>

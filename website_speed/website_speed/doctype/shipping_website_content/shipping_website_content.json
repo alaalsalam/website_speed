@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{from} - {to}",
+ "creation": "2025-04-27 15:13:36.755468",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "instructions_section",
+  "instructions",
+  "validate_date_section",
+  "from",
+  "column_break_jbbc",
+  "to",
+  "section_break_ohku",
+  "destination_country",
+  "destination_port",
+  "column_break_omik",
+  "car_is_not_drivable_fee",
+  "electric_and_hybrid_fee",
+  "section_break_tfnb",
+  "additional_costs",
+  "shipping_price_list_section",
+  "fetch_price_list",
+  "shipping_price_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "instructions_section",
+   "fieldtype": "Section Break",
+   "label": "Instructions"
+  },
+  {
+   "fieldname": "instructions",
+   "fieldtype": "Text Editor",
+   "label": "Instructions"
+  },
+  {
+   "fieldname": "validate_date_section",
+   "fieldtype": "Section Break",
+   "label": "Validate Date"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Date",
+   "label": "From"
+  },
+  {
+   "fieldname": "column_break_jbbc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "label": "To"
+  },
+  {
+   "fieldname": "shipping_price_list_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Price List"
+  },
+  {
+   "fieldname": "shipping_price_list",
+   "fieldtype": "Table",
+   "label": "Shipping Price List",
+   "options": "Shipping Price List"
+  },
+  {
+   "fieldname": "fetch_price_list",
+   "fieldtype": "Button",
+   "label": "Fetch Price List"
+  },
+  {
+   "fieldname": "destination_country",
+   "fieldtype": "Link",
+   "label": "Destination Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "destination_port",
+   "fieldtype": "Link",
+   "label": "Destination Port",
+   "options": "Port"
+  },
+  {
+   "fieldname": "section_break_ohku",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_omik",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "car_is_not_drivable_fee",
+   "fieldtype": "Currency",
+   "label": "Car is not Drivable Fee"
+  },
+  {
+   "fieldname": "electric_and_hybrid_fee",
+   "fieldtype": "Currency",
+   "label": "Electric and Hybrid Fee"
+  },
+  {
+   "fieldname": "section_break_tfnb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "additional_costs",
+   "fieldtype": "Table",
+   "label": "Additional Costs",
+   "options": "Additional Costs"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-05 14:26:30.159372",
+ "modified_by": "alaalsalam101@gmail.com",
+ "module": "Website Speed",
+ "name": "Shipping Website Content",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
