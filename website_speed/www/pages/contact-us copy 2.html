@@ -27,39 +27,31 @@
 <div class="content-area contact-section" :class="{'shifted-content': isStatic}">
     <div class="contact-us">
         {% if current_lang == 'ar' %}
-        <div class="information" dir="rtl" data-aos="fade-right">
+        <div class="information" style="direction: rtl; text-align: right;" data-aos="fade-right">
         {% else %}
-        <div class="information" dir="ltr" data-aos="fade-right">
+        <div class="information" style="direction: ltr; text-align: left;" data-aos="fade-right">
         {% endif %}
-            <div class="container">
-                <div class="text-start" data-aos="fade-right">
-                    <h4 class="fw-bold mb-2">{{ i18n['questions'][current_lang] }}</h4>
-                    <h1 class="fw-bold title">{{ i18n['contact'][current_lang] }}</h1>
-                    <p class="desc">{{ i18n['contact_intro'][current_lang] }}</p>
+            <h4 class="fw-bold mb-2">{{ i18n['questions'][current_lang] }}</h4>
+            <h1 class="fw-bold title">{{ i18n['contact'][current_lang] }}</h1>
+            <p class="desc">{{ i18n['contact_intro'][current_lang] }}</p>
+
+            <div class="container info">
+                <div class="offices">
+                    <h3>{{ i18n['offices'][current_lang] }}</h3>
+                    <p class="desc">{{ i18n['office_yemen'][current_lang] }}</p>
                 </div>
-    
-                <div class="row mt-4 text-start">
-                    <div class="col-md-6 mb-3">
-                        <div class="offices">
-                            <h3>{{ i18n['offices'][current_lang] }}</h3>
-                            <p class="desc">{{ i18n['office_yemen'][current_lang] }}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="email">
-                            <h3>{{ i18n['email'][current_lang] }}</h3>
-                            <p class="desc">info@speedym.com</p>
-                            <p class="desc">cs@speedym.com</p>
-                        </div>
-                    </div>
+                <div class="email">
+                    <h3>{{ i18n['email'][current_lang] }}</h3>
+                    <p class="desc">info@speedym.com</p>
+                    <p class="desc">cs@speedym.com</p>
                 </div>
             </div>
         </div>
 
         <div class="form" data-aos="fade-up">
             <form id="customer-contact-form">
-                <h1 class="text-start">{{ i18n['get_in_touch'][current_lang] }}</h1>
-                <p class="desc text-start">{{ i18n['get_in_touch_desc'][current_lang] }}</p>
+                <h1>{{ i18n['get_in_touch'][current_lang] }}</h1>
+                <p class="desc">{{ i18n['get_in_touch_desc'][current_lang] }}</p>
 
                 <div class="field field-dark">
                     <input type="text" class="field-text" style="color: black;" name="full_name" placeholder="{{i18n['full_name'][current_lang]}}" required />

@@ -41,7 +41,12 @@
     <!-- Start Buy Car Section -->
 
     <!-- Start Buy Car Section -->
-<section class="buy-car py-5 bg-color-light section-animation">
+    {% if current_lang == 'ar' %}
+	<section class="buy-car py-5 bg-color-light section-animation"" style="direction: rtl; text-align: right;">
+	{% else %}
+	<section class="buy-car py-5 bg-color-light section-animation"" style="direction: ltr; text-align: left;">
+	{% endif %}
+<!-- <section class="buy-car py-5 bg-color-light section-animation"> -->
     <div class="container-fluid">
         <div class="title-header text-center">
             <h2 class="mb-0 load-animate-left">

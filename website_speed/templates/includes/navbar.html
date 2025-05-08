@@ -1,5 +1,10 @@
 <!-- Start Navbar -->
+{% if current_lang == 'ar' %}
+<section id="header" class="position-fixed w-100 top-0 right-0">
+{% else %}
 <section id="header" class="position-fixed w-100 top-0 left-0">
+{% endif %}
+<!-- <section id="header" class="position-fixed w-100 top-0 left-0"> -->
     <div class="header pt-2">
         <div class="container-fluid">
             <div class="nav-bar d-flex align-items-center justify-content-between">
@@ -22,18 +27,18 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../pages/calculator" data-after="Calculator">
-                                {{ i18n['calculator'][current_lang] }}
-                            </a>
-                        </li>
-                        <li>
                             <a href="../pages/about-us" data-after="About">
                                 {{ i18n['about_us'][current_lang] }}
                             </a>
                         </li>
                         <li>
-                            <a href="../pages/help" data-after="help">
-                                {{ i18n['help'][current_lang] }}
+                            <a href="../pages/shipping_rates" data-after="Shipping Rates">
+                                {{ i18n['shipping_rates'][current_lang] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../pages/calculator" data-after="Calculator">
+                                {{ i18n['calculator'][current_lang] }}
                             </a>
                         </li>
                         <li>
@@ -42,8 +47,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../pages/shipping_rates" data-after="Shipping Rates">
-                                {{ i18n['shipping_rates'][current_lang] }}
+                            <a href="../pages/help" data-after="help">
+                                {{ i18n['help'][current_lang] }}
                             </a>
                         </li>
                         <li class="acount align-items-center justify-content-between">

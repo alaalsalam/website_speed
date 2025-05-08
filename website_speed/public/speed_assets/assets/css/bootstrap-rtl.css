@@ -451,7 +451,7 @@ th {
 .glyphicon-text-width:before {
   content: "\e051";
 }
-.glyphicon-align-right:before {
+.glyphicon-align-left:before {
   content: "\e052";
 }
 .glyphicon-align-center:before {
@@ -466,7 +466,7 @@ th {
 .glyphicon-list:before {
   content: "\e056";
 }
-.glyphicon-indent-right:before {
+.glyphicon-indent-left:before {
   content: "\e057";
 }
 .glyphicon-indent-left:before {
@@ -529,10 +529,10 @@ th {
 .glyphicon-eject:before {
   content: "\e078";
 }
-.glyphicon-chevron-right:before {
+.glyphicon-chevron-left:before {
   content: "\e079";
 }
-.glyphicon-chevron-left:before {
+.glyphicon-chevron-right:before {
   content: "\e080";
 }
 .glyphicon-plus-sign:before {
@@ -565,10 +565,10 @@ th {
 .glyphicon-ban-circle:before {
   content: "\e090";
 }
-.glyphicon-arrow-right:before {
+.glyphicon-arrow-left:before {
   content: "\e091";
 }
-.glyphicon-arrow-left:before {
+.glyphicon-arrow-right:before {
   content: "\e092";
 }
 .glyphicon-arrow-up:before {
@@ -664,10 +664,10 @@ th {
 .glyphicon-thumbs-down:before {
   content: "\e126";
 }
-.glyphicon-hand-left:before {
+.glyphicon-hand-right:before {
   content: "\e127";
 }
-.glyphicon-hand-right:before {
+.glyphicon-hand-left:before {
   content: "\e128";
 }
 .glyphicon-hand-up:before {
@@ -676,10 +676,10 @@ th {
 .glyphicon-hand-down:before {
   content: "\e130";
 }
-.glyphicon-circle-arrow-left:before {
+.glyphicon-circle-arrow-right:before {
   content: "\e131";
 }
-.glyphicon-circle-arrow-right:before {
+.glyphicon-circle-arrow-left:before {
   content: "\e132";
 }
 .glyphicon-circle-arrow-up:before {
@@ -1024,19 +1024,19 @@ th {
 .glyphicon-object-align-horizontal:before {
   content: "\e246";
 }
-.glyphicon-object-align-right:before {
+.glyphicon-object-align-left:before {
   content: "\e247";
 }
 .glyphicon-object-align-vertical:before {
   content: "\e248";
 }
-.glyphicon-object-align-left:before {
+.glyphicon-object-align-right:before {
   content: "\e249";
 }
-.glyphicon-triangle-left:before {
+.glyphicon-triangle-right:before {
   content: "\e250";
 }
-.glyphicon-triangle-right:before {
+.glyphicon-triangle-left:before {
   content: "\e251";
 }
 .glyphicon-triangle-bottom:before {
@@ -1054,10 +1054,10 @@ th {
 .glyphicon-subscript:before {
   content: "\e256";
 }
-.glyphicon-menu-right:before {
+.glyphicon-menu-left:before {
   content: "\e257";
 }
-.glyphicon-menu-left:before {
+.glyphicon-menu-right:before {
   content: "\e258";
 }
 .glyphicon-menu-down:before {
@@ -1309,10 +1309,10 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3;
 }
-.text-right {
+.text-left {
   text-align: right;
 }
-.text-left {
+.text-right {
   text-align: left;
 }
 .text-center {
@@ -3615,7 +3615,8 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
-.dropdown-menu.pull-left {
+.dropdown-menu.pull-right
+ {
   left: 0;
   right: auto;
 }
@@ -3667,11 +3668,11 @@ tbody.collapse.in {
 .open > a {
   outline: 0;
 }
-.dropdown-menu-left {
+.dropdown-menu-right {
   left: 0;
   right: auto;
 }
-.dropdown-menu-right {
+.dropdown-menu-left {
   left: auto;
   right: 0;
 }
@@ -3691,7 +3692,7 @@ tbody.collapse.in {
   right: 0;
   z-index: 990;
 }
-.pull-left > .dropdown-menu {
+.pull-right > .dropdown-menu {
   left: 0;
   right: auto;
 }
@@ -3709,11 +3710,11 @@ tbody.collapse.in {
   margin-bottom: 2px;
 }
 @media (min-width: 768px) {
-  .navbar-left .dropdown-menu {
+  .navbar-right .dropdown-menu {
     left: 0;
     right: auto;
   }
-  .navbar-left .dropdown-menu-right {
+  .navbar-right .dropdown-menu-left {
     left: auto;
     right: 0;
   }
@@ -5289,16 +5290,16 @@ a.thumbnail.active {
 .media-object.img-thumbnail {
   max-width: none;
 }
-.media-left,
-.media > .pull-left {
-  padding-right: 10px;
-}
 .media-right,
 .media > .pull-right {
+  padding-right: 10px;
+}
+.media-left,
+.media > .pull-left {
   padding-left: 10px;
 }
-.media-right,
 .media-left,
+.media-right,
 .media-body {
   display: table-cell;
   vertical-align: top;
@@ -6096,7 +6097,7 @@ button.close {
   padding: 5px 0;
   margin-top: -3px;
 }
-.tooltip.left {
+.tooltip.right {
   padding: 0 5px;
   margin-right: 3px;
 }
@@ -6104,7 +6105,7 @@ button.close {
   padding: 5px 0;
   margin-top: 3px;
 }
-.tooltip.right {
+.tooltip.left {
   padding: 0 5px;
   margin-right: -3px;
 }
@@ -6115,28 +6116,28 @@ button.close {
   border-width: 5px 5px 0;
   border-top-color: #000;
 }
-.tooltip.top-right .tooltip-arrow {
+.tooltip.top-left .tooltip-arrow {
   left: 5px;
   bottom: 0;
   margin-bottom: -5px;
   border-width: 5px 5px 0;
   border-top-color: #000;
 }
-.tooltip.top-left .tooltip-arrow {
+.tooltip.top-right .tooltip-arrow {
   bottom: 0;
   right: 5px;
   margin-bottom: -5px;
   border-width: 5px 5px 0;
   border-top-color: #000;
 }
-.tooltip.left .tooltip-arrow {
+.tooltip.right .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
   border-left-color: #000;
 }
-.tooltip.right .tooltip-arrow {
+.tooltip.left .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
@@ -6150,14 +6151,14 @@ button.close {
   border-width: 0 5px 5px;
   border-bottom-color: #000;
 }
-.tooltip.bottom-right .tooltip-arrow {
+.tooltip.bottom-left .tooltip-arrow {
   top: 0;
   left: 5px;
   margin-top: -5px;
   border-width: 0 5px 5px;
   border-bottom-color: #000;
 }
-.tooltip.bottom-left .tooltip-arrow {
+.tooltip.bottom-right .tooltip-arrow {
   top: 0;
   right: 5px;
   margin-top: -5px;
@@ -6214,13 +6215,13 @@ button.close {
 .popover.top {
   margin-top: -10px;
 }
-.popover.left {
+.popover.right {
   margin-right: 10px;
 }
 .popover.bottom {
   margin-top: 10px;
 }
-.popover.right {
+.popover.left {
   margin-right: -10px;
 }
 .popover > .arrow {
@@ -6254,7 +6255,7 @@ button.close {
   border-top-color: #fff;
   border-bottom-width: 0;
 }
-.popover.left > .arrow {
+.popover.right > .arrow {
   top: 50%;
   right: -11px;
   margin-top: -11px;
@@ -6262,7 +6263,7 @@ button.close {
   border-left-color: rgba(0, 0, 0, 0.25);
   border-right-width: 0;
 }
-.popover.left > .arrow:after {
+.popover.right > .arrow:after {
   bottom: -10px;
   right: 1px;
   content: " ";
@@ -6284,7 +6285,7 @@ button.close {
   border-top-width: 0;
   border-bottom-color: #fff;
 }
-.popover.right > .arrow {
+.popover.left > .arrow {
   top: 50%;
   left: -11px;
   margin-top: -11px;
@@ -6292,7 +6293,7 @@ button.close {
   border-right-color: #999999;
   border-right-color: rgba(0, 0, 0, 0.25);
 }
-.popover.right > .arrow:after {
+.popover.left > .arrow:after {
   left: 1px;
   bottom: -10px;
   content: " ";
@@ -6348,13 +6349,13 @@ button.close {
     right: 0;
   }
   .carousel-inner > .item.prev,
-  .carousel-inner > .item.active.right {
+  .carousel-inner > .item.active.left {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
     right: 0;
   }
-  .carousel-inner > .item.next.right,
-  .carousel-inner > .item.prev.left,
+  .carousel-inner > .item.next.left,
+  .carousel-inner > .item.prev.right,
   .carousel-inner > .item.active {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -6381,14 +6382,14 @@ button.close {
 .carousel-inner > .prev {
   right: -100%;
 }
-.carousel-inner > .next.right,
-.carousel-inner > .prev.left {
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
   right: 0;
 }
-.carousel-inner > .active.right {
+.carousel-inner > .active.left {
   right: -100%;
 }
-.carousel-inner > .active.left {
+.carousel-inner > .active.right {
   right: 100%;
 }
 .carousel-control {
@@ -6405,7 +6406,7 @@ button.close {
   filter: alpha(opacity=50);
   opacity: 0.5;
 }
-.carousel-control.right {
+.carousel-control.left {
   background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
@@ -6413,7 +6414,7 @@ button.close {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
   background-repeat: repeat-x;
 }
-.carousel-control.left {
+.carousel-control.right {
   left: 0;
   right: auto;
   background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
@@ -6433,8 +6434,8 @@ button.close {
 }
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-right,
-.carousel-control .glyphicon-chevron-left {
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
   position: absolute;
   top: 50%;
   z-index: 5;
@@ -6442,12 +6443,12 @@ button.close {
   margin-top: -10px;
 }
 .carousel-control .icon-prev,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .glyphicon-chevron-left {
   right: 50%;
   margin-right: -10px;
 }
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-left {
+.carousel-control .glyphicon-chevron-right {
   left: 50%;
   margin-left: -10px;
 }
@@ -6509,8 +6510,8 @@ button.close {
   text-shadow: none;
 }
 @media screen and (min-width: 768px) {
-  .carousel-control .glyphicon-chevron-right,
   .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
     width: 30px;
@@ -6518,11 +6519,11 @@ button.close {
     margin-top: -10px;
     font-size: 30px;
   }
-  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .glyphicon-chevron-left,
   .carousel-control .icon-prev {
     margin-right: -10px;
   }
-  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-next {
     margin-left: -10px;
   }
@@ -6593,10 +6594,10 @@ button.close {
   margin-left: auto;
   margin-right: auto;
 }
-.pull-left {
+.pull-right {
   float: left !important;
 }
-.pull-right {
+.pull-left {
   float: right !important;
 }
 .hide {

@@ -463,6 +463,18 @@ body.dark p{
     z-index: 0;
 }
 
+/* .buy-car .steps .card {
+    position: relative;
+  }
+  
+.buy-car .steps .line-center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    inset-inline-end: 0;
+} */
+
 /* End Buy Car Section */
 
 /* Start Advantages Section */
@@ -983,7 +995,8 @@ span.color-line.gold {
         width: 53%;
         transform: rotateZ(90deg) translateY(62px);
         position: absolute;
-        left: 0px;
+        /* left: 0px; */
+        inset-inline-start: 0px;
         top: 65px;
     }
 
@@ -1451,4 +1464,8 @@ span.color-line.gold {
 
 .footer-links li a:hover {
     color: red !important;
+}
+
+html, body {
+    overflow-x: hidden;
 }

@@ -43,183 +43,89 @@
 
 <!-- Start Shipping Rates Page -->
 {% if current_lang == 'ar' %}
-<section class="help details-page py-5 bg-white" style="direction: rtl; text-align: right;">
+<section class="help details-page py-5 bg-white text-end" dir="rtl">
 {% else %}
-<section class="help details-page py-5 bg-white" style="direction: ltr; text-align: left;">
+<section class="help details-page py-5 bg-white text-start" dir="ltr">
 {% endif %}
-    <table class="waffle" cellspacing="0" cellpadding="0" style="width: 100%;">
-        <thead>
-            <tr>
-                <th class="row-header freezebar-vertical-handle header-shim row-header-shim"></th>
-                <th id="0C0" style="width:110px;" class="header-shim"></th>
-                <th id="0C1" style="width:70px;" class="header-shim"></th>
-                <th id="0C2" style="width:267px;" class="header-shim"></th>
-                <th id="0C3" style="width:185px;" class="header-shim"></th>
-                <th id="0C4" style="width:95px;" class="header-shim"></th>
-                <th id="0C5" style="width:96px;" class="header-shim"></th>
-                <th id="0C6" style="width:81px;" class="header-shim"></th>
-                <th id="0C9" style="width:85px;" class="header-shim"></th>
-                <th id="0C10" style="width:97px;" class="header-shim"></th>
-                <th id="0C11" style="width:195px;" class="header-shim"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="height: 38px; background-color: #CC0000; color: white; font-weight: bold;">
-                <td style=" border: 1px solid black; text-align: center;" class="s1" dir="rtl" colspan="5">أســــعـــار الــــــــشـــحـــــن الـــى:</td>
-                <td style=" border: 1px solid black; text-align: center;" class="s0" dir="ltr" colspan="4">(Shihen, YE)</td>
-                <td style=" border: 1px solid black; text-align: center;" class="s0" colspan="3">
-                    {% if shipping_from_date and shipping_to_date %}
-                        {% if current_lang == 'ar' %}
-                            صالح من {{ shipping_from_date }} إلى {{ shipping_to_date }}
-                        {% else %}
-                            Valid From {{ shipping_from_date }} To {{ shipping_to_date }}
-                        {% endif %}
-                    {% else %}
-                        {% if current_lang == 'ar' %}
-                            لم يتم تحديد التواريخ
-                        {% else %}
-                            Dates Not Set
-                        {% endif %}
-                    {% endif %}
-                </td>
-                
-            </tr>
-            <tr style="height: 20px; text-align: center;">
-                <td style="text-align: center;" class="s3" dir="rtl" colspan="12">{{ shipping_instructions | safe }}</td>
-            </tr>
-            <tr style="height: 20px">
-                <td style=" border: 1px solid rgb(135, 219, 255); text-align: center;" class="s7" dir="rtl" colspan="9"> - الاسعار غير شامله العمولات والغرامات الاخرى</td>
-                <td style=" border: 1px solid rgb(135, 219, 255); text-align: center; background-color: rgb(88, 180, 255); color: white;" class="s6" dir="ltr" colspan="3">Start From: April 01, 2025</td>
-            </tr>
-            <tr style="height: 44px; background-color: #CC0000; color: white; font-weight: bold;">
-                <td style=" border: 2px solid white; text-align: center;" class="s8" colspan="2">ملاحظات</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s8">الإجمالي</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s9">خارجي</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s8">داخلي</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s8">PORT</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s8">ZIP</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s8">City</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s8" colspan="2">Location</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s8">State</td>
-                <td style=" border: 2px solid white; text-align: center;" class="s2">Auction</td>
-            </tr>
-            {% for rate in shipping_rates %}
-            <tr style="background-color: #FAE5E5; font-weight: bold;">
-                <td style=" border: 2px solid white; text-align: center;" colspan="2">{{ rate.notes }}</td>
-                <td style=" border: 2px solid white; text-align: center;" >{{ rate.total }}</td>
-                <td style=" border: 2px solid white; text-align: center;" >{{ rate.external }}</td>
-                <td style=" border: 2px solid white; text-align: center;" >{{ rate.internal }}</td>
-                <td style=" border: 2px solid white; text-align: center; background-color: {{ rate.port_color }};" >{{ rate.port }}</td>
-                <td style=" border: 2px solid white; text-align: center;" >{{ rate.zip }}</td>
-                <td style=" border: 2px solid white; text-align: center;" >{{ rate.city }}</td>
-                <td style=" border: 2px solid white; text-align: center;"  colspan="2">{{ rate.location }}</td>
-                <td style=" border: 2px solid white; text-align: center;" >{{ rate.state }}</td>
-                <td style=" border: 2px solid white; text-align: center;">{{ rate.auction }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+<div class="table-responsive">
+    <table class="table table-bordered text-center waffle" style="min-width: 1200px;">
+      <thead>
+        <tr>
+          <th></th>
+          <th style="width:110px;"></th>
+          <th style="width:70px;"></th>
+          <th style="width:267px;"></th>
+          <th style="width:185px;"></th>
+          <th style="width:95px;"></th>
+          <th style="width:96px;"></th>
+          <th style="width:81px;"></th>
+          <th style="width:85px;"></th>
+          <th style="width:97px;"></th>
+          <th style="width:195px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color: #CC0000; color: white; font-weight: bold;">
+          <td colspan="5" dir="rtl" style="border: 1px solid black;">أســــعـــار الــــــــشـــحـــــن الـــى:</td>
+          <td colspan="4" dir="ltr" style="border: 1px solid black;">(Shihen, YE)</td>
+          <td colspan="3" style="border: 1px solid black;">
+            {% if shipping_from_date and shipping_to_date %}
+              {% if current_lang == 'ar' %}
+                صالح من {{ shipping_from_date }} إلى {{ shipping_to_date }}
+              {% else %}
+                Valid From {{ shipping_from_date }} To {{ shipping_to_date }}
+              {% endif %}
+            {% else %}
+              {% if current_lang == 'ar' %}
+                لم يتم تحديد التواريخ
+              {% else %}
+                Dates Not Set
+              {% endif %}
+            {% endif %}
+          </td>
+        </tr>
+  
+        <tr>
+          <td colspan="12" class="s3" dir="rtl">{{ shipping_instructions | safe }}</td>
+        </tr>
+  
+        <tr>
+          <td colspan="9" dir="rtl" style="border: 1px solid #87dbff;">- الاسعار غير شامله العمولات والغرامات الاخرى</td>
+          <td colspan="3" dir="ltr" style="border: 1px solid #87dbff; background-color: #58b4ff; color: white;">Start From: April 01, 2025</td>
+        </tr>
+  
+        <tr style="background-color: #CC0000; color: white; font-weight: bold;">
+          <td colspan="2" style="border: 2px solid white;">ملاحظات</td>
+          <td style="border: 2px solid white;">الإجمالي</td>
+          <td style="border: 2px solid white;">خارجي</td>
+          <td style="border: 2px solid white;">داخلي</td>
+          <td style="border: 2px solid white;">PORT</td>
+          <td style="border: 2px solid white;">ZIP</td>
+          <td style="border: 2px solid white;">City</td>
+          <td colspan="2" style="border: 2px solid white;">Location</td>
+          <td style="border: 2px solid white;">State</td>
+          <td style="border: 2px solid white;">Auction</td>
+        </tr>
+  
+        {% for rate in shipping_rates %}
+        <tr style="background-color: #FAE5E5; font-weight: bold;">
+          <td colspan="2" style="border: 2px solid white;">{{ rate.notes }}</td>
+          <td style="border: 2px solid white;">{{ rate.total }}</td>
+          <td style="border: 2px solid white;">{{ rate.external }}</td>
+          <td style="border: 2px solid white;">{{ rate.internal }}</td>
+          <td style="border: 2px solid white; background-color: {{ rate.port_color }};">{{ rate.port }}</td>
+          <td style="border: 2px solid white;">{{ rate.zip }}</td>
+          <td style="border: 2px solid white;">{{ rate.city }}</td>
+          <td colspan="2" style="border: 2px solid white;">{{ rate.location }}</td>
+          <td style="border: 2px solid white;">{{ rate.state }}</td>
+          <td style="border: 2px solid white;">{{ rate.auction }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
+  </div>
+  
 </section>
-
-<!-- <section class="help details-page py-5 bg-white ">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-12 section-animation inner-pages">
-                    <div class="title-header animate-top">
-                        <h2 class="fs-1 text-center">4 Steps to Buying a Vehicle with Speed</h2>
-                    </div>
-                </div>
-
-
-
-                <div class="col-md-12 section-animation inner-pages">
-                    <div class="title-header animate-top">
-                        <h2 class="fs-1 text-center">4 Steps to Buying a Vehicle with Speed</h2>
-                    </div>
-                    <p class="animate-top">
-                        To make the import of vehicles from the USA clear and transparent, we've created the Speed service. Auctions are conducted without intermediaries, with no hidden costs - you're the one making all the decisions! You choose the car you want to bid on and the amount you're willing to pay, and we help you win the auction! Importantly, at Speed, there are no costs incurred before you win a bid on a car. Registration and participation in the auction are free! We only require a refundable deposit to secure your bidding. Speed allows you to quickly and easily order auctions, purchase, and ship vehicles, with an option for "doorstep" delivery. Speed stands for 100% transparency and full awareness of the costs incurred, as well as control over the location of your vehicle.
-                    </p>
-                </div>
-            </div>
-            <div class="row help-steps mb-5 section-animation">
-                <div class="col-md-9 border-bottom animate-top">
-                    <h4 class="text-info mb-5">Step 1</h4>
-                    <h2 class="mb-2">Find your dream car</h2>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Once registered, you'll have the opportunity to track all the vehicles you're interested in from one tab. You'll also gain:
-                    </p>
-                    <ul class="my-4 fs-5">
-                        <li>the ability to add cars to your watchlist,</li>
-                        <li>the ability to view final prices of archived offers,</li>
-                    </ul>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
-                    <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-3.svg" alt="">
-                </div>
-            </div>
-            <div class="row help-steps mb-5 section-animation">
-                <div class="col-md-9 border-bottom animate-top">
-                    <h4 class="text-info mb-5">Step 2</h4>
-                    <h2 class="mb-2">Make a Refundable Deposit</h2>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Once registered, you'll have the opportunity to track all the vehicles you're interested in from one tab. You'll also gain:
-                    </p>
-                    <ul class="my-4 fs-5">
-                        <li>the ability to add cars to your watchlist,</li>
-                        <li>the ability to view final prices of archived offers,</li>
-                    </ul>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
-                    <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg" alt="">
-                </div>
-            </div>
-            <div class="row help-steps mb-5 section-animation">
-                <div class="col-md-9 border-bottom animate-top">
-                    <h4 class="text-info mb-5">Step 2</h4>
-                    <h2 class="mb-2">Make a Refundable Deposit</h2>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                    <p class="my-4 fs-5">
-                        Once registered, you'll have the opportunity to track all the vehicles you're interested in from one tab. You'll also gain:
-                    </p>
-                    <ul class="my-4 fs-5">
-                        <li>the ability to add cars to your watchlist,</li>
-                        <li>the ability to view final prices of archived offers,</li>
-                    </ul>
-                    <p class="my-4 fs-5">
-                        Find your dream car from the USA. Our search engine and detailed filters will make it easy for you to browse through our car database. At Speed, you don't need to create an account to view the cars and auctions that interest you.
-                    </p>
-                </div>
-                <div class="col-md-3 d-flex align-items-center justify-content-around image-animate">
-                    <img src="/assets/website_speed/speed_assets/uploads/topics/icon-page-2.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-<!-- End About Page -->
 
 <!-- Start footer Section -->
 

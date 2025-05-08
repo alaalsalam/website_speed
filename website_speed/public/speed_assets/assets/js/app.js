@@ -201,32 +201,43 @@ $(document).ready(function () {
 
     $("#owl-slider-adv").trigger('refresh.owl.carousel');
 
-    $("#owl-slider-warranties").owlCarousel({
+    var $owlWarranties = $("#owl-slider-warranties");
+
+    $owlWarranties.owlCarousel({
         items: 6,
         autoplay: false,
-        rtl: false,
-        lazyLoad:true,
+        rtl: isRTL,
+        lazyLoad: true,
         autoplayTimeout: 3000,
         dots: false,
         nav: true,
-        navText: ['<i class="fa fa-angle-right">', '<i class="fa fa-angle-left">'],
+        navText: navIcons,
         responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 6
-            }
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 6 }
         }
     });
+
+    setTimeout(function () {
+        $owlWarranties.find('img.owl-lazy').each(function () {
+            var $img = $(this);
+            var src = $img.attr('data-src');
+            if (src) {
+                $img.attr('src', src);
+                $img.removeAttr('data-src');
+                $img.removeClass('owl-lazy');
+            }
+        });
+
+        $owlWarranties.trigger('refresh.owl.carousel');
+    }, 500);
+
 
     $("#owl-slider-gallry-info").owlCarousel({
         items: 3,
         autoplay: false,
-        rtl: true,
+        rtl: isRTL,
         loop: true,
         autoplayTimeout: 3000,
         dots: false,
@@ -246,7 +257,7 @@ $(document).ready(function () {
     $("#owl-slider-about1").owlCarousel({
         items: 4,
         autoplay: false,
-        rtl: false,
+        rtl: isRTL,
         loop: true,
         autoplayTimeout: 3000,
         dots: true,
@@ -266,7 +277,7 @@ $(document).ready(function () {
     $("#owl-slider-about2").owlCarousel({
         items: 4,
         autoplay: false,
-        rtl: false,
+        rtl: isRTL,
         loop: true,
         autoplayTimeout: 3000,
         dots: true,

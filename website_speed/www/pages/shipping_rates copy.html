@@ -1,0 +1,126 @@
+{% extends '/templates/base_speed.html' %}
+
+{% block title %} Help {% endblock %}
+
+{% block content %}
+<!-- End Navbar -->
+
+<!-- <table class="table">
+    <thead class="table-light">
+      ...
+    </thead>
+    <tbody>
+      ...
+    </tbody>
+  </table>
+
+  <div class="table-responsive"> -->
+
+
+<!-- Start Breadcrump Section -->
+<section class="breadcrump2 d-flex align-items-end justify-content-center mb-3 section-animation inner-pages">
+    <div class="container position-relative z-1">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="text-white load-animate-left mb-5">{{ i18n['shipping_rates'][current_lang] }}</h1>
+                <ul
+                    class="ul d-flex flex-wrap px-3 py-3 breadcrump-list rounded-3 align-items-center justify-content-center">
+                    <li>
+                        <a href="../index" class="text-white mx-1">{{ i18n['home'][current_lang] }}</a>
+                    </li>
+                    <li>
+                        <a href="../pages/shipping_rates" class="text-white mx-1"><span class="mx-2">/</span> {{
+                            i18n['shipping_rates'][current_lang] }} </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- End Breadcrump Section -->
+
+<!-- Start Shipping Rates Page -->
+{% if current_lang == 'ar' %}
+<section class="help details-page py-5 bg-white" style="direction: rtl; text-align: right;">
+{% else %}
+<section class="help details-page py-5 bg-white" style="direction: ltr; text-align: left;">
+{% endif %}
+    <table class="waffle" cellspacing="0" cellpadding="0" style="width: 100%;">
+        <thead>
+            <tr>
+                <th class="row-header freezebar-vertical-handle header-shim row-header-shim"></th>
+                <th id="0C0" style="width:110px;" class="header-shim"></th>
+                <th id="0C1" style="width:70px;" class="header-shim"></th>
+                <th id="0C2" style="width:267px;" class="header-shim"></th>
+                <th id="0C3" style="width:185px;" class="header-shim"></th>
+                <th id="0C4" style="width:95px;" class="header-shim"></th>
+                <th id="0C5" style="width:96px;" class="header-shim"></th>
+                <th id="0C6" style="width:81px;" class="header-shim"></th>
+                <th id="0C9" style="width:85px;" class="header-shim"></th>
+                <th id="0C10" style="width:97px;" class="header-shim"></th>
+                <th id="0C11" style="width:195px;" class="header-shim"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="height: 38px; background-color: #CC0000; color: white; font-weight: bold;">
+                <td style=" border: 1px solid black; text-align: center;" class="s1" dir="rtl" colspan="5">أســــعـــار الــــــــشـــحـــــن الـــى:</td>
+                <td style=" border: 1px solid black; text-align: center;" class="s0" dir="ltr" colspan="4">(Shihen, YE)</td>
+                <td style=" border: 1px solid black; text-align: center;" class="s0" colspan="3">
+                    {% if shipping_from_date and shipping_to_date %}
+                        {% if current_lang == 'ar' %}
+                            صالح من {{ shipping_from_date }} إلى {{ shipping_to_date }}
+                        {% else %}
+                            Valid From {{ shipping_from_date }} To {{ shipping_to_date }}
+                        {% endif %}
+                    {% else %}
+                        {% if current_lang == 'ar' %}
+                            لم يتم تحديد التواريخ
+                        {% else %}
+                            Dates Not Set
+                        {% endif %}
+                    {% endif %}
+                </td>
+                
+            </tr>
+            <tr style="height: 20px; text-align: center;">
+                <td style="text-align: center;" class="s3" dir="rtl" colspan="12">{{ shipping_instructions | safe }}</td>
+            </tr>
+            <tr style="height: 20px">
+                <td style=" border: 1px solid rgb(135, 219, 255); text-align: center;" class="s7" dir="rtl" colspan="9"> - الاسعار غير شامله العمولات والغرامات الاخرى</td>
+                <td style=" border: 1px solid rgb(135, 219, 255); text-align: center; background-color: rgb(88, 180, 255); color: white;" class="s6" dir="ltr" colspan="3">Start From: April 01, 2025</td>
+            </tr>
+            <tr style="height: 44px; background-color: #CC0000; color: white; font-weight: bold;">
+                <td style=" border: 2px solid white; text-align: center;" class="s8" colspan="2">ملاحظات</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s8">الإجمالي</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s9">خارجي</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s8">داخلي</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s8">PORT</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s8">ZIP</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s8">City</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s8" colspan="2">Location</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s8">State</td>
+                <td style=" border: 2px solid white; text-align: center;" class="s2">Auction</td>
+            </tr>
+            {% for rate in shipping_rates %}
+            <tr style="background-color: #FAE5E5; font-weight: bold;">
+                <td style=" border: 2px solid white; text-align: center;" colspan="2">{{ rate.notes }}</td>
+                <td style=" border: 2px solid white; text-align: center;" >{{ rate.total }}</td>
+                <td style=" border: 2px solid white; text-align: center;" >{{ rate.external }}</td>
+                <td style=" border: 2px solid white; text-align: center;" >{{ rate.internal }}</td>
+                <td style=" border: 2px solid white; text-align: center; background-color: {{ rate.port_color }};" >{{ rate.port }}</td>
+                <td style=" border: 2px solid white; text-align: center;" >{{ rate.zip }}</td>
+                <td style=" border: 2px solid white; text-align: center;" >{{ rate.city }}</td>
+                <td style=" border: 2px solid white; text-align: center;"  colspan="2">{{ rate.location }}</td>
+                <td style=" border: 2px solid white; text-align: center;" >{{ rate.state }}</td>
+                <td style=" border: 2px solid white; text-align: center;">{{ rate.auction }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<!-- Start footer Section -->
+
+{% endblock %}

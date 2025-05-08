@@ -463,6 +463,17 @@ body.dark p{
     z-index: 0;
 }
 
+/* .buy-car .steps .card {
+    position: relative;
+  }
+  
+.buy-car .steps .line-center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    inset-inline-start: 0;
+} */
 /* End Buy Car Section */
 
 /* Start Advantages Section */
@@ -827,7 +838,7 @@ span.color-line.gold {
     right: 50%;
     top: 50%;
     z-index: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
 }
 .home-welcome .details p{
     color: #888;
@@ -835,6 +846,7 @@ span.color-line.gold {
     font-weight: 400;
     line-height: 2;
     margin: 0;
+    text-align: right;
 }
 .home-welcome .details h2{
     font-size: 40px;
@@ -943,6 +955,7 @@ span.color-line.gold {
         font-size: 27px;
         font-weight: 700;
         width: 100%;
+        text-align: right;
     }
 
     .header .container-fluid{
@@ -983,7 +996,8 @@ span.color-line.gold {
         width: 53%;
         transform: rotateZ(90deg) translateY(62px);
         position: absolute;
-        right: 0px;
+        /* right: 0px; */
+        inset-inline-start: -120px;
         top: 65px;
     }
 
@@ -1450,4 +1464,9 @@ span.color-line.gold {
 
 .footer-links li a:hover {
     color: red !important;
+}
+
+
+html, body {
+    overflow-x: hidden;
 }
