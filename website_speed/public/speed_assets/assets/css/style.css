@@ -128,11 +128,11 @@ a{
 }
 
 .owl-carousel .owl-nav .owl-prev{
-    right: -20px;
+    right: -40px;
 }
 
 .owl-carousel .owl-nav .owl-next{
-    left: -20px;
+    left: -40px;
 }
 
 .select2-container--bootstrap-5 .select2-selection{

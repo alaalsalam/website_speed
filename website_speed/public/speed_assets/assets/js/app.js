@@ -18,6 +18,7 @@ menu_item.forEach((item)=>{
 
 document.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
+    // const a = document.querySelector('.header nav-bar nav-list ul li a');
     var scroll_position = window.scrollY;
     if(scroll_position > 150){
         header.style.backgroundColor = "#293542";
@@ -159,6 +160,8 @@ if(document.querySelector('.settings-mobile')){
 //         console.log(img)
 //     })
 // });
+
+
 
 $(document).ready(function () {
     var isRTL = document.documentElement.dir === 'rtl';
